@@ -1,6 +1,6 @@
 # Codex CLI
 
-推荐通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 管理 Codex CLI 的 Tokeness 配置。CC Switch 会处理 Codex 的 `auth.json` 和 `config.toml`，比手动维护配置更稳。
+Codex CLI 可以通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 配置 Tokeness。CC Switch 会写入 Codex 使用的 `auth.json` 和 `config.toml`。
 
 ## 1. 安装 Codex
 
@@ -34,7 +34,7 @@ npm install -g @openai/codex --registry=https://registry.npmmirror.com
 
 ## 3. 自定义配置参考
 
-CC Switch 的 Codex 自定义供应商会写入两个配置文件。平时建议直接在 CC Switch 界面里维护，下面的内容只用于理解它背后改了什么：
+CC Switch 的 Codex 自定义供应商会写入两个配置文件。下面的内容用于核对配置结果：
 
 `~/.codex/auth.json`
 
@@ -58,7 +58,7 @@ wire_api = "responses"
 requires_openai_auth = true
 ```
 
-优先在 CC Switch 界面中维护这些配置，避免手动编辑后被切换操作覆盖。
+在 CC Switch 界面中维护这些配置，可以避免手动编辑后被切换操作覆盖。
 
 ## 4. 切换并重启终端
 

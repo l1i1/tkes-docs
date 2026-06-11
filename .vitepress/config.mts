@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Tokeness Docs',
-  description: 'Tokeness 一站式 AI API 接口文档',
+  description: 'Tokeness OpenAI 兼容 API 接入文档',
   lang: 'zh-CN',
   cleanUrls: true,
   lastUpdated: true,
@@ -13,14 +13,14 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/logo.svg' }],
     ['meta', { property: 'og:site_name', content: 'Tokeness Docs' }],
     ['meta', { property: 'og:title', content: 'Tokeness Docs' }],
-    ['meta', { property: 'og:description', content: '一个 Key 对接所有模型，OpenAI 兼容协议，统一路由、额度和账单。' }],
+    ['meta', { property: 'og:description', content: 'Tokeness OpenAI 兼容接口、API Key、额度和日志说明。' }],
     ['meta', { property: 'og:url', content: 'https://docs.tokeness.io' }]
   ],
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: 'Tokeness Docs',
     nav: [
-      { text: '快速上手', link: '/guide/getting-started' },
+      { text: '开始接入', link: '/guide/getting-started' },
       { text: '接入指南', link: '/integrations/openai-compatible' },
       { text: '计费', link: '/billing/pricing' },
       { text: '控制台', link: 'https://tokeness.cn/dashboard/overview' }
@@ -29,7 +29,7 @@ export default defineConfig({
       {
         text: '开始使用',
         items: [
-          { text: '快速上手', link: '/guide/getting-started' },
+          { text: '开始接入', link: '/guide/getting-started' },
           { text: '控制台概览', link: '/guide/dashboard' },
           { text: 'API 密钥', link: '/guide/api-keys' },
           { text: '常见问题', link: '/faq' }
@@ -60,7 +60,7 @@ export default defineConfig({
       }
     ],
     footer: {
-      message: '一个 Key，所有模型。接得快，花得清楚。',
+      message: 'OpenAI 兼容接口。模型、额度、日志集中管理。',
       copyright: 'Copyright © 2026 Tokeness'
     },
     search: {

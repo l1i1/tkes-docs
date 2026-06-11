@@ -9,9 +9,9 @@ Base URL: https://n.tokeness.io/v1
 API Key: 你的 Tokeness API Key
 ```
 
-## 先安装 SDK
+## 代码调用
 
-如果你用代码调用，先安装对应 SDK：
+先安装 SDK：
 
 ```bash
 npm install openai
@@ -23,16 +23,18 @@ pip install openai
 
 ## Node.js
 
+创建 `test-tokeness.mjs`，把 `YOUR_TOKENESS_API_KEY` 和 `YOUR_MODEL_NAME` 换成自己的值。
+
 ```ts
 import OpenAI from 'openai'
 
 const client = new OpenAI({
-  apiKey: process.env.TOKENESS_API_KEY,
+  apiKey: 'YOUR_TOKENESS_API_KEY',
   baseURL: 'https://n.tokeness.io/v1'
 })
 
 const completion = await client.chat.completions.create({
-  model: process.env.TOKENESS_MODEL || '你的模型名',
+  model: 'YOUR_MODEL_NAME',
   messages: [
     { role: 'system', content: 'You are a concise assistant.' },
     { role: 'user', content: 'Say hello from Tokeness.' }
@@ -42,7 +44,15 @@ const completion = await client.chat.completions.create({
 console.log(completion.choices[0]?.message?.content)
 ```
 
+运行：
+
+```bash
+node test-tokeness.mjs
+```
+
 ## Python
+
+创建 `test_tokeness.py`，把 `YOUR_TOKENESS_API_KEY` 和 `YOUR_MODEL_NAME` 换成自己的值。
 
 ```py
 from openai import OpenAI
@@ -80,16 +90,16 @@ curl https://n.tokeness.io/v1/chat/completions \
 
 模型名称以控制台“模型广场”或后台返回为准。复制模型名时保留大小写、连字符和版本号。
 
-如果你刚开始接入，先复制一个最常用的模型名，再回到教程里替换 `YOUR_MODEL_NAME`。
+首次接入时，先从模型广场复制一个可用模型名，再回到示例里替换 `YOUR_MODEL_NAME`。
 
 <div class="tokeness-shot-grid">
   <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-openai-light-16x9.png" alt="Tokeness OpenAI 兼容接入浅色模式">
-    <figcaption>OpenAI 兼容接入浅色模式</figcaption>
+    <img class="tokeness-shot" src="/images/tokeness-models-light-16x9.png" alt="Tokeness 模型广场浅色模式">
+    <figcaption>模型广场浅色模式</figcaption>
   </figure>
   <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-openai-dark-16x9.png" alt="Tokeness OpenAI 兼容接入深色模式">
-    <figcaption>OpenAI 兼容接入深色模式</figcaption>
+    <img class="tokeness-shot" src="/images/tokeness-models-dark-16x9.png" alt="Tokeness 模型广场深色模式">
+    <figcaption>模型广场深色模式</figcaption>
   </figure>
 </div>
 

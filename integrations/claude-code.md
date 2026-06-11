@@ -1,6 +1,6 @@
 # Claude Code
 
-推荐使用 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 管理 Claude Code 的 Tokeness 配置。CC Switch 可以统一管理 Claude Code、Codex、OpenCode 等工具的供应商配置，并支持在系统托盘快速切换。
+Claude Code 可以通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 配置 Tokeness。CC Switch 用于管理 Claude Code、Codex、OpenCode 等工具的供应商配置，并支持在系统托盘切换。
 
 ## 1. 准备环境
 
@@ -45,11 +45,11 @@ npm install -g @anthropic-ai/claude-code --registry=https://registry.npmmirror.c
 6. Base URL 填写 `https://n.tokeness.io/v1`。
 7. 模型填写 Tokeness 模型广场中的模型名。
 
-Tokeness 是 OpenAI 兼容接口。若 Claude Code 供应商表单提供 API 格式选项，优先选择 OpenAI Chat Completions 或 OpenAI Responses，并按 CC Switch 提示开启代理或应用接管。
+Tokeness 是 OpenAI 兼容接口。若 Claude Code 供应商表单提供 API 格式选项，选择 OpenAI Chat Completions 或 OpenAI Responses，并按 CC Switch 提示开启代理或应用接管。
 
 ## 4. 切换并生效
 
-添加完成后，点击 Tokeness 供应商卡片上的“启用”。Claude Code 通常会自动热重载；如果没有变化，关掉 Claude Code 再重新打开一次。
+添加完成后，点击 Tokeness 供应商卡片上的“启用”。如果 Claude Code 没有读取新配置，关掉 Claude Code 再重新打开一次。
 
 如果 Claude Code 首次启动时出现官方初始化引导，可以在 CC Switch 的“设置 → 通用”中开启“跳过 Claude Code 初次安装确认”，然后重新启动 Claude Code。
 

@@ -1,6 +1,6 @@
 # OpenCode
 
-推荐通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 接入 OpenCode。CC Switch 支持 OpenCode，并提供 OpenAI Compatible 预设，适合配置 Tokeness。
+OpenCode 可以通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 配置 Tokeness。CC Switch 支持 OpenCode，并提供 OpenAI Compatible 预设。
 
 ## 1. 准备 Tokeness
 
@@ -10,7 +10,7 @@
 2. 创建 OpenCode 专用 API Key。
 3. 在模型广场复制要使用的模型名。
 
-接口地址统一使用：
+接口地址：
 
 ```txt
 https://n.tokeness.io/v1
@@ -30,7 +30,7 @@ https://n.tokeness.io/v1
 8. 模型填写 Tokeness 模型广场中的模型名。
 9. 保存。
 
-CC Switch 支持自动从 OpenAI 兼容的 `/v1/models` 端点获取模型列表。若自动获取失败，手动填写模型名即可。
+CC Switch 支持从 OpenAI 兼容的 `/v1/models` 端点获取模型列表。若自动获取失败，手动填写模型名。
 
 ## 3. 切换并重启终端
 

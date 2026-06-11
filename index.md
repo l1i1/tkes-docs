@@ -3,14 +3,14 @@ layout: home
 
 hero:
   name: Tokeness Docs
-  text: 一个 Key，所有模型
-  tagline: 面向开发者和渠道伙伴的 Tokeness 接入文档。统一模型入口、统一额度控制、统一消费记录，兼容 OpenAI API 格式。
+  text: OpenAI 兼容 API 文档
+  tagline: 这里记录 Tokeness 的接口地址、API Key 管理、模型名称、计费和常见工具接入方式。
   image:
     src: /logo.svg
     alt: Tokeness
   actions:
     - theme: brand
-      text: 快速上手
+      text: 开始接入
       link: /guide/getting-started
     - theme: alt
       text: OpenAI 兼容接入
@@ -18,13 +18,13 @@ hero:
 
 features:
   - title: OpenAI 兼容
-    details: 现有 OpenAI SDK、Chat 客户端和自动化工具可以按兼容模式接入，减少迁移成本。
+    details: 支持按 OpenAI 兼容格式配置 Base URL、API Key 和模型名。
   - title: Key 与额度控制
-    details: 为项目创建独立 API Key，限制可用模型、分组和额度，便于开发、测试、生产分开管理。
+    details: API Key 可以按项目拆分，并配置额度、分组和可用模型范围。
   - title: 模型与路由
-    details: 聚合 OpenAI、Claude、Gemini、DeepSeek、Qwen 等模型供应商，按场景选择通用或专用线路。
+    details: 模型广场展示可用模型名称，接入时按页面中的完整模型名填写。
   - title: 消费可追溯
-    details: 控制台提供概览、数据看板、使用日志和钱包入口，帮助定位调用、余额和消耗。
+    details: 控制台提供概览、数据看板、使用日志和钱包入口，用于核对请求、余额和消耗。
 ---
 
 <div class="tokeness-note-grid">
@@ -34,7 +34,7 @@ features:
     文档域名：<a href="https://docs.tokeness.io">docs.tokeness.io</a>
   </div>
   <div class="tokeness-note">
-    <strong>推荐路径</strong>
-    先看快速上手，再选一个接入页。最短路径是：注册登录、充值、创建 API Key、填入 Base URL、发起一次测试调用。
+    <strong>接入顺序</strong>
+    注册登录、充值、创建 API Key、复制模型名、配置 Base URL、发起一次测试调用。
   </div>
 </div>

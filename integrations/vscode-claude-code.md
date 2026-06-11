@@ -1,6 +1,6 @@
 # VS Code + Claude Code
 
-如果你在 VS Code 中使用 Claude Code 插件或类似 AI 编程插件，优先选择支持自定义 API Base URL 的配置方式。
+如果你在 VS Code 中使用 Claude Code 插件或类似 AI 编程插件，需要确认插件支持自定义 API Base URL。
 
 ## 配置入口
 
@@ -12,7 +12,7 @@
 
 如果插件还要求登录某个厂商账号，先确认它支持自定义 Base URL，再决定是否继续接入。
 
-## 推荐配置
+## 字段配置
 
 ```txt
 API Key: 你的 Tokeness API Key
@@ -20,9 +20,9 @@ Base URL: https://n.tokeness.io/v1
 Model: 从 Tokeness 模型广场复制
 ```
 
-## 使用建议
+## Key 与额度
 
-AI 编程插件可能连续读取上下文、修改文件和重试任务。建议为 VS Code 插件创建独立 Key，并设置额度上限。
+AI 编程插件可能连续读取上下文、修改文件和重试任务。为 VS Code 插件创建独立 Key，并设置额度上限。
 
 ## 排查
 

@@ -1,6 +1,6 @@
 # OpenClaw
 
-OpenClaw 可通过手动配置中转服务接入 Tokeness。适合希望统一管理模型、Key 和消费记录的开发者。
+OpenClaw 可通过手动配置中转服务接入 Tokeness。
 
 ## 手动配置
 
@@ -13,9 +13,9 @@ API Key: 你的 Tokeness API Key
 Model: 从 Tokeness 模型广场复制
 ```
 
-如果你第一次接入，先手动复制一个最常用的模型名，别先依赖自动拉取。
+首次接入时，先手动复制一个模型名，不依赖自动拉取。
 
-如果 OpenClaw 要求选择协议类型，优先选择 OpenAI Compatible 或 OpenAI API。
+如果 OpenClaw 要求选择协议类型，选择 OpenAI Compatible 或 OpenAI API。
 
 ## 验证配置
 
