@@ -38,14 +38,3 @@ features:
     先看快速上手，再选一个接入页。最短路径是：注册登录、充值、创建 API Key、填入 Base URL、发起一次测试调用。
   </div>
 </div>
-
-<div class="tokeness-shot-grid">
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-home-light-16x9.png" alt="Tokeness 首页浅色模式">
-    <figcaption>首页浅色模式</figcaption>
-  </figure>
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-home-dark-16x9.png" alt="Tokeness 首页深色模式">
-    <figcaption>首页深色模式</figcaption>
-  </figure>
-</div>
