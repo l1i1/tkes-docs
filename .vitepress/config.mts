@@ -39,6 +39,8 @@ export default defineConfig({
         text: '接入指南',
         items: [
           { text: 'OpenAI 兼容接入', link: '/integrations/openai-compatible' },
+          { text: 'OpenAI Responses API', link: '/integrations/openai-responses' },
+          { text: 'Anthropic API', link: '/integrations/anthropic-api' },
           { text: 'Cherry Studio', link: '/integrations/cherry-studio' },
           { text: 'Claude Code', link: '/integrations/claude-code' },
           { text: 'VS Code + Claude Code', link: '/integrations/vscode-claude-code' },
