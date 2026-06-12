@@ -2,16 +2,13 @@
 
 API Key 是 Tokeness 的调用凭证。每个 Key 需要有明确用途，避免多个项目共用同一个 Key。
 
-<div class="tokeness-shot-grid">
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-api-keys-light-16x9.png" alt="Tokeness API 密钥页浅色模式">
-    <figcaption>API 密钥页浅色模式</figcaption>
-  </figure>
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-api-keys-dark-16x9.png" alt="Tokeness API 密钥页深色模式">
-    <figcaption>API 密钥页深色模式</figcaption>
-  </figure>
-</div>
+<figure class="tokeness-shot">
+  <div class="tokeness-shot-frame">
+    <img class="tokeness-shot-light" src="/images/tokeness-api-keys-light-16x9.png" alt="Tokeness API 密钥页">
+    <img class="tokeness-shot-dark" src="/images/tokeness-api-keys-dark-16x9.png" alt="Tokeness API 密钥页">
+  </div>
+  <figcaption>API 密钥页</figcaption>
+</figure>
 
 ## 创建 Key
 

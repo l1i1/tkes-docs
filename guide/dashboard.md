@@ -2,16 +2,13 @@
 
 Tokeness 控制台用于管理模型、Key、日志和余额。登录后默认进入概览页。
 
-<div class="tokeness-shot-grid">
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-dashboard-light-16x9.png" alt="Tokeness 控制台概览浅色模式">
-    <figcaption>控制台概览浅色模式</figcaption>
-  </figure>
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-dashboard-dark-16x9.png" alt="Tokeness 控制台概览深色模式">
-    <figcaption>控制台概览深色模式</figcaption>
-  </figure>
-</div>
+<figure class="tokeness-shot">
+  <div class="tokeness-shot-frame">
+    <img class="tokeness-shot-light" src="/images/tokeness-dashboard-light-16x9.png" alt="Tokeness 控制台概览">
+    <img class="tokeness-shot-dark" src="/images/tokeness-dashboard-dark-16x9.png" alt="Tokeness 控制台概览">
+  </div>
+  <figcaption>控制台概览</figcaption>
+</figure>
 
 ## 导航结构
 

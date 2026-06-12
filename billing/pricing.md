@@ -2,16 +2,13 @@
 
 Tokeness 采用先充值后调用的模式。每次 API 调用按实际消耗扣费。模型价格以控制台、模型广场或正式报价为准。
 
-<div class="tokeness-shot-grid">
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-models-light-16x9.png" alt="Tokeness 模型广场浅色模式">
-    <figcaption>模型广场浅色模式</figcaption>
-  </figure>
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-models-dark-16x9.png" alt="Tokeness 模型广场深色模式">
-    <figcaption>模型广场深色模式</figcaption>
-  </figure>
-</div>
+<figure class="tokeness-shot">
+  <div class="tokeness-shot-frame">
+    <img class="tokeness-shot-light" src="/images/tokeness-models-light-16x9.png" alt="Tokeness 模型广场">
+    <img class="tokeness-shot-dark" src="/images/tokeness-models-dark-16x9.png" alt="Tokeness 模型广场">
+  </div>
+  <figcaption>模型广场</figcaption>
+</figure>
 
 ## 计费口径
 

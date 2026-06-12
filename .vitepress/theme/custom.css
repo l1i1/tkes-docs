@@ -129,12 +129,33 @@ body {
 .tokeness-shot {
   display: block;
   width: 100%;
+  margin: 24px 0;
+}
+
+.tokeness-shot-frame {
+  display: block;
+}
+
+.tokeness-shot img {
+  display: block;
+  width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   margin: 0;
 }
 
-.tokeness-shot-grid,
+.tokeness-shot img.tokeness-shot-dark {
+  display: none;
+}
+
+.dark .tokeness-shot img.tokeness-shot-light {
+  display: none;
+}
+
+.dark .tokeness-shot img.tokeness-shot-dark {
+  display: block;
+}
+
 .tokeness-note-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -142,11 +163,7 @@ body {
   margin: 24px 0;
 }
 
-.tokeness-shot-card {
-  margin: 0;
-}
-
-.tokeness-shot-card figcaption {
+.tokeness-shot figcaption {
   margin-top: 8px;
   color: var(--vp-c-text-2);
   font-size: 13px;
@@ -167,7 +184,6 @@ body {
 }
 
 @media (max-width: 720px) {
-  .tokeness-shot-grid,
   .tokeness-note-grid {
     grid-template-columns: 1fr;
   }

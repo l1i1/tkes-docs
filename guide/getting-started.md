@@ -24,16 +24,13 @@
 
 打开 [tokeness.cn](https://tokeness.cn)，点击右上角“登录”。已登录时会直接进入控制台。
 
-<div class="tokeness-shot-grid">
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-dashboard-light-16x9.png" alt="Tokeness 控制台浅色模式">
-    <figcaption>登录后控制台浅色模式</figcaption>
-  </figure>
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-dashboard-dark-16x9.png" alt="Tokeness 控制台深色模式">
-    <figcaption>登录后控制台深色模式</figcaption>
-  </figure>
-</div>
+<figure class="tokeness-shot">
+  <div class="tokeness-shot-frame">
+    <img class="tokeness-shot-light" src="/images/tokeness-dashboard-light-16x9.png" alt="Tokeness 控制台">
+    <img class="tokeness-shot-dark" src="/images/tokeness-dashboard-dark-16x9.png" alt="Tokeness 控制台">
+  </div>
+  <figcaption>登录后控制台</figcaption>
+</figure>
 
 首次使用请先注册账号。邮箱用于登录、找回密码和接收通知。
 

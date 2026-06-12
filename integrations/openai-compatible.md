@@ -92,16 +92,13 @@ curl https://n.tokeness.io/v1/chat/completions \
 
 首次接入时，先从模型广场复制一个可用模型名，再回到示例里替换 `YOUR_MODEL_NAME`。
 
-<div class="tokeness-shot-grid">
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-models-light-16x9.png" alt="Tokeness 模型广场浅色模式">
-    <figcaption>模型广场浅色模式</figcaption>
-  </figure>
-  <figure class="tokeness-shot-card">
-    <img class="tokeness-shot" src="/images/tokeness-models-dark-16x9.png" alt="Tokeness 模型广场深色模式">
-    <figcaption>模型广场深色模式</figcaption>
-  </figure>
-</div>
+<figure class="tokeness-shot">
+  <div class="tokeness-shot-frame">
+    <img class="tokeness-shot-light" src="/images/tokeness-models-light-16x9.png" alt="Tokeness 模型广场">
+    <img class="tokeness-shot-dark" src="/images/tokeness-models-dark-16x9.png" alt="Tokeness 模型广场">
+  </div>
+  <figcaption>模型广场</figcaption>
+</figure>
 
 ## 常见错误
 
