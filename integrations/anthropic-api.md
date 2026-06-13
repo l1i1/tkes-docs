@@ -8,6 +8,15 @@ https://n.tokeness.io/v1/messages
 
 模型名从 Tokeness 模型广场复制。Claude 分组模型使用这一页的格式。
 
+## 端点规则
+
+| 场景 | 地址 |
+| --- | --- |
+| cURL 或手写 HTTP | `https://n.tokeness.io/v1/messages` |
+| Anthropic SDK | `https://n.tokeness.io` |
+
+Anthropic SDK 的 `messages.create` 会处理 Messages 路径。SDK 的 `base_url` 或 `baseURL` 填服务根地址，不要再追加 `/v1/messages`。
+
 ## 请求字段
 
 | 字段 | 填写 |
@@ -17,6 +26,12 @@ https://n.tokeness.io/v1/messages
 | Header | `x-api-key: YOUR_TOKENESS_API_KEY` |
 | Version | `anthropic-version: 2023-06-01` |
 | Model | 从模型广场复制 Claude 模型名 |
+
+## 验证顺序
+
+1. 先用 cURL 请求 `https://n.tokeness.io/v1/messages`。
+2. 确认使用日志里出现请求记录。
+3. 再把同一个 Key、模型名和 SDK 根地址放进 Anthropic SDK。
 
 ## cURL
 
@@ -39,7 +54,7 @@ curl https://n.tokeness.io/v1/messages \
 
 ## Python SDK
 
-Anthropic Python SDK 会在 `base_url` 后拼接 `/v1/messages`。因此 SDK 场景填写根地址：
+SDK 场景填写服务根地址：
 
 ```bash
 pip install anthropic
@@ -64,7 +79,13 @@ message = client.messages.create(
     ],
 )
 
-print(message.content[0].text)
+text = "\n".join(
+    block.text
+    for block in message.content
+    if block.type == "text"
+)
+
+print(text)
 ```
 
 ## TypeScript SDK
@@ -92,10 +113,12 @@ const message = await anthropic.messages.create({
   ]
 })
 
-const firstBlock = message.content[0]
-if (firstBlock.type === 'text') {
-  console.log(firstBlock.text)
-}
+const text = message.content
+  .map((block) => block.type === 'text' ? block.text : '')
+  .filter(Boolean)
+  .join('\n')
+
+console.log(text)
 ```
 
 ## 与 OpenAI 格式的区别
@@ -113,6 +136,6 @@ if (firstBlock.type === 'text') {
 | 现象 | 检查 |
 | --- | --- |
 | 401 | `x-api-key` 是否填写 Tokeness API Key |
-| 404 | SDK `base_url` 是否写成 `https://n.tokeness.io`，cURL endpoint 是否是 `https://n.tokeness.io/v1/messages` |
+| 404 | SDK 是否使用 `https://n.tokeness.io`，cURL endpoint 是否是 `https://n.tokeness.io/v1/messages` |
 | 版本错误 | 是否带了 `anthropic-version: 2023-06-01` |
 | 模型不可用 | 模型名是否来自 Claude 分组，Key 是否允许调用该模型 |

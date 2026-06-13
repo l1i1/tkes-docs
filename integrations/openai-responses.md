@@ -10,6 +10,12 @@ API Key: 你的 Tokeness API Key
 Model: 从 Tokeness 模型广场复制的模型名
 ```
 
+## 验证顺序
+
+1. 先用 cURL 请求 `https://n.tokeness.io/v1/responses`。
+2. 确认使用日志里出现请求记录。
+3. 再把同一个 Key、模型名和 Base URL 放进 SDK。
+
 ## Node.js
 
 安装 SDK：
