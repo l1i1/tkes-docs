@@ -14,7 +14,13 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: 'Tokeness Docs' }],
     ['meta', { property: 'og:title', content: 'Tokeness Docs' }],
     ['meta', { property: 'og:description', content: 'Tokeness OpenAI 兼容接口、API Key、额度和日志说明。' }],
-    ['meta', { property: 'og:url', content: 'https://docs.tokeness.io' }]
+    ['meta', { property: 'og:url', content: 'https://docs.tokeness.io' }],
+    ['script', { charset: 'UTF-8', id: 'MXA_COLLECT', src: '//mxana.tacool.com/sdk.js' }],
+    [
+      'script',
+      {},
+      'window.MXA && window.MXA.init({ id: "c2-DtVtddN1", useHash: true, useErrorLog: true })'
+    ]
   ],
   themeConfig: {
     logo: '/logo.svg',
