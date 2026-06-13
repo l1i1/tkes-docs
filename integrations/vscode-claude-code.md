@@ -1,3 +1,8 @@
+---
+title: VS Code + Claude Code
+description: VS Code Claude Code 插件接入 Tokeness 的 Base URL、模型名和 Key 管理说明。
+---
+
 # VS Code + Claude Code
 
 如果你在 VS Code 中使用 Claude Code 插件或类似 AI 编程插件，需要确认插件支持自定义 API Base URL。

@@ -1,3 +1,8 @@
+---
+title: Cherry Studio
+description: 在 Cherry Studio 中配置 Tokeness OpenAI 兼容供应商、Base URL、API Key 和模型名。
+---
+
 # Cherry Studio
 
 Cherry Studio 支持自定义 OpenAI 兼容服务商，可直接接入 Tokeness。

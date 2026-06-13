@@ -1,3 +1,8 @@
+---
+title: Codex CLI
+description: 通过 CC Switch 为 Codex CLI 配置 Tokeness Provider、auth.json 和 config.toml。
+---
+
 # Codex CLI
 
 Codex CLI 可以通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 配置 Tokeness。CC Switch 会写入 Codex 使用的 `auth.json` 和 `config.toml`。

@@ -1,3 +1,8 @@
+---
+title: OpenClaw
+description: OpenClaw 手动配置 Tokeness 中转服务、Base URL、API Key 和模型名。
+---
+
 # OpenClaw
 
 OpenClaw 可通过手动配置中转服务接入 Tokeness。

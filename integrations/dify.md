@@ -1,3 +1,8 @@
+---
+title: Dify
+description: Dify 通过 OpenAI 兼容模型供应商接入 Tokeness 的配置方式。
+---
+
 # Dify
 
 Dify 可通过 OpenAI 兼容模型供应商接入 Tokeness，用于工作流、聊天应用和内部 AI 工具。

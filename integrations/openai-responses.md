@@ -1,3 +1,8 @@
+---
+title: OpenAI Responses API
+description: 通过 Tokeness 调用 OpenAI Responses API，包含 Node.js、Python、cURL 和排查步骤。
+---
+
 # OpenAI Responses API
 
 Responses API 使用 `POST /v1/responses`。如果你的代码已经基于 OpenAI SDK 的 `responses.create`，把 Base URL 和 API Key 换成 Tokeness 配置。

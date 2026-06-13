@@ -1,3 +1,8 @@
+---
+title: OpenCode
+description: 通过 CC Switch 为 OpenCode 配置 Tokeness OpenAI Compatible 供应商。
+---
+
 # OpenCode
 
 OpenCode 可以通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 配置 Tokeness。CC Switch 支持 OpenCode，并提供 OpenAI Compatible 预设。

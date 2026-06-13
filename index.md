@@ -1,5 +1,8 @@
 ---
 layout: home
+title: Tokeness Docs
+titleTemplate: false
+description: Tokeness OpenAI 兼容 API 文档，包含 API Key、模型名称、计费、OpenAI Responses、Anthropic API 和常见工具接入方式。
 
 hero:
   name: Tokeness Docs

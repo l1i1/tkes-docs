@@ -1,3 +1,8 @@
+---
+title: Claude Code
+description: 通过 CC Switch 为 Claude Code 配置 Tokeness API Key、Base URL 和模型名。
+---
+
 # Claude Code
 
 Claude Code 可以通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 配置 Tokeness。CC Switch 用于管理 Claude Code、Codex、OpenCode 等工具的供应商配置，并支持在系统托盘切换。

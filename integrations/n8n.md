@@ -1,3 +1,8 @@
+---
+title: n8n
+description: n8n 使用 HTTP Request 节点或凭证管理接入 Tokeness API。
+---
+
 # n8n
 
 n8n 可通过 HTTP Request 节点或 OpenAI 兼容凭证接入 Tokeness，用于自动化工作流。

@@ -1,3 +1,8 @@
+---
+title: OpenAI 兼容接入
+description: 使用 OpenAI SDK、Python、Node.js 和 cURL 接入 Tokeness OpenAI 兼容接口。
+---
+
 # OpenAI 兼容接入
 
 Tokeness 提供 OpenAI 兼容接口。大多数支持自定义 OpenAI Base URL 的 SDK、Chat 客户端和自动化工具都可以接入。

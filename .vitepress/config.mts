@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Tokeness Docs',
   description: 'Tokeness OpenAI 兼容 API 接入文档',
+  titleTemplate: ':title | Tokeness Docs',
   lang: 'zh-CN',
   cleanUrls: true,
   lastUpdated: true,
@@ -11,10 +12,15 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
+    ['meta', { name: 'robots', content: 'index,follow' }],
+    ['meta', { name: 'keywords', content: 'Tokeness,Tokeness API,OpenAI 兼容接口,AI API,API Key,Claude API,Anthropic API,Responses API,AI 模型网关' }],
+    ['meta', { name: 'author', content: 'Tokeness' }],
     ['meta', { property: 'og:site_name', content: 'Tokeness Docs' }],
-    ['meta', { property: 'og:title', content: 'Tokeness Docs' }],
-    ['meta', { property: 'og:description', content: 'Tokeness OpenAI 兼容接口、API Key、额度和日志说明。' }],
-    ['meta', { property: 'og:url', content: 'https://docs.tokeness.io' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    ['meta', { property: 'og:image', content: 'https://docs.tokeness.io/images/tokeness-home-light-16x9.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://docs.tokeness.io/images/tokeness-home-light-16x9.png' }],
     ['script', { charset: 'UTF-8', id: 'MXA_COLLECT', src: '//mxana.tacool.com/sdk.js' }],
     [
       'script',
@@ -22,6 +28,22 @@ export default defineConfig({
       'window.MXA && window.MXA.init({ id: "c2-DtVtddN1", useHash: true, useErrorLog: true })'
     ]
   ],
+  transformHead({ page, title, description }) {
+    const path = page
+      .replace(/(^|\/)index\.(html|md)$/, '$1')
+      .replace(/\.(html|md)$/, '')
+    const normalizedPath = path === '/' ? '' : `/${path.replace(/^\/+/, '')}`
+    const url = `https://docs.tokeness.io${normalizedPath}`
+
+    return [
+      ['link', { rel: 'canonical', href: url }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }]
+    ]
+  },
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: 'Tokeness Docs',

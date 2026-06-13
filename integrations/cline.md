@@ -1,3 +1,8 @@
+---
+title: Cline
+description: Cline 使用 OpenAI Compatible Provider 接入 Tokeness 的配置步骤和排查项。
+---
+
 # Cline
 
 Cline 支持自定义 OpenAI 兼容 Provider，可用于接入 Tokeness。

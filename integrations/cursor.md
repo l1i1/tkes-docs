@@ -1,3 +1,8 @@
+---
+title: Cursor
+description: Cursor 自定义 OpenAI 兼容模型入口接入 Tokeness 的配置说明。
+---
+
 # Cursor
 
 Cursor 如果使用自定义 OpenAI 兼容模型入口，可以通过 Tokeness 接入。

@@ -1,3 +1,8 @@
+---
+title: API 密钥
+description: Tokeness API Key 创建、命名、额度、轮换和环境变量配置说明。
+---
+
 # API 密钥
 
 API Key 是 Tokeness 的调用凭证。每个 Key 需要有明确用途，避免多个项目共用同一个 Key。
