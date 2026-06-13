@@ -66,6 +66,7 @@ export default defineConfig({
       {
         text: '接入指南',
         items: [
+          { text: '自定义 API 与 Key', link: '/integrations/custom-api-key' },
           { text: 'OpenAI 兼容接入', link: '/integrations/openai-compatible' },
           { text: 'OpenAI Responses API', link: '/integrations/openai-responses' },
           { text: 'Anthropic API', link: '/integrations/anthropic-api' },
