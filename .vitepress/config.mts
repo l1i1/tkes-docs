@@ -74,12 +74,18 @@ export default defineConfig({
           { text: 'Claude Code', link: '/integrations/claude-code' },
           { text: 'VS Code + Claude Code', link: '/integrations/vscode-claude-code' },
           { text: 'Cline', link: '/integrations/cline' },
+          { text: 'Roo Code', link: '/integrations/roo-code' },
+          { text: 'Continue', link: '/integrations/continue' },
+          { text: 'Cursor', link: '/integrations/cursor' },
+          { text: 'Codex CLI', link: '/integrations/codex-cli' },
           { text: 'Dify', link: '/integrations/dify' },
           { text: 'n8n', link: '/integrations/n8n' },
+          { text: 'Open WebUI', link: '/integrations/open-webui' },
+          { text: 'AnythingLLM', link: '/integrations/anythingllm' },
+          { text: 'LibreChat', link: '/integrations/librechat' },
+          { text: 'LiteLLM', link: '/integrations/litellm' },
           { text: 'OpenClaw', link: '/integrations/openclaw' },
-          { text: 'OpenCode', link: '/integrations/opencode' },
-          { text: 'Cursor', link: '/integrations/cursor' },
-          { text: 'Codex CLI', link: '/integrations/codex-cli' }
+          { text: 'OpenCode', link: '/integrations/opencode' }
         ]
       },
       {

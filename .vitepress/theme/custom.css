@@ -96,6 +96,7 @@ body {
 .vp-doc table {
   display: table;
   width: 100%;
+  max-width: 100%;
   border: 1px solid var(--vp-c-border);
 }
 
@@ -107,6 +108,13 @@ body {
 .vp-doc td,
 .vp-doc th {
   border-color: var(--vp-c-border);
+  overflow-wrap: anywhere;
+}
+
+.vp-doc td code,
+.vp-doc th code {
+  white-space: normal;
+  word-break: break-word;
 }
 
 .vp-doc img {
@@ -185,6 +193,11 @@ body {
 }
 
 @media (max-width: 720px) {
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+  }
+
   .tokeness-note-grid {
     grid-template-columns: 1fr;
   }

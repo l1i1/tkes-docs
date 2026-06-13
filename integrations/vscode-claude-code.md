@@ -1,39 +1,119 @@
 ---
 title: VS Code + Claude Code
-description: VS Code Claude Code 插件接入 Tokeness 的 Base URL、模型名和 Key 管理说明。
+description: 在 VS Code 中使用 Claude Code、Cline 或支持自定义 Base URL 的插件接入 Tokeness。
 ---
 
 # VS Code + Claude Code
 
-如果你在 VS Code 中使用 Claude Code 插件或类似 AI 编程插件，需要确认插件支持自定义 API Base URL。
+VS Code 里常见的 AI 编程接入方式有三种：
 
-## 配置入口
+| 方式 | 适用页面 |
+| --- | --- |
+| 在 VS Code 终端里运行 Claude Code | 参考 Claude Code 页面 |
+| 使用 Cline 插件 | 参考 Cline 页面 |
+| 使用其他支持自定义 Base URL 的插件 | 按本页通用字段配置 |
 
-1. 安装 VS Code。
-2. 安装 Claude Code 或对应 AI 编程插件。
-3. 打开插件设置。
-4. 找到 API Key、Base URL、Model 或 Provider 相关配置。
-5. 填入 Tokeness 的 Key 和兼容地址。
-
-如果插件还要求登录某个厂商账号，先确认它支持自定义 Base URL，再决定是否继续接入。
-
-## 字段配置
+Tokeness 的通用接入方式是 OpenAI 兼容接口：
 
 ```txt
-API Key: 你的 Tokeness API Key
-Base URL: https://n.tokeness.io/v1
-Model: 从 Tokeness 模型广场复制
+https://n.tokeness.io/v1
 ```
 
-## Key 与额度
+## 1. 在 VS Code 终端里运行 Claude Code
 
-AI 编程插件可能连续读取上下文、修改文件和重试任务。为 VS Code 插件创建独立 Key，并设置额度上限。
+如果你只是把 VS Code 当终端使用，配置方式和普通 Claude Code 一样：
 
-## 排查
+1. 安装 Claude Code。
+2. 安装 CC Switch。
+3. 在 CC Switch 中为 Claude Code 添加 Tokeness 供应商。
+4. 开启路由模式。
+5. 在 VS Code 终端里运行 `claude`。
 
-| 问题 | 检查 |
+这类场景不要在 VS Code 插件设置里重复填 Key。Claude Code 会读取自己的配置。
+
+详见：[Claude Code](/integrations/claude-code)
+
+## 2. 使用 Cline 插件
+
+Cline 是 VS Code 插件，支持 OpenAI Compatible Provider。
+
+字段填写：
+
+```txt
+Provider: OpenAI Compatible
+Base URL: https://n.tokeness.io/v1
+API Key: 你的 Tokeness API Key
+Model ID: 从 Tokeness 模型广场复制
+```
+
+详见：[Cline](/integrations/cline)
+
+## 3. 使用其他 VS Code AI 插件
+
+只要插件提供这些字段，就可以尝试接入 Tokeness：
+
+| 插件字段 | Tokeness 填写内容 |
 | --- | --- |
-| 插件无法启动 | Node.js、插件版本、终端环境是否满足要求 |
-| 认证失败 | Key 是否正确，是否多复制了空格 |
-| 模型报错 | 模型名是否与 Tokeness 模型广场一致 |
-| 消耗异常 | 到 Tokeness 使用日志按 Key 查看调用记录 |
+| API Provider | OpenAI Compatible / OpenAI |
+| API Key | Tokeness API Key |
+| Base URL / API Base / Endpoint | `https://n.tokeness.io/v1` |
+| Model / Model ID | Tokeness 模型广场中的完整模型名 |
+
+如果插件只支持某一家厂商登录，不支持自定义 Base URL，则不能直接接入 Tokeness。
+
+## 4. Claude Code LLM Gateway 说明
+
+Claude Code 官方支持通过 `ANTHROPIC_BASE_URL` 接入 LLM Gateway，但这个方式要求网关暴露 Anthropic Messages 格式。
+
+Tokeness 文档中的 Claude Code 接入默认走 CC Switch 路由模式，因为它能把 Claude Code 请求转到 OpenAI 兼容供应商。只有在你明确使用 Anthropic Messages 兼容接口时，才按 Anthropic API 页面处理。
+
+相关页面：
+
+- [Claude Code](/integrations/claude-code)
+- [Anthropic API](/integrations/anthropic-api)
+
+## 5. Key 与额度
+
+VS Code 插件通常会读取项目上下文，消耗比普通聊天更高。
+
+处理方式：
+
+- 给 VS Code 插件单独创建 Key。
+- 给 Key 设置额度。
+- 首次使用先跑只读任务。
+- 大范围修改前确认 Git 工作区状态。
+- 使用日志中按 Key 查看调用记录。
+
+## 6. 验证
+
+在插件或 Claude Code 中输入：
+
+```txt
+请只回复一句话，说明当前 VS Code 接入已经可用。
+```
+
+然后检查 Tokeness 使用日志：
+
+1. 有新请求。
+2. Key 是 VS Code 或插件专用 Key。
+3. 模型名正确。
+4. 状态码成功。
+
+## 7. 排查
+
+| 现象 | 处理 |
+| --- | --- |
+| 插件不显示 Base URL | 该插件可能不支持自定义 API |
+| 认证失败 | 检查 Key、空格、是否启用 |
+| 404 Not Found | Base URL 填 `https://n.tokeness.io/v1` |
+| model not found | 从模型广场重新复制模型名 |
+| Claude Code 无日志 | 检查 CC Switch 是否启用 Tokeness 和路由模式 |
+| 插件能聊天但不能改代码 | 换代码能力更强的模型，或改用 Cline/Claude Code |
+| 消耗异常 | 限制上下文范围，检查是否有循环任务 |
+
+## 外部文档
+
+- [Claude Code LLM Gateway](https://docs.anthropic.com/en/docs/claude-code/llm-gateway)
+- [Claude Code Settings](https://docs.anthropic.com/zh-CN/docs/claude-code/settings)
+- [Cline OpenAI Compatible Provider](https://docs.cline.bot/provider-config/openai-compatible)
+
