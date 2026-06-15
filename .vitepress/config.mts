@@ -51,6 +51,7 @@ export default defineConfig({
       { text: '开始接入', link: '/guide/getting-started' },
       { text: '接入指南', link: '/integrations/openai-compatible' },
       { text: '计费', link: '/billing/pricing' },
+      { text: '公益计划', link: '/partners/impact' },
       { text: '控制台', link: 'https://tokeness.cn/dashboard/overview' }
     ],
     sidebar: [
@@ -92,6 +93,7 @@ export default defineConfig({
         text: '计费与合作',
         items: [
           { text: '模型与计费', link: '/billing/pricing' },
+          { text: '公益智能扶持计划', link: '/partners/impact' },
           { text: '渠道合作', link: '/partners/channel' }
         ]
       }
