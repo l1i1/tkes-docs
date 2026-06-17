@@ -17,7 +17,7 @@ API Key 是 Tokeness 的调用凭证。每个 Key 需要有明确用途，避免
 
 ## 创建 Key
 
-1. 登录 [tokeness.cn](https://tokeness.cn)。
+1. 登录 [tokeness.io](https://tokeness.io)。
 2. 打开控制台左侧“API 密钥”。
 3. 点击创建或添加密钥。
 4. 填写名称、额度、分组或模型范围。

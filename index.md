@@ -33,7 +33,7 @@ features:
 <div class="tokeness-note-grid">
   <div class="tokeness-note">
     <strong>服务入口</strong>
-    官网与控制台：<a href="https://tokeness.cn">tokeness.cn</a><br>
+    官网与控制台：<a href="https://tokeness.io">tokeness.io</a><br>
     文档域名：<a href="https://docs.tokeness.io">docs.tokeness.io</a>
   </div>
   <div class="tokeness-note">

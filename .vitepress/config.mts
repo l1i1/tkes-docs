@@ -52,7 +52,7 @@ export default defineConfig({
       { text: '接入指南', link: '/integrations/openai-compatible' },
       { text: '计费', link: '/billing/pricing' },
       { text: '公益计划', link: '/partners/impact' },
-      { text: '控制台', link: 'https://tokeness.cn/dashboard/overview' }
+      { text: '控制台', link: 'https://tokeness.io/dashboard/overview' }
     ],
     sidebar: [
       {

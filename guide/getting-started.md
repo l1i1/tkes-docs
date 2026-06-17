@@ -13,7 +13,7 @@ description: Tokeness API 最小接入流程：登录、充值、创建 API Key�
 
 | 项目 | 检查内容 |
 | --- | --- |
-| Tokeness 账户 | 已注册并登录 tokeness.cn |
+| Tokeness 账户 | 已注册并登录 tokeness.io |
 | 余额 | 先充值一小笔测试余额 |
 | 模型名 | 从模型广场复制一个可用模型名 |
 | 测试方式 | 任选一种：客户端、Node.js、Python 或 cURL |
@@ -27,7 +27,7 @@ description: Tokeness API 最小接入流程：登录、充值、创建 API Key�
 
 ## 1. 登录 Tokeness
 
-打开 [tokeness.cn](https://tokeness.cn)，点击右上角“登录”。已登录时会直接进入控制台。
+打开 [tokeness.io](https://tokeness.io)，点击右上角“登录”。已登录时会直接进入控制台。
 
 <figure class="tokeness-shot">
   <div class="tokeness-shot-frame">
