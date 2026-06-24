@@ -7,7 +7,7 @@ description: Tokeness 面向开源项目、公益项目和社会化企业提供�
 
 Tokeness 面向开源项目、公益项目和社会化企业开放公益智能扶持计划。入选项目可获得每月 `1000 万 - 50 亿` tokens 的 AI API 支持，用于开发、运营、知识服务、内容生产、自动化处理和公共服务场景。
 
-公益额度以 `DeepSeek-V4-Flash` 作为基准模型核算。项目可以使用其他模型，实际消耗按 Tokeness 平台模型价格、模型权限和等价额度规则折算。其他模型消耗按实际模型成本相对 `DeepSeek-V4-Flash` 基准成本折算，最终以 Tokeness 后台记录的调用、模型和消耗为准。
+公益额度以 `MiMo-V2.5` 作为基准模型核算。项目可以使用其他模型，实际消耗按 Tokeness 平台模型价格、模型权限和等价额度规则折算。
 
 ## 支持对象
 
@@ -49,24 +49,23 @@ Tokeness 面向开源项目、公益项目和社会化企业开放公益智能�
 
 ```md
 <p>
-  本项目的 AI 智能支持由
+  本项目的 AI API 支持由
   <a href="https://tokeness.io">
-    <img src="https://docs.tokeness.io/logo.svg" alt="Tokeness" height="20">
-    Tokeness
+    Tokeness.io
   </a>
-  提供。
+  赞助提供。
 </p>
 ```
 
 网站页脚或发布页底部写法：
 
 ```html
-本项目的 AI 智能支持由
+本项目的 AI API 支持由
 <a href="https://tokeness.io" target="_blank" rel="noopener">
   <img src="https://docs.tokeness.io/logo.svg" alt="Tokeness" height="24">
-  Tokeness
+  Tokeness.io
 </a>
-提供。
+ 赞助提供。
 ```
 
 Tokeness 会在申请审核和续期审核时检查该链接是否仍然公开可访问。未展示 Logo、未链接到 `https://tokeness.io`、链接放置位置不符合要求，均视为未完成申请前置要求。
