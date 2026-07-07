@@ -1,5 +1,24 @@
 import { defineConfig } from 'vitepress'
 
+const websiteJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Tokeness Docs',
+  url: 'https://docs.tokeness.io',
+  description: 'Tokeness OpenAI-compatible AI API gateway documentation',
+  inLanguage: 'zh-CN'
+} as const)
+
+const organizationJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Tokeness',
+  url: 'https://tokeness.io',
+  logo: 'https://docs.tokeness.io/logo.svg',
+  sameAs: ['https://docs.tokeness.io'],
+  description: 'Tokeness is an AI API gateway with OpenAI-compatible access, API key management, quota control, and usage logs.'
+} as const)
+
 export default defineConfig({
   title: 'Tokeness Docs',
   description: 'Tokeness OpenAI 兼容 API 接入文档',
@@ -15,6 +34,8 @@ export default defineConfig({
     ['meta', { name: 'robots', content: 'index,follow' }],
     ['meta', { name: 'keywords', content: 'Tokeness,Tokeness API,OpenAI 兼容接口,AI API,API Key,Claude API,Anthropic API,Responses API,AI 模型网关' }],
     ['meta', { name: 'author', content: 'Tokeness' }],
+    ['script', { type: 'application/ld+json' }, websiteJsonLd],
+    ['script', { type: 'application/ld+json' }, organizationJsonLd],
     ['meta', { property: 'og:site_name', content: 'Tokeness Docs' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
@@ -48,6 +69,7 @@ export default defineConfig({
     logo: '/logo.svg',
     siteTitle: 'Tokeness Docs',
     nav: [
+      { text: '关于', link: '/about' },
       { text: '开始接入', link: '/guide/getting-started' },
       { text: '接入指南', link: '/integrations/openai-compatible' },
       { text: '计费', link: '/billing/pricing' },
@@ -58,6 +80,7 @@ export default defineConfig({
       {
         text: '开始使用',
         items: [
+          { text: '关于 Tokeness', link: '/about' },
           { text: '开始接入', link: '/guide/getting-started' },
           { text: '控制台概览', link: '/guide/dashboard' },
           { text: 'API 密钥', link: '/guide/api-keys' },
