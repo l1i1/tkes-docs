@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://docs.tokeness.io/sitemap.xml
+Llms-Txt: https://docs.tokeness.io/llms.txt
