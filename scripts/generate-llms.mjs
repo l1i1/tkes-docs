@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -14,8 +14,15 @@ const renderLink = (site, link) => `- [${link.label}](${absoluteUrl(site, link.p
 
 const compactBlankLines = (content) => `${content.trim()}\n`
 
-export const generateLlmsTxt = (manifest = llmsManifest) => {
-  const { site, sections } = manifest
+const withPathPrefix = (sections, prefix) => sections.map((section) => ({
+  ...section,
+  links: section.links.map((link) => ({
+    ...link,
+    path: `${prefix}${link.path}`
+  }))
+}))
+
+const renderLlmsTxt = (site, sections) => {
   const lines = [
     `# ${site.title}`,
     '',
@@ -35,6 +42,10 @@ export const generateLlmsTxt = (manifest = llmsManifest) => {
 
   return compactBlankLines(lines.join('\n'))
 }
+
+export const generateLlmsTxt = (manifest = llmsManifest) => renderLlmsTxt(manifest.site, manifest.englishSections)
+
+export const generateZhLlmsTxt = (manifest = llmsManifest) => renderLlmsTxt(manifest.site, withPathPrefix(manifest.sections, '/zh'))
 
 const renderFullPage = (site, page) => [
   '---',
@@ -63,10 +74,26 @@ export const generateLlmsFullTxt = (manifest = llmsManifest) => {
   return compactBlankLines([header.join('\n'), ...fullPages.map((page) => renderFullPage(site, page))].join('\n\n'))
 }
 
+export const generateZhLlmsFullTxt = (manifest = llmsManifest) => {
+  const zhManifest = {
+    ...manifest,
+    fullPages: manifest.fullPages.map((page) => ({
+      ...page,
+      path: `/zh${page.path}`
+    }))
+  }
+
+  return generateLlmsFullTxt(zhManifest)
+}
+
 const writeGeneratedFiles = async () => {
+  await mkdir(join(docsRoot, 'public', 'zh'), { recursive: true })
+
   await Promise.all([
     writeFile(join(docsRoot, 'public', 'llms.txt'), generateLlmsTxt(llmsManifest)),
-    writeFile(join(docsRoot, 'public', 'llms-full.txt'), generateLlmsFullTxt(llmsManifest))
+    writeFile(join(docsRoot, 'public', 'llms-full.txt'), generateLlmsFullTxt(llmsManifest)),
+    writeFile(join(docsRoot, 'public', 'zh', 'llms.txt'), generateZhLlmsTxt(llmsManifest)),
+    writeFile(join(docsRoot, 'public', 'zh', 'llms-full.txt'), generateZhLlmsFullTxt(llmsManifest))
   ])
 }
 

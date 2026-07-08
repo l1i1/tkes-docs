@@ -10,24 +10,24 @@
 
 ## Core Facts
 
-- [关于 Tokeness](https://docs.tokeness.io/about): Canonical product facts, API endpoint, billing model, supported integration types, and official links.
-- [常见问题](https://docs.tokeness.io/faq): Tokeness FAQ covering Base URL, auth errors, balance, model names, billing, Claude Code, and supported tools.
-- [模型与计费](https://docs.tokeness.io/billing/pricing): Pre-paid billing model, usage logs, model price policy, and cost control guidance.
+- [About Tokeness](https://docs.tokeness.io/about): Canonical product facts, API endpoint, billing model, supported integration types, and official links.
+- [FAQ](https://docs.tokeness.io/faq): Tokeness FAQ covering Base URL, auth errors, balance, model names, billing, Claude Code, and supported tools.
+- [Models and Billing](https://docs.tokeness.io/billing/pricing): Prepaid billing model, usage logs, model price policy, and cost control guidance.
 
 ## Getting Started
 
-- [开始接入](https://docs.tokeness.io/guide/getting-started): Minimum onboarding flow: log in, top up, create API key, copy model name, and make a test call.
-- [API 密钥](https://docs.tokeness.io/guide/api-keys): API Key management, project separation, quota control, and safe key handling.
-- [控制台概览](https://docs.tokeness.io/guide/dashboard): Console pages for overview, usage logs, wallet, and troubleshooting.
+- [Getting Started](https://docs.tokeness.io/guide/getting-started): Minimum onboarding flow: sign in, top up, create API key, copy model name, and make a test call.
+- [API Keys](https://docs.tokeness.io/guide/api-keys): API key management, project separation, quota control, and safe key handling.
+- [Dashboard Overview](https://docs.tokeness.io/guide/dashboard): Console pages for overview, usage logs, wallet, and troubleshooting.
 
 ## Integration Guides
 
-- [自定义 API 与 Key](https://docs.tokeness.io/integrations/custom-api-key): Generic configuration for tools that support OpenAI Compatible, Base URL, Custom Provider, or Custom API.
-- [OpenAI 兼容接入](https://docs.tokeness.io/integrations/openai-compatible): OpenAI SDK, Node.js, Python, and cURL examples.
+- [Custom API and Key](https://docs.tokeness.io/integrations/custom-api-key): Generic configuration for tools that support OpenAI Compatible, Base URL, Custom Provider, or Custom API.
+- [OpenAI-Compatible API](https://docs.tokeness.io/integrations/openai-compatible): OpenAI SDK, Node.js, Python, and cURL examples.
 - [OpenAI Responses API](https://docs.tokeness.io/integrations/openai-responses): Responses API usage with Tokeness.
 - [Anthropic API](https://docs.tokeness.io/integrations/anthropic-api): Anthropic-format access through Tokeness.
 - [Cherry Studio](https://docs.tokeness.io/integrations/cherry-studio): Cherry Studio custom provider configuration.
-- [Claude Code](https://docs.tokeness.io/integrations/claude-code): Claude Code setup through CC Switch and Tokeness.
+- [Claude Code](https://docs.tokeness.io/integrations/claude-code): Claude Code setup through Tokeness-compatible routing.
 - [VS Code + Claude Code](https://docs.tokeness.io/integrations/vscode-claude-code): VS Code Claude Code extension configuration.
 - [Cline](https://docs.tokeness.io/integrations/cline): Cline configuration.
 - [Roo Code](https://docs.tokeness.io/integrations/roo-code): Roo Code OpenAI-compatible provider configuration.
@@ -45,8 +45,8 @@
 
 ## Programs
 
-- [公益智能扶持计划](https://docs.tokeness.io/partners/impact): Tokeness impact program for open-source projects, public-interest projects, and social enterprises.
-- [渠道合作](https://docs.tokeness.io/partners/channel): Channel cooperation and partner materials.
+- [Impact Program](https://docs.tokeness.io/partners/impact): Tokeness impact program for open-source projects, public-interest projects, and social enterprises.
+- [Channel Partners](https://docs.tokeness.io/partners/channel): Channel cooperation and partner materials.
 
 ## Optional
 

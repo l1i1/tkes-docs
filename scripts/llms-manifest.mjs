@@ -103,6 +103,98 @@ export const llmsManifest = {
       ]
     }
   ],
+  englishSections: [
+    {
+      heading: 'Core Facts',
+      links: [
+        {
+          label: 'About Tokeness',
+          path: '/about',
+          description: 'Canonical product facts, API endpoint, billing model, supported integration types, and official links.'
+        },
+        {
+          label: 'FAQ',
+          path: '/faq',
+          description: 'Tokeness FAQ covering Base URL, auth errors, balance, model names, billing, Claude Code, and supported tools.'
+        },
+        {
+          label: 'Models and Billing',
+          path: '/billing/pricing',
+          description: 'Prepaid billing model, usage logs, model price policy, and cost control guidance.'
+        }
+      ]
+    },
+    {
+      heading: 'Getting Started',
+      links: [
+        {
+          label: 'Getting Started',
+          path: '/guide/getting-started',
+          description: 'Minimum onboarding flow: sign in, top up, create API key, copy model name, and make a test call.'
+        },
+        {
+          label: 'API Keys',
+          path: '/guide/api-keys',
+          description: 'API key management, project separation, quota control, and safe key handling.'
+        },
+        {
+          label: 'Dashboard Overview',
+          path: '/guide/dashboard',
+          description: 'Console pages for overview, usage logs, wallet, and troubleshooting.'
+        }
+      ]
+    },
+    {
+      heading: 'Integration Guides',
+      links: [
+        { label: 'Custom API and Key', path: '/integrations/custom-api-key', description: 'Generic configuration for tools that support OpenAI Compatible, Base URL, Custom Provider, or Custom API.' },
+        { label: 'OpenAI-Compatible API', path: '/integrations/openai-compatible', description: 'OpenAI SDK, Node.js, Python, and cURL examples.' },
+        { label: 'OpenAI Responses API', path: '/integrations/openai-responses', description: 'Responses API usage with Tokeness.' },
+        { label: 'Anthropic API', path: '/integrations/anthropic-api', description: 'Anthropic-format access through Tokeness.' },
+        { label: 'Cherry Studio', path: '/integrations/cherry-studio', description: 'Cherry Studio custom provider configuration.' },
+        { label: 'Claude Code', path: '/integrations/claude-code', description: 'Claude Code setup through Tokeness-compatible routing.' },
+        { label: 'VS Code + Claude Code', path: '/integrations/vscode-claude-code', description: 'VS Code Claude Code extension configuration.' },
+        { label: 'Cline', path: '/integrations/cline', description: 'Cline configuration.' },
+        { label: 'Roo Code', path: '/integrations/roo-code', description: 'Roo Code OpenAI-compatible provider configuration.' },
+        { label: 'Continue', path: '/integrations/continue', description: 'Continue custom model provider configuration.' },
+        { label: 'Cursor', path: '/integrations/cursor', description: 'Cursor IDE configuration.' },
+        { label: 'Codex CLI', path: '/integrations/codex-cli', description: 'Codex CLI configuration.' },
+        { label: 'Dify', path: '/integrations/dify', description: 'Dify platform integration.' },
+        { label: 'n8n', path: '/integrations/n8n', description: 'n8n workflow integration.' },
+        { label: 'Open WebUI', path: '/integrations/open-webui', description: 'Open WebUI integration.' },
+        { label: 'AnythingLLM', path: '/integrations/anythingllm', description: 'AnythingLLM integration.' },
+        { label: 'LibreChat', path: '/integrations/librechat', description: 'LibreChat integration.' },
+        { label: 'LiteLLM', path: '/integrations/litellm', description: 'LiteLLM proxy integration.' },
+        { label: 'OpenClaw', path: '/integrations/openclaw', description: 'OpenClaw configuration.' },
+        { label: 'OpenCode', path: '/integrations/opencode', description: 'OpenCode configuration.' }
+      ]
+    },
+    {
+      heading: 'Programs',
+      links: [
+        {
+          label: 'Impact Program',
+          path: '/partners/impact',
+          description: 'Tokeness impact program for open-source projects, public-interest projects, and social enterprises.'
+        },
+        {
+          label: 'Channel Partners',
+          path: '/partners/channel',
+          description: 'Channel cooperation and partner materials.'
+        }
+      ]
+    },
+    {
+      heading: 'Optional',
+      links: [
+        {
+          label: 'Full LLM content',
+          path: '/llms-full.txt',
+          description: 'Extended machine-readable facts and key documentation excerpts for LLM ingestion.'
+        }
+      ]
+    }
+  ],
   fullPages: [
     {
       title: 'About Tokeness',
