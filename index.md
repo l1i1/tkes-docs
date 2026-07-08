@@ -2,42 +2,42 @@
 layout: home
 title: Tokeness Docs
 titleTemplate: false
-description: Tokeness OpenAI 兼容 API 文档，包含 API Key、模型名称、计费、OpenAI Responses、Anthropic API 和常见工具接入方式。
+description: Tokeness OpenAI-compatible API documentation covering API keys, model names, billing, OpenAI Responses, Anthropic API, and common tool integrations.
 
 hero:
   name: Tokeness Docs
-  text: OpenAI 兼容 API 文档
-  tagline: 这里记录 Tokeness 的接口地址、API Key 管理、模型名称、计费和常见工具接入方式。
+  text: OpenAI-compatible API docs
+  tagline: Configure Tokeness Base URL, API keys, model names, billing, and common AI development tools.
   image:
     src: /logo.svg
     alt: Tokeness
   actions:
     - theme: brand
-      text: 开始接入
+      text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: OpenAI 兼容接入
+      text: OpenAI-Compatible API
       link: /integrations/openai-compatible
 
 features:
-  - title: OpenAI 兼容
-    details: 支持按 OpenAI 兼容格式配置 Base URL、API Key 和模型名。
-  - title: Key 与额度控制
-    details: API Key 可以按项目拆分，并配置额度、分组和可用模型范围。
-  - title: 模型与路由
-    details: 模型广场展示可用模型名称，接入时按页面中的完整模型名填写。
-  - title: 消费可追溯
-    details: 控制台提供概览、数据看板、使用日志和钱包入口，用于核对请求、余额和消耗。
+  - title: OpenAI Compatible
+    details: Configure Base URL, API key, and model name in the OpenAI-compatible format.
+  - title: Key and Quota Control
+    details: Split API keys by project and control quota, groups, and available models.
+  - title: Models and Routing
+    details: Copy exact model names from the model marketplace before configuring clients.
+  - title: Traceable Usage
+    details: Review dashboard data, usage logs, and balance records from the Tokeness console.
 ---
 
 <div class="tokeness-note-grid">
   <div class="tokeness-note">
-    <strong>服务入口</strong>
-    官网与控制台：<a href="https://tokeness.io">tokeness.io</a><br>
-    文档域名：<a href="https://docs.tokeness.io">docs.tokeness.io</a>
+    <strong>Service entries</strong>
+    Website and console: <a href="https://tokeness.io">tokeness.io</a><br>
+    Documentation: <a href="https://docs.tokeness.io">docs.tokeness.io</a>
   </div>
   <div class="tokeness-note">
-    <strong>接入顺序</strong>
-    注册登录、充值、创建 API Key、复制模型名、配置 Base URL、发起一次测试调用。
+    <strong>Setup order</strong>
+    Sign in, top up, create an API key, copy a model name, configure the Base URL, then make one test request.
   </div>
 </div>
