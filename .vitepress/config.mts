@@ -28,6 +28,40 @@ const createOrganizationJsonLd = (language: 'en-US' | 'zh-CN') => JSON.stringify
       : 'Tokeness is an AI API gateway with OpenAI-compatible access, API key management, quota control, and usage logs.'
 } as const)
 
+const browserLanguageRedirectScript = `(() => {
+  const key = 'tokeness-docs-locale'
+  const isChinesePath = (path) => path === '/zh' || path === '/zh/' || path.startsWith('/zh/')
+  const toChinesePath = (path) => {
+    if (isChinesePath(path)) return path === '/zh' ? '/zh/' : path
+    return path === '/' ? '/zh/' : '/zh' + path
+  }
+  const toEnglishPath = (path) => {
+    if (path === '/zh' || path === '/zh/') return '/'
+    return path.startsWith('/zh/') ? path.slice(3) || '/' : path
+  }
+  const getStoredLocale = () => {
+    try { return localStorage.getItem(key) } catch { return null }
+  }
+  const setStoredLocale = (locale) => {
+    try { localStorage.setItem(key, locale) } catch {}
+  }
+  const storedLocale = getStoredLocale()
+  const browserLocale = (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en'
+  const targetLocale = storedLocale === 'zh' || storedLocale === 'en' ? storedLocale : browserLocale
+  if (!storedLocale) setStoredLocale(targetLocale)
+  const targetPath = targetLocale === 'zh' ? toChinesePath(location.pathname) : toEnglishPath(location.pathname)
+  if (targetPath !== location.pathname) {
+    location.replace(targetPath + location.search + location.hash)
+    return
+  }
+  window.addEventListener('click', (event) => {
+    const link = event.target instanceof Element ? event.target.closest('a[href]') : null
+    if (!link) return
+    const url = new URL(link.href, location.origin)
+    if (url.origin === location.origin) setStoredLocale(isChinesePath(url.pathname) ? 'zh' : 'en')
+  }, true)
+})()`
+
 const enNav = [
   { text: 'About', link: '/about' },
   { text: 'Getting Started', link: '/guide/getting-started' },
@@ -170,6 +204,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/logo.svg' }],
     ['meta', { name: 'robots', content: 'index,follow' }],
     ['meta', { name: 'author', content: 'Tokeness' }],
+    ['script', {}, browserLanguageRedirectScript],
     ['meta', { property: 'og:site_name', content: 'Tokeness Docs' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:image', content: `${docsOrigin}/images/tokeness-home-light-16x9.png` }],
