@@ -1,40 +1,192 @@
 ---
 title: FAQ
 description: Frequently asked questions about Tokeness Base URL, API keys, model names, billing, balance, and tool integrations.
+head:
+  - - script
+    - type: application/ld+json
+    - |
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Tokeness?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tokeness is an AI API gateway. You use one API key to call different models and review balance, logs, and usage in the console."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What Base URL should I use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For OpenAI-compatible integration, use https://n.tokeness.io/v1. Do not remove /v1 yourself."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does authentication fail?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Common causes include an incompletely copied key, missing Bearer in the request header, a disabled key, or an environment variable that has not taken effect."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does a request show insufficient balance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tokeness uses a prepaid model. Check your wallet balance and whether the current API key has a quota limit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where should model names be copied from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copy from the Tokeness console or model marketplace. Model names must keep their exact case, hyphens, and version numbers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I share one API key?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Technically yes. Using separate keys for development, production, customer projects, and automation tasks makes it easier to set limits and troubleshoot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which tools are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tools that support a custom OpenAI-compatible Base URL can be connected using this documentation. Configuration references are provided for Cherry Studio, Claude Code, VS Code Claude Code plugin, Cline, Roo Code, Continue, Cursor, Codex CLI, Dify, n8n, Open WebUI, AnythingLLM, LibreChat, LiteLLM, OpenClaw, and OpenCode."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if the Claude Code command is not found after installation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "First confirm Node.js and npm are installed, then restart the terminal. On Windows, use PowerShell, WSL2, or the shell environment recommended by the tool."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What to do when connecting AI coding tools returns 401?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Check the API key, Base URL, model name, and protocol type in the tool configuration. For OpenAI-compatible integration, use https://n.tokeness.io/v1 and the header Authorization: Bearer <API Key>."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is YOUR_MODEL_NAME in the code examples?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is not a fixed model name. Copy the actual model name from the model marketplace and replace it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which AI models does Tokeness support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tokeness supports a variety of mainstream models. Available model names are authoritative in the Tokeness console or model marketplace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Tokeness different from calling OpenAI directly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tokeness is a gateway compatible with the OpenAI API format. It lets you access multiple models with the same code and centrally manage API keys, quotas, and usage logs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I use Tokeness in Claude Code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Claude Code natively uses the Anthropic protocol. The Tokeness universal interface uses the OpenAI-compatible protocol, so it is recommended to add Tokeness as a provider via CC Switch and enable routing mode. Set the Base URL to https://n.tokeness.io/v1."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What top-up methods are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Top-up methods are authoritative on the console Wallet page. After entering the console, open Wallet to view currently available top-up channels, balance, and top-up records."
+            }
+          }
+        ]
+      }
 ---
 
 # FAQ
 
 ## What is Tokeness?
 
-Tokeness is an AI API gateway. You use one API key and a unified endpoint to call different AI models, then review balance, logs, and usage in the console.
+Tokeness is an AI API gateway. You use one API key to call different models and review balance, logs, and usage in the console.
 
 ## What Base URL should I use?
 
-Use the standard OpenAI-compatible Base URL:
+Use the same address on every integration page:
 
 ```txt
 https://n.tokeness.io/v1
 ```
 
-Do not remove `/v1` unless a specific client explicitly appends it automatically.
+If a client splits the field into Base URL, Endpoint, Host, or Service URL, put this complete address in the field that accepts a full path. Do not remove `/v1` yourself.
 
 ## Why does authentication fail?
 
-Common causes include incomplete API key copy, missing `Bearer` prefix, disabled API key, an environment variable that did not take effect, or a tool configured with the wrong provider type.
+Common causes include an incompletely copied key, missing `Bearer` in the request header, a disabled key, or an environment variable that has not taken effect.
 
 ## Why does a request show insufficient balance?
 
-Tokeness is prepaid. Check wallet balance and the quota configured on the current API key. If a key has its own limit, the key can be exhausted even when the account still has balance.
+Tokeness uses a prepaid model. Check your wallet balance and whether the current API key has a quota limit.
 
 ## Where should model names be copied from?
 
-Copy exact model names from the Tokeness console or model marketplace. Do not guess or shorten model IDs.
+Copy from the Tokeness console or model marketplace. Model names must keep their exact case, hyphens, and version numbers.
 
-## Where are model prices authoritative?
+When connecting for the first time, copy one available model name, then go back to the tutorial and replace `YOUR_MODEL_NAME`.
 
-Current model prices are authoritative in the Tokeness console model marketplace or in a formal quotation. Documentation avoids fixed price numbers because model availability and upstream costs can change.
+## Can I share one API key?
 
-## Which tools can connect to Tokeness?
+Technically yes. Using separate keys for development, production, customer projects, and automation tasks makes it easier to set limits and troubleshoot.
 
-Any tool that supports a custom OpenAI-compatible Base URL can usually connect. See [integration guides](/integrations/openai-compatible) for OpenAI SDKs, Claude Code, Cherry Studio, Cline, Roo Code, Continue, Cursor, Dify, n8n, Open WebUI, AnythingLLM, LibreChat, LiteLLM, OpenClaw, and OpenCode.
+## Which tools are supported?
+
+Tools that support a custom OpenAI-compatible Base URL can be connected using this documentation. Configuration references are provided for Cherry Studio, Claude Code, VS Code Claude Code plugin, Cline, Roo Code, Continue, Cursor, Codex CLI, Dify, n8n, Open WebUI, AnythingLLM, LibreChat, LiteLLM, OpenClaw, and OpenCode.
+
+## What if the Claude Code command is not found after installation?
+
+First confirm Node.js and npm are installed, then restart the terminal. On Windows, use PowerShell, WSL2, or the shell environment recommended by the tool.
+
+## What to do when connecting AI coding tools returns 401?
+
+Check the API key, Base URL, model name, and protocol type in the tool configuration. For OpenAI-compatible integration, use `https://n.tokeness.io/v1` and the header `Authorization: Bearer <API Key>`.
+
+## What is `YOUR_MODEL_NAME` in the code examples?
+
+It is not a fixed model name. Copy the actual model name from the model marketplace and replace it.
+
+## Which AI models does Tokeness support?
+
+Tokeness supports a variety of mainstream models. Available model names are authoritative in the Tokeness console or model marketplace. Before use, copy the full model name from the model marketplace; do not substitute default model names from other platforms or tools.
+
+## How is Tokeness different from calling OpenAI directly?
+
+Tokeness is a gateway compatible with the OpenAI API format. When connecting OpenAI-compatible tools, you typically only need to replace `base_url` and `api_key`; business code continues to call the OpenAI-compatible format. Tokeness also provides centralized key management, quota control, usage logs, and multi-model access.
+
+## How do I use Tokeness in Claude Code?
+
+Claude Code natively uses the Anthropic protocol. The Tokeness universal interface uses the OpenAI-compatible protocol, so it is recommended to add Tokeness as a provider via CC Switch and enable routing mode to handle protocol conversion. See the [Claude Code integration guide](/integrations/claude-code).
+
+## What top-up methods are supported?
+
+Top-up methods are authoritative on the console Wallet page. After entering the console, open Wallet to view currently available top-up channels, balance, and top-up records.

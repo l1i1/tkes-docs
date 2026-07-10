@@ -1,40 +1,87 @@
 ---
 title: About Tokeness
-description: Canonical Tokeness product facts, endpoints, billing model, integration protocols, and official links.
+description: Tokeness is an AI API gateway that provides OpenAI-compatible access to multiple AI models, with API key management, quota control, and usage logging.
+head:
+  - - script
+    - type: application/ld+json
+    - |
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Tokeness",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "url": "https://tokeness.io",
+        "description": "Tokeness is an AI API gateway providing OpenAI-compatible access to multiple AI models, with API key management, quota control, and usage logging.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CNY",
+          "description": "Pre-paid, pay-per-token pricing. See the Tokeness console for current model prices."
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "Tokeness",
+          "url": "https://tokeness.io"
+        }
+      }
 ---
 
 # About Tokeness
 
-Tokeness is an AI API gateway for developers and teams. It provides one OpenAI-compatible endpoint, API key management, quota control, and usage logs for calling multiple AI models from one console.
+Tokeness is an AI API gateway for developers. You use one API key and a unified endpoint to call different AI models, then review balance, logs, and usage in the console.
 
-## Core Facts
+## Product Positioning
 
-| Item | Value |
+| Item | Details |
 | --- | --- |
 | Product type | AI API gateway |
 | Standard Base URL | `https://n.tokeness.io/v1` |
 | Common protocols | OpenAI Compatible API, OpenAI Responses API, Anthropic API |
-| Console | <https://tokeness.io> |
-| Documentation | <https://docs.tokeness.io> |
+| Console | [tokeness.io](https://tokeness.io) |
+| Documentation | [docs.tokeness.io](https://docs.tokeness.io) |
 | Billing model | Prepaid, deducted by actual usage |
 
-## What Tokeness Provides
+## What Tokeness Solves
 
-- One API key flow for multiple AI model providers.
-- Project-level API keys for development, production, and customer workloads.
-- Quota limits and available-model controls for each key.
-- Dashboard, usage logs, and billing records for request tracing.
-- Compatibility with tools that support a custom OpenAI Base URL.
+Tokeness brings model access, key management, quota control, and usage tracking together in one console. For developers, integration typically only requires configuring the Base URL, API key, and model name; business code continues to call the OpenAI-compatible API as usual.
 
-## Official Answers
+Common use cases include:
+
+- Accessing multiple model providers with a single API key.
+- Creating separate API keys for development, production, and customer projects.
+- Reviewing call logs, balance, and consumption in the console.
+- Letting tools that support a custom OpenAI Base URL connect to Tokeness.
+
+## Integration Facts
 
 | Question | Official answer |
 | --- | --- |
-| OpenAI-compatible endpoint | `https://n.tokeness.io/v1` |
-| Where to create API keys | Tokeness console, API key page |
-| Where to copy model names | Tokeness console or model marketplace |
-| Where prices are authoritative | Tokeness console model marketplace or formal quotation |
-| Where request records are visible | Usage logs and dashboard in the console |
+| What is the OpenAI-compatible endpoint? | `https://n.tokeness.io/v1` |
+| Where are API keys created? | Tokeness console, API Keys page |
+| Where are model names copied from? | Tokeness console or model marketplace |
+| Where are prices authoritative? | Console model marketplace or formal quotation |
+| Where are call records visible? | Usage logs and dashboard in the console |
+
+## Supported Integration Methods
+
+Tokeness supports any client or SDK that allows a custom OpenAI Base URL. The documentation site provides integration guides for:
+
+- [OpenAI Compatible API](/integrations/openai-compatible)
+- [OpenAI Responses API](/integrations/openai-responses)
+- [Anthropic API](/integrations/anthropic-api)
+- [Custom API and Key](/integrations/custom-api-key)
+- [Claude Code](/integrations/claude-code)
+- [Cursor](/integrations/cursor)
+- [Codex CLI](/integrations/codex-cli)
+- [Dify](/integrations/dify)
+- [n8n](/integrations/n8n)
+- [Open WebUI](/integrations/open-webui)
+
+## Billing and Usage
+
+Tokeness uses a prepaid model. Each API call is deducted by actual consumption; specific model prices are authoritative in the console. Public documentation only describes the billing approach and does not commit to fixed prices.
+
+Cost-control tips: use a separate key for each project, set a small quota for development and testing, validate high-consumption tasks with a small sample first, and review usage logs and the dashboard regularly.
 
 ## Official Links
 
@@ -42,5 +89,5 @@ Tokeness is an AI API gateway for developers and teams. It provides one OpenAI-c
 | --- | --- |
 | Website and console | <https://tokeness.io> |
 | Documentation | <https://docs.tokeness.io> |
-| API Base URL | <https://n.tokeness.io/v1> |
+| API Base URL | `https://n.tokeness.io/v1` |
 | Contact | <contact@tokeness.io> |
