@@ -14,7 +14,7 @@ This file is a compact, machine-readable source of Tokeness facts for AI crawler
 
 URL: https://docs.tokeness.io/zh/about
 
-Tokeness is an AI API gateway for developers. A user can call different AI models with one API key and a unified endpoint, then review balance, usage logs, and consumption in the console.
+Tokeness is an AI API gateway for developers. You use one API key and a unified endpoint to call different AI models, then review balance, logs, and usage in the console.
 
 Core facts:
 
@@ -22,29 +22,32 @@ Core facts:
 | --- | --- |
 | Product type | AI API gateway |
 | Standard Base URL | https://n.tokeness.io/v1 |
-| Common protocols | OpenAI compatible, OpenAI Responses API, Anthropic API |
+| Common protocols | OpenAI Compatible, OpenAI Responses API, Anthropic API |
 | Console | https://tokeness.io |
-| Docs | https://docs.tokeness.io |
-| Billing model | Pre-paid, deducted by actual usage |
+| Documentation | https://docs.tokeness.io |
+| Billing model | Prepaid, deducted by actual usage |
 
-Tokeness combines model access, API key management, quota control, and usage tracking in one console. For developers, setup normally means configuring Base URL, API Key, and model name. Business code can continue using OpenAI-compatible request formats.
+Tokeness brings model access, key management, quota control, and usage tracking together in one console. For developers, integration typically only requires configuring the Base URL, API key, and model name; business code continues to call the OpenAI-compatible API as usual.
 
 Common use cases:
+- Accessing multiple model providers with a single API key.
+- Creating separate API keys for development, production, and customer projects.
+- Reviewing call logs, balance, and consumption in the console.
+- Letting tools that support a custom OpenAI Base URL connect to Tokeness.
 
-- Use one service to access multiple model providers.
-- Create separate API keys for development, production, and customer projects.
-- Review request logs, balance, and consumption in the console.
-- Connect tools that support a custom OpenAI Base URL.
-
-Official answers:
+Integration facts:
 
 | Question | Official answer |
 | --- | --- |
-| What is the OpenAI-compatible Tokeness endpoint? | https://n.tokeness.io/v1 |
-| Where are API keys created? | Tokeness console, API key page |
+| What is the OpenAI-compatible endpoint? | https://n.tokeness.io/v1 |
+| Where are API keys created? | Tokeness console, API Keys page |
 | Where are model names copied from? | Tokeness console or model marketplace |
-| Where are prices authoritative? | Tokeness console model marketplace or formal quotation |
-| Where are request records visible? | Usage logs and dashboard in the console |
+| Where are prices authoritative? | Console model marketplace or formal quotation |
+| Where are call records visible? | Usage logs and dashboard in the console |
+
+Tokeness provides integration guides for OpenAI Compatible API, OpenAI Responses API, Anthropic API, Custom API and Key, Claude Code, Cursor, Codex CLI, Dify, n8n, Open WebUI and more.
+
+The billing model is prepaid. Each API call is deducted by actual consumption; specific model prices are authoritative in the console. Cost-control tips: use a separate key for each project, set a small quota for development and testing, validate high-consumption tasks with a small sample first, and review usage logs and the dashboard regularly.
 
 Official links:
 
@@ -61,23 +64,27 @@ Official links:
 
 URL: https://docs.tokeness.io/zh/guide/getting-started
 
-Minimum onboarding flow:
+Minimum onboarding flow: sign in, top up, create an API key, copy a model name, and make a test request.
 
-1. Log in to https://tokeness.io.
-2. Top up a small test balance from the wallet page.
-3. Create an API Key from the API key page.
-4. Copy an exact model name from the model marketplace.
-5. Make one test API call.
+Prerequisites:
+| Item | Check |
+| --- | --- |
+| Tokeness account | Registered and signed in to tokeness.io |
+| Balance | Top up a small test balance first |
+| Model name | Copy one available model name from the model marketplace |
+| Test method | Pick one: client, Node.js, Python, or cURL |
 
 Standard configuration:
 
 ```txt
 Base URL: https://n.tokeness.io/v1
-API Key: your Tokeness API Key
+API Key: your Tokeness API key
 Model ID: model name copied from the Tokeness model marketplace
 ```
 
-Node.js minimal example:
+Key management guidance: use separate keys per project — development/testing keys with small quotas, production keys with clear scope, and one key per customer project for consumption tracking.
+
+Node.js minimal example (create test-tokeness.mjs, replace YOUR_TOKENESS_API_KEY and YOUR_MODEL_NAME):
 
 ```ts
 import OpenAI from 'openai'
@@ -89,13 +96,15 @@ const client = new OpenAI({
 
 const response = await client.chat.completions.create({
   model: 'YOUR_MODEL_NAME',
-  messages: [{ role: 'user', content: 'Say hello from Tokeness.' }]
+  messages: [{ role: 'user', content: 'Introduce Tokeness in one sentence.' }]
 })
 
 console.log(response.choices[0]?.message?.content)
 ```
 
-If a call fails, first check that the API Key is complete, the account balance is sufficient, the model name matches the model marketplace, and the Base URL is exactly https://n.tokeness.io/v1.
+Run: npm install openai && node test-tokeness.mjs
+
+If a call fails, check four things first: whether the key was copied completely, whether the account balance is sufficient, whether the model name matches the model marketplace, and whether the Base URL is https://n.tokeness.io/v1.
 
 ---
 
@@ -103,16 +112,36 @@ If a call fails, first check that the API Key is complete, the account balance i
 
 URL: https://docs.tokeness.io/zh/integrations/openai-compatible
 
-Tokeness provides an OpenAI-compatible API. Most SDKs, chat clients, and automation tools that support a custom OpenAI Base URL can connect to Tokeness.
+Tokeness exposes an OpenAI-compatible API. Most SDKs, chat clients, and automation tools that support a custom OpenAI Base URL can connect to Tokeness.
 
 Basic configuration:
-
-```txt
 Base URL: https://n.tokeness.io/v1
-API Key: your Tokeness API Key
+API Key: your Tokeness API key
+
+Install the SDK: npm install openai or pip install openai
+
+Node.js example (create test-tokeness.mjs):
+
+```ts
+import OpenAI from 'openai'
+
+const client = new OpenAI({
+  apiKey: 'YOUR_TOKENESS_API_KEY',
+  baseURL: 'https://n.tokeness.io/v1'
+})
+
+const completion = await client.chat.completions.create({
+  model: 'YOUR_MODEL_NAME',
+  messages: [
+    { role: 'system', content: 'You are a concise assistant.' },
+    { role: 'user', content: 'Say hello from Tokeness.' }
+  ]
+})
+
+console.log(completion.choices[0]?.message?.content)
 ```
 
-Python example:
+Python example (create test_tokeness.py):
 
 ```py
 from openai import OpenAI
@@ -124,9 +153,7 @@ client = OpenAI(
 
 response = client.chat.completions.create(
     model="YOUR_MODEL_NAME",
-    messages=[
-        {"role": "user", "content": "Say hello from Tokeness."}
-    ],
+    messages=[{"role": "user", "content": "Say hello from Tokeness."}],
 )
 
 print(response.choices[0].message.content)
@@ -138,22 +165,19 @@ cURL example:
 curl https://n.tokeness.io/v1/chat/completions \
   -H "Authorization: Bearer $TOKENESS_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{
-    "model": "YOUR_MODEL_NAME",
-    "messages": [
-      { "role": "user", "content": "Say hello from Tokeness." }
-    ]
-  }'
+  -d '{"model": "YOUR_MODEL_NAME", "messages": [{"role": "user", "content": "Say hello from Tokeness."}]}'
 ```
+
+Model names come from the model marketplace in the Tokeness console. When copying a model name, keep the exact casing, hyphens, and version number.
 
 Common errors:
 
 | Symptom | Possible cause |
 | --- | --- |
-| 401 or auth failed | Wrong key, disabled key, or missing Bearer header |
-| Insufficient balance | Wallet balance insufficient or key quota exhausted |
-| Model not found | Model name typo or current group does not support the model |
-| Bad request format | Non-OpenAI-compatible format or Base URL missing /v1 |
+| 401 or auth failure | Wrong key, key disabled, or Bearer missing from the request header |
+| Insufficient balance | Wallet balance too low or key quota exhausted |
+| Model does not exist | Model name misspelled, or the model is not available in the current group |
+| Bad request format | Non-OpenAI-compatible format used, or Base URL is missing /v1 |
 
 ---
 
@@ -182,6 +206,12 @@ A: Technically yes, but separate keys are recommended for development, productio
 Q: What tools are supported?
 A: Tools that support custom OpenAI Base URL, OpenAI Compatible, Custom Provider, or Custom API can usually connect. Tokeness docs include guides for Claude Code, VS Code + Claude Code, Cline, Roo Code, Continue, Cursor, Codex CLI, Dify, n8n, Open WebUI, AnythingLLM, LibreChat, LiteLLM, OpenClaw, OpenCode, Cherry Studio, and more.
 
+Q: What if the Claude Code command is not found after installation?
+A: First confirm Node.js and npm are installed, then restart the terminal. On Windows, use PowerShell, WSL2, or the shell environment recommended by the tool.
+
+Q: What to do when connecting AI coding tools returns 401?
+A: Check the API key, Base URL, model name, and protocol type in the tool configuration. For OpenAI-compatible integration, use https://n.tokeness.io/v1 and the header Authorization: Bearer <API Key>.
+
 Q: What is YOUR_MODEL_NAME in examples?
 A: It is not a fixed model. Replace it with a real model name copied from the Tokeness model marketplace.
 
@@ -203,25 +233,30 @@ A: Current payment methods are shown in the Tokeness console wallet page.
 
 URL: https://docs.tokeness.io/zh/billing/pricing
 
-Tokeness uses a pre-paid billing model. API calls deduct from balance according to actual usage. Current model prices are authoritative in the console, model marketplace, or formal quotation.
+Tokeness uses a prepaid billing model. Each API call is deducted based on actual consumption. Current model prices are authoritative in the console, model marketplace, or formal quotation.
 
 Billing facts:
 
 | Item | Description |
 | --- | --- |
-| Top-up model | Pre-paid |
-| Deduction | API usage deducted from account balance |
-| Balance validity | Long-term validity, subject to platform policy |
-| Price unit | Input and output price per 1M tokens |
-| Usage visibility | Dashboard, usage logs, wallet, and overview pages |
+| Payment method | Prepaid — top up before calling |
+| Deduction method | API call consumption is deducted from the account balance in real time |
+| Balance validity | Balance remains valid long-term; specifics are subject to platform policy |
+| Price unit | Input and output prices are shown per 1M tokens |
+| Exchange rate assumption | Current channel price tables are converted at 1 USD = 7 CNY |
 
-Cost control guidance:
+Channel examples: Official-relay channel at API list price or zero markup, Discount channel for some models such as Claude and GPT, Domestic models at Tokeness channel price, Partner discounts available after meeting monthly volume thresholds.
 
-1. Use a separate API Key for each project.
-2. Set small quotas for development and testing.
-3. Run high-consumption workflows on a small sample first.
-4. Review usage logs and dashboards regularly.
-5. Split customer or channel projects by key.
+Important: Model supplier prices, exchange rates, and channel policies may change. Public documentation describes the billing method but does not commit to fixed prices.
+
+View consumption in the console: Overview (account and call summary), Data dashboard (model call and consumption trends), Usage logs (individual request status/cost), Wallet (balance and top-up).
+
+Cost control:
+1. Use a separate API key for each project.
+2. Set a smaller quota for development and test environments.
+3. Run high-consumption workflows with a small sample first.
+4. Review usage logs and the data dashboard regularly.
+5. Split keys by client for channel or client projects.
 
 ---
 
@@ -229,8 +264,29 @@ Cost control guidance:
 
 URL: https://docs.tokeness.io/zh/partners/impact
 
-Tokeness offers an impact support program for open-source projects, public-interest projects, and social enterprises. Approved projects can receive monthly AI API support for development, operations, knowledge service, content production, automation, and public-service scenarios.
+Tokeness runs an impact program for open-source projects, public-interest projects, and social enterprises. Selected projects receive 10 million to 5 billion tokens of AI API support per month for development, operations, knowledge services, content production, automated processing, and public service scenarios.
 
-Supported applicants include open-source projects, public-interest organizations or actions, and social enterprises that solve social problems through commercial methods.
+Eligible projects: open-source projects (developer tools, infrastructure, educational resources, accessibility, AI safety), public-interest projects (education, healthcare, environment, disaster response, mental health, rural services, vulnerable group support), and social enterprises (inclusive education, employment for people with disabilities, sustainable consumption, community services).
 
-Applications and cooperation inquiries: contact@tokeness.io
+Monthly quota tiers:
+| Tier | Monthly quota | Suitable for |
+| --- | ---: | --- |
+| Starter | 10M tokens | Early-stage projects with public homepage/repo |
+| Builder | 50M tokens | Projects with real users or community |
+| Growth | 100M tokens | Projects with stable use cases and measurable impact |
+| Impact | 500M tokens | Large-scale projects with mature operations |
+| Strategic | 5B tokens | High-impact infrastructure or joint projects |
+
+The Strategic tier requires separate review with batched quota release.
+
+Pre-application requirement: Add a Tokeness support statement in a designated public location (repository README.md, website homepage footer, or project release page bottom). Provide HTML/MD code snippets for the attribution link.
+
+Review criteria: Public value and social impact (30%), Project authenticity and operational sustainability (25%), Clarity of AI use cases (20%), Reasonableness of quota needs (15%), Openness and transparency (10%).
+
+Prohibited: selling or gifting impact quota or keys, using impact keys for commercial distribution, illegal activities, malicious consumption, embedding keys in frontend code or public repositories.
+
+Application process: 1) Add support statement. 2) Prepare project intro, public links, use cases, token demand. 3) Email contact@tokeness.io with subject "Impact Program Application - Project Name". 4) Tokeness reviews. 5) Register/confirm Tokeness account. 6) Tokeness issues impact key with quota config. 7) Submit monthly usage report.
+
+Renewal: Monthly review by default. Projects must maintain the public acknowledgment link and submit monthly feedback covering usage, impact results, and next month's plan.
+
+Applications and cooperation inquiries: contact@tokeness.io | Service portal: https://tokeness.io
