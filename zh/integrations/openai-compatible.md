@@ -7,6 +7,8 @@ description: 使用 OpenAI SDK、Python、Node.js 和 cURL 接入 Tokeness OpenA
 
 Tokeness 提供 OpenAI 兼容接口。大多数支持自定义 OpenAI Base URL 的 SDK、Chat 客户端和自动化工具都可以接入。
 
+本页配置的是 OpenAI 兼容协议，示例使用 `POST /v1/chat/completions`。它只说明 Tokeness 对该协议的接入边界，不代表 Anthropic API 的所有字段、工具调用或其他能力都会在转换后保持一致，也不能仅凭返回内容证明模型身份。
+
 ## 基础配置
 
 ```txt

@@ -45,7 +45,7 @@ const renderLlmsTxt = (site, sections) => {
 
 export const generateLlmsTxt = (manifest = llmsManifest) => renderLlmsTxt(manifest.site, manifest.englishSections)
 
-export const generateZhLlmsTxt = (manifest = llmsManifest) => renderLlmsTxt(manifest.site, withPathPrefix(manifest.sections, '/zh'))
+export const generateZhLlmsTxt = (manifest = llmsManifest) => renderLlmsTxt(manifest.zhSite, withPathPrefix(manifest.sections, '/zh'))
 
 const renderFullPage = (site, page) => [
   '---',
@@ -68,7 +68,7 @@ export const generateLlmsFullTxt = (manifest = llmsManifest) => {
     '',
     site.generatedHeader,
     '',
-    'This file is a compact, machine-readable source of Tokeness facts for AI crawlers and answer engines. It mirrors the official docs and avoids fixed model prices because current prices are shown in the Tokeness console.'
+    site.headerIntro
   ]
 
   return compactBlankLines([header.join('\n'), ...fullPages.map((page) => renderFullPage(site, page))].join('\n\n'))
@@ -77,7 +77,8 @@ export const generateLlmsFullTxt = (manifest = llmsManifest) => {
 export const generateZhLlmsFullTxt = (manifest = llmsManifest) => {
   const zhManifest = {
     ...manifest,
-    fullPages: manifest.fullPages.map((page) => ({
+    site: manifest.zhSite,
+    fullPages: manifest.zhFullPages.map((page) => ({
       ...page,
       path: `/zh${page.path}`
     }))

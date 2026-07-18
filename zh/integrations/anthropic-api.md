@@ -13,6 +13,8 @@ https://n.tokeness.io/v1/messages
 
 模型名从 Tokeness 模型广场复制。Claude 分组模型使用这一页的格式。
 
+本页只覆盖 Anthropic Messages 请求的已记录配置：手写 HTTP 使用 `/v1/messages`，Anthropic SDK 使用服务根地址并由 SDK 追加路径。`x-api-key` 是认证请求头，`anthropic-version` 是 API 版本请求头；两者分别承担认证和版本标识，不是两个认证请求头。不要把 Claude Max 订阅名称当作 API 模型 ID，也不要根据接口格式推断模型身份或所有 Anthropic 功能都能通过转换保留。
+
 ## 端点规则
 
 | 场景 | 地址 |

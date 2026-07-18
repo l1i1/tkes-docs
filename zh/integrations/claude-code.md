@@ -7,6 +7,8 @@ description: 通过 CC Switch 为 Claude Code 配置 Tokeness API Key、Base URL
 
 Claude Code 原生使用 Anthropic 协议。Tokeness 的通用接口是 OpenAI 兼容协议，所以用 Claude Code 接入 Tokeness 时，通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 管理供应商，并开启路由模式。
 
+支持的配置边界是：在 CC Switch 中添加 Tokeness 自定义供应商，选择 `OpenAI Compatible`/`OpenAI`，填写 `https://n.tokeness.io/v1`、Tokeness API Key 和模型广场中的模型名称，再由 CC Switch 完成协议转换。Claude Code 的 Anthropic 原生请求不会在未转换时直接变成 OpenAI 兼容请求；转换后也不要假设所有 Anthropic 功能、工具调用或模型身份都能被保留或证明。
+
 这一页按“新机器从零接入”的流程写。如果你已经装好 Claude Code 和 CC Switch，可以直接从“添加 Tokeness 供应商”开始。
 
 ## 接入信息

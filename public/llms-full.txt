@@ -243,7 +243,7 @@ Billing facts:
 | Deduction method | API call consumption is deducted from the account balance in real time |
 | Balance validity | Balance remains valid long-term; specifics are subject to platform policy |
 | Price unit | Input and output prices are shown per 1M tokens |
-| Exchange rate assumption | Current channel price tables are converted at 1 USD = 7 CNY |
+| Comparison basis | Compare input, output, and cached-token units; record retry behavior, date, and source |
 
 Channel examples: Official-relay channel at API list price or zero markup, Discount channel for some models such as Claude and GPT, Domestic models at Tokeness channel price, Partner discounts available after meeting monthly volume thresholds.
 
