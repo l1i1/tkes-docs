@@ -2,6 +2,7 @@
 import { defineConfig } from 'vitepress'
 
 const docsOrigin = 'https://docs.tokeness.io'
+const documentedUpdateTimestamp = Date.parse('2026-07-18T00:00:00Z')
 
 const createWebsiteJsonLd = (language: 'en-US' | 'zh-CN') => JSON.stringify({
   '@context': 'https://schema.org',
@@ -200,6 +201,9 @@ export default defineConfig({
   sitemap: {
     hostname: docsOrigin
   },
+  transformPageData(pageData) {
+    return { lastUpdated: documentedUpdateTimestamp }
+  },
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
     ['meta', { name: 'robots', content: 'index,follow' }],
@@ -222,11 +226,13 @@ export default defineConfig({
     const canonicalUrl = `${docsOrigin}${path === '/' ? '' : path}`
     const alternatePath = alternatePathFor(path)
     const isChinese = path === '/zh/' || path.startsWith('/zh/')
+    const englishPath = isChinese ? alternatePath : path
 
     return [
       ['link', { rel: 'canonical', href: canonicalUrl }],
+      ['link', { rel: 'alternate', hreflang: isChinese ? 'zh-CN' : 'en-US', href: canonicalUrl }],
       ['link', { rel: 'alternate', hreflang: isChinese ? 'en-US' : 'zh-CN', href: `${docsOrigin}${alternatePath === '/' ? '' : alternatePath}` }],
-      ['link', { rel: 'alternate', hreflang: 'x-default', href: docsOrigin }],
+      ['link', { rel: 'alternate', hreflang: 'x-default', href: `${docsOrigin}${englishPath === '/' ? '' : englishPath}` }],
       ['meta', { property: 'og:url', content: canonicalUrl }],
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:description', content: description }],
@@ -272,7 +278,8 @@ export default defineConfig({
           text: 'Last updated',
           formatOptions: {
             dateStyle: 'medium',
-            timeStyle: 'short'
+            timeStyle: 'short',
+            forceLocale: true
           }
         }
       }
@@ -306,7 +313,8 @@ export default defineConfig({
           text: '最后更新',
           formatOptions: {
             dateStyle: 'medium',
-            timeStyle: 'short'
+            timeStyle: 'short',
+            forceLocale: true
           }
         }
       }

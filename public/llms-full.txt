@@ -194,6 +194,15 @@ A: OpenAI-compatible integrations should use https://n.tokeness.io/v1. Do not re
 Q: Why does authentication fail?
 A: Common causes include incomplete API Key copy, missing Bearer header, disabled key, or environment variables not taking effect.
 
+Q: Is Claude Max the same as the Claude API?
+A: No. Claude Max is a personal-use subscription plan; the Claude API uses an API key to call models, with the model name or model ID determined by the API service console or model marketplace. A subscription plan name is not an API model ID and does not prove which model handled a request.
+
+Q: How should 401, 429, or 5xx errors be investigated?
+A: For 401, check the API Key, Base URL, model name, protocol type, and Bearer header. For 429, check key quota, wallet balance, and request rate; lower concurrency or retry later. For 5xx, record the time, request path, model name, and status, inspect the usage logs for the error, and avoid repeated retries.
+
+Q: What should I do if a streaming response is interrupted?
+A: First confirm that a non-streaming request succeeds, then check client timeout, network connection, proxy, and stream-reading implementation. Record the status code, request path, and model name before the interruption, fix the issue, and retry with a small request.
+
 Q: Why does a request show insufficient balance?
 A: Tokeness is pre-paid. Check wallet balance and the quota limit configured on the current API Key.
 

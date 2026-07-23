@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vitepress dev . --host 0.0.0.0",
     "generate": "node scripts/generate-llms.mjs",
-    "test": "node --test scripts/generate-llms.test.mjs",
+    "test": "node --test scripts/generate-llms.test.mjs scripts/geo-content-check.test.mjs scripts/geo-scope-check.test.mjs",
     "build": "node scripts/generate-llms.mjs && vitepress build .",
     "preview": "vitepress preview . --host 0.0.0.0"
   },

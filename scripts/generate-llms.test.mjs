@@ -131,6 +131,16 @@ describe('generateLlmsFullTxt', () => {
     assert.match(output, /Current model prices are authoritative in the console, model marketplace, or formal quotation\./)
   })
 
+  it('mirrors stable troubleshooting facts in English output', () => {
+    const output = generateLlmsFullTxt()
+
+    assert.match(output, /Claude Max.*subscription.*Claude API.*API key.*model ID/)
+    assert.match(output, /401.*API Key.*Base URL.*model name.*protocol/)
+    assert.match(output, /429.*quota.*wallet balance.*request rate/)
+    assert.match(output, /5xx.*usage logs.*avoid repeated retries/)
+    assert.match(output, /streaming response is interrupted/)
+    assert.match(output, /client timeout.*network connection.*retry/)
+  })
   it('recognizes prohibited static price forms in both directions', () => {
     for (const literal of ['$1', '¥1', 'USD 1', 'CNY 1', 'RMB 1', ' usd   1 ', '1 USD = 7 CNY', '1美元', '1 元/人民币']) {
       assert.match(literal, fixedPricePattern, `static price literal should be rejected: ${literal}`)
