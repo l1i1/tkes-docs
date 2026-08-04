@@ -7,7 +7,7 @@ description: 通过 CC Switch 为 Claude Code 配置 Tokeness API Key、Base URL
 
 Claude Code 原生使用 Anthropic 协议。Tokeness 的通用接口是 OpenAI 兼容协议，所以用 Claude Code 接入 Tokeness 时，通过 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started) 管理供应商，并开启路由模式。
 
-支持的配置边界是：在 CC Switch 中添加 Tokeness 自定义供应商，选择 `OpenAI Compatible`/`OpenAI`，填写 `https://n.tokeness.io/v1`、Tokeness API Key 和模型广场中的模型名称，再由 CC Switch 完成协议转换。Claude Code 的 Anthropic 原生请求不会在未转换时直接变成 OpenAI 兼容请求；转换后也不要假设所有 Anthropic 功能、工具调用或模型身份都能被保留或证明。
+支持的配置边界是：在 CC Switch 中添加 Tokeness 自定义供应商，选择 `OpenAI Compatible`/`OpenAI`，填写 `https://n.tokeness.io`（不要带 `/v1`，CC Switch 会自动拼接）、Tokeness API Key 和模型广场中的模型名称，再由 CC Switch 完成协议转换。Claude Code 的 Anthropic 原生请求不会在未转换时直接变成 OpenAI 兼容请求；转换后也不要假设所有 Anthropic 功能、工具调用或模型身份都能被保留或证明。
 
 这一页按“新机器从零接入”的流程写。如果你已经装好 Claude Code 和 CC Switch，可以直接从“添加 Tokeness 供应商”开始。
 
@@ -17,7 +17,7 @@ Claude Code 原生使用 Anthropic 协议。Tokeness 的通用接口是 OpenAI �
 | --- | --- |
 | Provider Name | `Tokeness` |
 | API Format | `OpenAI Compatible` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.io` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制 |
 
@@ -88,7 +88,7 @@ claude --version
 5. 名称填写 `Tokeness`。
 6. API 格式选择 `OpenAI Compatible` 或 `OpenAI`。
 7. API Key 填写 Tokeness API Key。
-8. Base URL 填写 `https://n.tokeness.io/v1`。
+8. Base URL 填写 `https://n.tokeness.io`，不要带 `/v1`，CC Switch 会自动拼接路径。
 9. 模型填写 Tokeness 模型广场里的完整模型名。
 10. 保存。
 
@@ -158,7 +158,7 @@ claude
 | `claude` 命令不存在 | 重新安装 Claude Code，或重启终端 |
 | CC Switch 找不到 Claude Code | 确认 `claude --version` 可用 |
 | 401 Unauthorized | 重新复制 Tokeness API Key |
-| 404 Not Found | Base URL 填 `https://n.tokeness.io/v1` |
+| 404 Not Found | Base URL 填 `https://n.tokeness.io`（不带 `/v1`，CC Switch 会自动拼接路径） |
 | model not found | 从模型广场重新复制模型名 |
 | Tokeness 无日志 | 确认 Tokeness 供应商已启用，并开启 CC Switch 路由模式 |
 | 回复很慢 | 换模型，或检查当前模型负载和网络 |

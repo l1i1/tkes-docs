@@ -110,7 +110,7 @@ head:
             "name": "如何在 Claude Code 中使用 Tokeness？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Claude Code 原生使用 Anthropic 协议。Tokeness 通用接口是 OpenAI 兼容协议，建议通过 CC Switch 添加 Tokeness 供应商并开启路由模式。Base URL 填 https://n.tokeness.io/v1。"
+              "text": "Claude Code 原生使用 Anthropic 协议。Tokeness 通用接口是 OpenAI 兼容协议，建议通过 CC Switch 添加 Tokeness 供应商并开启路由模式。Base URL 填 https://n.tokeness.io（不要带 /v1，CC Switch 会自动拼接路径）。"
             }
           },
           {

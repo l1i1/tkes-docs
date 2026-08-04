@@ -233,7 +233,7 @@ URL: https://docs.tokeness.io/zh/faq
 答：Tokeness 是 OpenAI 兼容网关。接入通常只需替换 base_url 和 api_key，同时保留 OpenAI 兼容请求格式。Tokeness 增加了集中式密钥管理、额度控制、用量日志和多模型访问。
 
 问：Claude Code 如何使用 Tokeness？
-答：Claude Code 原生使用 Anthropic 协议。Tokeness 常规接入是 OpenAI 兼容的，因此使用 CC Switch 将 Tokeness 添加为 OpenAI 兼容提供商并启用路由/转换。Base URL: https://n.tokeness.io/v1。
+答：Claude Code 原生使用 Anthropic 协议。Tokeness 常规接入是 OpenAI 兼容的，因此使用 CC Switch 将 Tokeness 添加为 OpenAI 兼容提供商并启用路由/转换。Base URL: https://n.tokeness.io（不要带 /v1，CC Switch 会自动拼接路径）。
 
 问：支持哪些支付方式？
 答：当前支付方式显示在 Tokeness 控制台钱包页面。
@@ -309,7 +309,7 @@ Anthropic API 使用 Messages 格式，手写 HTTP 使用 https://n.tokeness.io/
 
 URL: https://docs.tokeness.io/zh/integrations/claude-code
 
-Claude Code 原生使用 Anthropic 协议。通过 CC Switch 添加 Tokeness 自定义供应商，选择 OpenAI Compatible/OpenAI，填写 https://n.tokeness.io/v1、Tokeness API Key 和模型广场中的模型名称，并开启路由模式完成协议转换。
+Claude Code 原生使用 Anthropic 协议。通过 CC Switch 添加 Tokeness 自定义供应商，选择 OpenAI Compatible/OpenAI，填写 https://n.tokeness.io（不要带 /v1，CC Switch 会自动拼接路径）、Tokeness API Key 和模型广场中的模型名称，并开启路由模式完成协议转换。
 
 没有转换时，Claude Code 的 Anthropic 请求不会直接变成 OpenAI 兼容请求；转换后也不要假设所有 Anthropic 功能、工具调用或模型身份都能被保留或证明。
 

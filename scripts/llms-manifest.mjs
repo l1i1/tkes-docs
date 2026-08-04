@@ -422,7 +422,7 @@ Q: How is Tokeness different from direct OpenAI calls?
 A: Tokeness is an OpenAI-compatible gateway. Integrations usually only replace base_url and api_key while retaining OpenAI-compatible request formats. Tokeness adds centralized key management, quota control, usage logs, and multi-model access.
 
 Q: How can Claude Code use Tokeness?
-A: Claude Code natively uses Anthropic protocol. Tokeness common access is OpenAI compatible, so use CC Switch to add Tokeness as an OpenAI-compatible provider and enable routing/conversion. Base URL: https://n.tokeness.io/v1.
+A: Claude Code natively uses Anthropic protocol. Tokeness common access is OpenAI compatible, so use CC Switch to add Tokeness as an OpenAI-compatible provider and enable routing/conversion. Base URL: https://n.tokeness.io (without /v1 — CC Switch appends the path itself).
 
 Q: What payment methods are supported?
 A: Current payment methods are shown in the Tokeness console wallet page.`
@@ -700,7 +700,7 @@ curl https://n.tokeness.io/v1/chat/completions \\
 答：Tokeness 是 OpenAI 兼容网关。接入通常只需替换 base_url 和 api_key，同时保留 OpenAI 兼容请求格式。Tokeness 增加了集中式密钥管理、额度控制、用量日志和多模型访问。
 
 问：Claude Code 如何使用 Tokeness？
-答：Claude Code 原生使用 Anthropic 协议。Tokeness 常规接入是 OpenAI 兼容的，因此使用 CC Switch 将 Tokeness 添加为 OpenAI 兼容提供商并启用路由/转换。Base URL: https://n.tokeness.io/v1。
+答：Claude Code 原生使用 Anthropic 协议。Tokeness 常规接入是 OpenAI 兼容的，因此使用 CC Switch 将 Tokeness 添加为 OpenAI 兼容提供商并启用路由/转换。Base URL: https://n.tokeness.io（不要带 /v1，CC Switch 会自动拼接路径）。
 
 问：支持哪些支付方式？
 答：当前支付方式显示在 Tokeness 控制台钱包页面。`
@@ -761,7 +761,7 @@ curl https://n.tokeness.io/v1/chat/completions \\
     {
       title: 'Claude Code 接入',
       path: '/integrations/claude-code',
-      body: `Claude Code 原生使用 Anthropic 协议。通过 CC Switch 添加 Tokeness 自定义供应商，选择 OpenAI Compatible/OpenAI，填写 https://n.tokeness.io/v1、Tokeness API Key 和模型广场中的模型名称，并开启路由模式完成协议转换。
+      body: `Claude Code 原生使用 Anthropic 协议。通过 CC Switch 添加 Tokeness 自定义供应商，选择 OpenAI Compatible/OpenAI，填写 https://n.tokeness.io（不要带 /v1，CC Switch 会自动拼接路径）、Tokeness API Key 和模型广场中的模型名称，并开启路由模式完成协议转换。
 
 没有转换时，Claude Code 的 Anthropic 请求不会直接变成 OpenAI 兼容请求；转换后也不要假设所有 Anthropic 功能、工具调用或模型身份都能被保留或证明。
 

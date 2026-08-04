@@ -134,7 +134,7 @@ head:
             "name": "How do I use Tokeness in Claude Code?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Claude Code natively uses the Anthropic protocol. The Tokeness universal interface uses the OpenAI-compatible protocol, so it is recommended to add Tokeness as a provider via CC Switch and enable routing mode. Set the Base URL to https://n.tokeness.io/v1."
+              "text": "Claude Code natively uses the Anthropic protocol. The Tokeness universal interface uses the OpenAI-compatible protocol, so it is recommended to add Tokeness as a provider via CC Switch and enable routing mode. Set the Base URL to https://n.tokeness.io (without /v1 — CC Switch appends the path itself)."
             }
           },
           {

@@ -231,7 +231,7 @@ Q: How is Tokeness different from direct OpenAI calls?
 A: Tokeness is an OpenAI-compatible gateway. Integrations usually only replace base_url and api_key while retaining OpenAI-compatible request formats. Tokeness adds centralized key management, quota control, usage logs, and multi-model access.
 
 Q: How can Claude Code use Tokeness?
-A: Claude Code natively uses Anthropic protocol. Tokeness common access is OpenAI compatible, so use CC Switch to add Tokeness as an OpenAI-compatible provider and enable routing/conversion. Base URL: https://n.tokeness.io/v1.
+A: Claude Code natively uses Anthropic protocol. Tokeness common access is OpenAI compatible, so use CC Switch to add Tokeness as an OpenAI-compatible provider and enable routing/conversion. Base URL: https://n.tokeness.io (without /v1 — CC Switch appends the path itself).
 
 Q: What payment methods are supported?
 A: Current payment methods are shown in the Tokeness console wallet page.
