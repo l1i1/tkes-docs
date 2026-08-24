@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://docs.tokeness.io/sitemap.xml
-Llms-Txt: https://docs.tokeness.io/llms.txt
+Sitemap: https://docs.tokeness.ai/sitemap.xml
+Llms-Txt: https://docs.tokeness.ai/llms.txt
