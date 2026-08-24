@@ -11,7 +11,7 @@ Open WebUI 可以通过 OpenAI 兼容配置连接外部模型服务。自托管 
 
 | 项目 | 填写值 |
 | --- | --- |
-| OpenAI API Base URL | `https://n.tokeness.io/v1` |
+| OpenAI API Base URL | `https://n.tokeness.dev/v1` |
 | OpenAI API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制完整模型名 |
 
@@ -25,7 +25,7 @@ Open WebUI 可以通过 OpenAI 兼容配置连接外部模型服务。自托管 
 docker run -d \
   --name open-webui \
   -p 3000:8080 \
-  -e OPENAI_API_BASE_URL=https://n.tokeness.io/v1 \
+  -e OPENAI_API_BASE_URL=https://n.tokeness.dev/v1 \
   -e OPENAI_API_KEY=你的 Tokeness API Key \
   -v open-webui:/app/backend/data \
   ghcr.io/open-webui/open-webui:main
@@ -40,7 +40,7 @@ services:
     ports:
       - "3000:8080"
     environment:
-      OPENAI_API_BASE_URL: https://n.tokeness.io/v1
+      OPENAI_API_BASE_URL: https://n.tokeness.dev/v1
       OPENAI_API_KEY: ${TOKENESS_API_KEY}
     volumes:
       - open-webui:/app/backend/data
@@ -63,7 +63,7 @@ TOKENESS_API_KEY=你的 Tokeness API Key
 2. 进入 Admin Panel。
 3. 找到 Connections 或 Models 相关设置。
 4. 找到 OpenAI API 配置。
-5. Base URL 填 `https://n.tokeness.io/v1`。
+5. Base URL 填 `https://n.tokeness.dev/v1`。
 6. API Key 填 Tokeness API Key。
 7. 保存后刷新页面。
 
@@ -92,7 +92,7 @@ Open WebUI 的知识库、RAG、语音和图片相关功能可能有独立配置
 Embedding 常见字段：
 
 ```bash
-RAG_OPENAI_API_BASE_URL=https://n.tokeness.io/v1
+RAG_OPENAI_API_BASE_URL=https://n.tokeness.dev/v1
 RAG_OPENAI_API_KEY=你的 Tokeness API Key
 ```
 
@@ -113,7 +113,7 @@ Embedding 的模型名要使用 Tokeness 中可用的向量模型。不要把聊
 | 修改环境变量后不生效 | Open WebUI 可能已持久化配置，到管理后台修改，或处理 PersistentConfig |
 | 模型列表为空 | 手动填写 Tokeness 模型名 |
 | 401 | 检查 `OPENAI_API_KEY` |
-| 404 | 检查 `OPENAI_API_BASE_URL` 是否为 `https://n.tokeness.io/v1` |
+| 404 | 检查 `OPENAI_API_BASE_URL` 是否为 `https://n.tokeness.dev/v1` |
 | 聊天可用，知识库不可用 | 单独检查 embedding 模型和 RAG 相关配置 |
 | Docker 容器内请求失败 | 进入容器检查网络、DNS 和代理配置 |
 

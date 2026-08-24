@@ -29,15 +29,15 @@ const sourcePagePairs = [
 
 const makeInventory = () => ({
   inventory_version: 1,
-  docs_origin: 'https://docs.tokeness.io',
+  docs_origin: 'https://docs.tokeness.ai',
   selected_article_ids: selectedArticleIds,
   articles: sourcePagePairs.map(([englishPath, chinesePath], index) => {
     const articleId = selectedArticleIds[index]
     const englishRoute = englishPath.slice('apps/docs/'.length).replace(/\.md$/, '')
     const chineseRoute = chinesePath.slice('apps/docs/'.length).replace(/\.md$/, '')
     const sourcePages = [
-      { locale: 'en', local_path: englishPath, canonical_url: `https://docs.tokeness.io/${englishRoute}/` },
-      { locale: 'zh', local_path: chinesePath, canonical_url: `https://docs.tokeness.io/${chineseRoute}/` }
+      { locale: 'en', local_path: englishPath, canonical_url: `https://docs.tokeness.ai/${englishRoute}/` },
+      { locale: 'zh', local_path: chinesePath, canonical_url: `https://docs.tokeness.ai/${chineseRoute}/` }
     ]
     const isGapAware = articleId === '27'
     return {
@@ -60,7 +60,7 @@ const makeInventory = () => ({
       },
       ...(isGapAware ? { blocked_claim_ids: [`CLAIM_${articleId}`] } : {}),
       source_pages: sourcePages,
-      canonical_urls: [`https://docs.tokeness.io/${chineseRoute}/`]
+      canonical_urls: [`https://docs.tokeness.ai/${chineseRoute}/`]
     }
   })
 })
@@ -112,7 +112,7 @@ describe('question inventory baseline', () => {
     for (const article of inventory.articles) {
       assert.deepEqual([...new Set(article.source_pages.map((page) => page.locale))].sort(), ['en', 'zh'])
       assert.ok(article.canonical_urls.length > 0)
-      assert.ok(article.canonical_urls.every((url) => url.startsWith('https://docs.tokeness.io/zh/')))
+      assert.ok(article.canonical_urls.every((url) => url.startsWith('https://docs.tokeness.ai/zh/')))
     }
   })
 
@@ -190,7 +190,7 @@ describe('geo content CLI contract', () => {
 
   it('rejects a canonical that cannot resolve to the mapped page', () => {
     const inventory = cloneInventory()
-    articleById(inventory).source_pages[0].canonical_url = 'https://docs.tokeness.io/zh/faq-other/'
+    articleById(inventory).source_pages[0].canonical_url = 'https://docs.tokeness.ai/zh/faq-other/'
 
     const result = runCli(inventory)
 
@@ -236,10 +236,10 @@ describe('geo content CLI contract', () => {
     const inventory = cloneInventory()
     const article = articleById(inventory)
     article.source_pages = [
-      { locale: 'en', local_path: 'apps/docs/guide/api-keys.md', canonical_url: 'https://docs.tokeness.io/guide/api-keys/' },
-      { locale: 'zh', local_path: 'apps/docs/zh/guide/api-keys.md', canonical_url: 'https://docs.tokeness.io/zh/guide/api-keys/' }
+      { locale: 'en', local_path: 'apps/docs/guide/api-keys.md', canonical_url: 'https://docs.tokeness.ai/guide/api-keys/' },
+      { locale: 'zh', local_path: 'apps/docs/zh/guide/api-keys.md', canonical_url: 'https://docs.tokeness.ai/zh/guide/api-keys/' }
     ]
-    article.canonical_urls = ['https://docs.tokeness.io/zh/guide/api-keys/']
+    article.canonical_urls = ['https://docs.tokeness.ai/zh/guide/api-keys/']
 
     const result = runCli(inventory)
 

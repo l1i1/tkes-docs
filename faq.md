@@ -22,7 +22,7 @@ head:
             "name": "What Base URL should I use?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "For OpenAI-compatible integration, use https://n.tokeness.io/v1. Do not remove /v1 yourself."
+              "text": "For OpenAI-compatible integration, use https://n.tokeness.dev/v1. Do not remove /v1 yourself."
             }
           },
           {
@@ -102,7 +102,7 @@ head:
             "name": "What to do when connecting AI coding tools returns 401?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Check the API key, Base URL, model name, and protocol type in the tool configuration. For OpenAI-compatible integration, use https://n.tokeness.io/v1 and the header Authorization: Bearer <API Key>."
+              "text": "Check the API key, Base URL, model name, and protocol type in the tool configuration. For OpenAI-compatible integration, use https://n.tokeness.dev/v1 and the header Authorization: Bearer <API Key>."
             }
           },
           {
@@ -134,7 +134,7 @@ head:
             "name": "How do I use Tokeness in Claude Code?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Claude Code natively uses the Anthropic protocol. The Tokeness universal interface uses the OpenAI-compatible protocol, so it is recommended to add Tokeness as a provider via CC Switch and enable routing mode. Set the Base URL to https://n.tokeness.io (without /v1 — CC Switch appends the path itself)."
+              "text": "Claude Code natively uses the Anthropic protocol. The Tokeness universal interface uses the OpenAI-compatible protocol, so it is recommended to add Tokeness as a provider via CC Switch and enable routing mode. Set the Base URL to https://n.tokeness.dev (without /v1 — CC Switch appends the path itself)."
             }
           },
           {
@@ -162,7 +162,7 @@ Tokeness is an AI API gateway. You use one API key to call different models and 
 Use the same address on every integration page:
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 If a client splits the field into Base URL, Endpoint, Host, or Service URL, put this complete address in the field that accepts a full path. Do not remove `/v1` yourself.
@@ -211,7 +211,7 @@ First confirm Node.js and npm are installed, then restart the terminal. On Windo
 
 ## What to do when connecting AI coding tools returns 401?
 
-Check the API key, Base URL, model name, and protocol type in the tool configuration. For OpenAI-compatible integration, use `https://n.tokeness.io/v1` and the header `Authorization: Bearer <API Key>`.
+Check the API key, Base URL, model name, and protocol type in the tool configuration. For OpenAI-compatible integration, use `https://n.tokeness.dev/v1` and the header `Authorization: Bearer <API Key>`.
 
 ## What is `YOUR_MODEL_NAME` in the code examples?
 

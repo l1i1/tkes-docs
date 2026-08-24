@@ -8,7 +8,7 @@ description: 通过 CC Switch 或手动配置为 Codex CLI 接入 Tokeness Respo
 Codex CLI 可以使用自定义模型供应商。Tokeness 按 OpenAI Responses 协议接入，Base URL 统一填写：
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 如果你使用 [CC Switch](https://ccswitch.io/zh/docs?section=getting-started)，它会帮你写入 Codex 的 `auth.json` 和 `config.toml`。如果需要手动核对配置，本页也给出文件示例。
@@ -18,7 +18,7 @@ https://n.tokeness.io/v1
 | 项目 | 填写内容 |
 | --- | --- |
 | Provider Name | `Tokeness` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制 |
 | Wire API | `responses` |
@@ -74,7 +74,7 @@ codex --version
 4. 如果没有 Tokeness 预设，选择自定义供应商。
 5. 名称填写 `Tokeness`。
 6. API Key 填写 Tokeness API Key。
-7. Base URL 填写 `https://n.tokeness.io/v1`。
+7. Base URL 填写 `https://n.tokeness.dev/v1`。
 8. 模型填写 Tokeness 模型广场中的完整模型名。
 9. API 类型或 Wire API 选择 `responses`。
 10. 保存并启用。
@@ -114,7 +114,7 @@ disable_response_storage = true
 
 [model_providers.tokeness]
 name = "Tokeness"
-base_url = "https://n.tokeness.io/v1"
+base_url = "https://n.tokeness.dev/v1"
 wire_api = "responses"
 requires_openai_auth = true
 ```
@@ -171,7 +171,7 @@ codex
 | `codex` 命令不存在 | 重新安装，或重启终端 |
 | 仍然使用旧模型 | 关闭终端重新打开；检查 `model_provider` |
 | 401 Unauthorized | 检查 `auth.json` 中的 Key |
-| 404 Not Found | 检查 `base_url` 是否为 `https://n.tokeness.io/v1` |
+| 404 Not Found | 检查 `base_url` 是否为 `https://n.tokeness.dev/v1` |
 | Responses 相关报错 | 检查 `wire_api = "responses"` |
 | model not found | 从 Tokeness 模型广场重新复制模型名 |
 | Tokeness 无日志 | 当前 Codex 没有走 Tokeness 配置，检查供应商是否启用 |

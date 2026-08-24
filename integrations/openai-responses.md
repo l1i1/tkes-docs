@@ -10,14 +10,14 @@ The Responses API uses `POST /v1/responses`. If your code already calls `respons
 ## Configuration
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 Model: model name copied from the Tokeness model marketplace
 ```
 
 ## Verification order
 
-1. First send a cURL request to `https://n.tokeness.io/v1/responses`.
+1. First send a cURL request to `https://n.tokeness.dev/v1/responses`.
 2. Confirm the request appears in the Tokeness usage logs.
 3. Then use the same key, model name, and Base URL in your SDK.
 
@@ -36,7 +36,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const response = await client.responses.create({
@@ -68,7 +68,7 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="YOUR_TOKENESS_API_KEY",
-    base_url="https://n.tokeness.io/v1",
+    base_url="https://n.tokeness.dev/v1",
 )
 
 response = client.responses.create(
@@ -82,7 +82,7 @@ print(response.output_text)
 ## cURL
 
 ```bash
-curl https://n.tokeness.io/v1/responses \
+curl https://n.tokeness.dev/v1/responses \
   -H "Authorization: Bearer $TOKENESS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

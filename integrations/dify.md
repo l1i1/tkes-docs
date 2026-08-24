@@ -12,7 +12,7 @@ Dify can connect to external models through model providers. To integrate Tokene
 | Field | Value |
 | --- | --- |
 | Provider | OpenAI-API-compatible |
-| API Endpoint / Base URL | `https://n.tokeness.io/v1` |
+| API Endpoint / Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model Name | The full model name from the Tokeness model catalog |
 
@@ -59,7 +59,7 @@ Add a model under the OpenAI-API-compatible provider.
 Fill in:
 
 ```txt
-API Endpoint: https://n.tokeness.io/v1
+API Endpoint: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 Model Name: the model name copied from the Tokeness model catalog
 ```
@@ -75,7 +75,7 @@ If your Dify application uses a knowledge base, you also need to add an embeddin
 Fill in the same way as the chat model:
 
 ```txt
-API Endpoint: https://n.tokeness.io/v1
+API Endpoint: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 Model Name: the embedding model name copied from the Tokeness model catalog
 ```
@@ -101,7 +101,7 @@ In workflow applications, verify that every LLM node has a Tokeness model select
 
 ## 6. Self-Hosted Dify Notes
 
-When self-hosting Dify, the Dify container must be able to reach `https://n.tokeness.io/v1`.
+When self-hosting Dify, the Dify container must be able to reach `https://n.tokeness.dev/v1`.
 
 If validation fails:
 
@@ -120,7 +120,7 @@ You can enter the Dify container and test the Tokeness endpoint with cURL.
 | --- | --- |
 | Credential validation failed | Check the endpoint, key, and container network |
 | 401 Unauthorized | The API key is wrong or has been disabled |
-| 404 Not Found | Set the API endpoint to `https://n.tokeness.io/v1` |
+| 404 Not Found | Set the API endpoint to `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the model name from the Tokeness model catalog |
 | Model not found in the app | The model was not saved after adding, or was not selected in the app node |
 | Knowledge base cannot index | Check whether the embedding model is configured correctly |

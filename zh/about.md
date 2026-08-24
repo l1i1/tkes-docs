@@ -11,7 +11,7 @@ head:
         "name": "Tokeness",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",
-        "url": "https://tokeness.io",
+        "url": "https://tokeness.ai",
         "description": "Tokeness is an AI API gateway providing OpenAI-compatible access to multiple AI models, with API key management, quota control, and usage logging.",
         "offers": {
           "@type": "Offer",
@@ -21,7 +21,7 @@ head:
         "provider": {
           "@type": "Organization",
           "name": "Tokeness",
-          "url": "https://tokeness.io"
+          "url": "https://tokeness.ai"
         }
       }
 ---
@@ -35,10 +35,10 @@ Tokeness 是面向开发者的 AI API 网关。你用一个 API Key 和统一的
 | 项目 | 说明 |
 | --- | --- |
 | 产品类型 | AI API 网关 |
-| 标准 Base URL | `https://n.tokeness.io/v1` |
+| 标准 Base URL | `https://n.tokeness.dev/v1` |
 | 常用协议 | OpenAI 兼容、OpenAI Responses API、Anthropic API |
-| 控制台 | [tokeness.io](https://tokeness.io) |
-| 文档站 | [docs.tokeness.io](https://docs.tokeness.io) |
+| 控制台 | [tokeness.ai](https://tokeness.ai) |
+| 文档站 | [docs.tokeness.ai](https://docs.tokeness.ai) |
 | 计费模式 | 先充值后调用，按实际消耗扣费 |
 
 ## Tokeness 解决什么问题
@@ -56,7 +56,7 @@ Tokeness 把模型接入、Key 管理、额度控制和用量追踪放在同一�
 
 | 问题 | 官方答案 |
 | --- | --- |
-| Tokeness 的 OpenAI 兼容地址是什么？ | `https://n.tokeness.io/v1` |
+| Tokeness 的 OpenAI 兼容地址是什么？ | `https://n.tokeness.dev/v1` |
 | API Key 从哪里创建？ | Tokeness 控制台的 API 密钥页面 |
 | 模型名从哪里复制？ | Tokeness 控制台或模型广场 |
 | 价格以哪里为准？ | 控制台模型广场或正式报价 |
@@ -87,7 +87,7 @@ Tokeness 采用先充值后调用的模式。每次 API 调用按实际消耗扣
 
 | 入口 | 地址 |
 | --- | --- |
-| 官网与控制台 | <https://tokeness.io> |
-| 文档站 | <https://docs.tokeness.io> |
-| API Base URL | `https://n.tokeness.io/v1` |
-| 联系邮箱 | <contact@tokeness.io> |
+| 官网与控制台 | <https://tokeness.ai> |
+| 文档站 | <https://docs.tokeness.ai> |
+| API Base URL | `https://n.tokeness.dev/v1` |
+| 联系邮箱 | <contact@tokeness.ai> |

@@ -13,7 +13,7 @@ Cherry Studio supports custom AI providers. Tokeness connects through the OpenAI
 | --- | --- |
 | Provider Type | `OpenAI` or a custom OpenAI-compatible provider |
 | Provider Name | `Tokeness` |
-| API Address / Base URL | `https://n.tokeness.io/v1` |
+| API Address / Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model ID | The full model name from the Tokeness model catalog |
 
@@ -44,7 +44,7 @@ Create a new provider:
 ```txt
 Name: Tokeness
 Type: OpenAI
-API Address: https://n.tokeness.io/v1
+API Address: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 ```
 
@@ -96,7 +96,7 @@ These providers can share the same Base URL — only the key and model configura
 | --- | --- |
 | Check fails | Verify the API address, key, and balance |
 | 401 Unauthorized | Re-copy the API key |
-| 404 Not Found | Set the API address to `https://n.tokeness.io/v1` |
+| 404 Not Found | Set the API address to `https://n.tokeness.dev/v1` |
 | Model list is empty | Add model names manually |
 | model not found | Re-copy the model name from the model catalog |
 | No Tokeness logs | The current session is not using the Tokeness provider |

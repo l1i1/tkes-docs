@@ -54,7 +54,7 @@ Tokeness 支持 API + Key 的标准分销接入方式，适合已有开发者、
 
 ## 联系方式
 
-邮箱：<contact@tokeness.io>
+邮箱：<contact@tokeness.ai>
 
 商务沟通可按现有邮件材料中的方式进一步对接。
 

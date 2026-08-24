@@ -11,7 +11,7 @@ Open WebUI can connect to external model services through OpenAI-compatible conf
 
 | Field | Value |
 | --- | --- |
-| OpenAI API Base URL | `https://n.tokeness.io/v1` |
+| OpenAI API Base URL | `https://n.tokeness.dev/v1` |
 | OpenAI API Key | A key created in the Tokeness console |
 | Model | The full model name copied from the Tokeness model catalog |
 
@@ -25,7 +25,7 @@ For single-machine testing, start like this:
 docker run -d \
   --name open-webui \
   -p 3000:8080 \
-  -e OPENAI_API_BASE_URL=https://n.tokeness.io/v1 \
+  -e OPENAI_API_BASE_URL=https://n.tokeness.dev/v1 \
   -e OPENAI_API_KEY=your Tokeness API key \
   -v open-webui:/app/backend/data \
   ghcr.io/open-webui/open-webui:main
@@ -40,7 +40,7 @@ services:
     ports:
       - "3000:8080"
     environment:
-      OPENAI_API_BASE_URL: https://n.tokeness.io/v1
+      OPENAI_API_BASE_URL: https://n.tokeness.dev/v1
       OPENAI_API_KEY: ${TOKENESS_API_KEY}
     volumes:
       - open-webui:/app/backend/data
@@ -63,7 +63,7 @@ If Open WebUI is already running, you can configure it in the admin panel:
 2. Open the Admin Panel.
 3. Find the Connections or Models settings.
 4. Locate the OpenAI API configuration.
-5. Set the Base URL to `https://n.tokeness.io/v1`.
+5. Set the Base URL to `https://n.tokeness.dev/v1`.
 6. Enter your Tokeness API key.
 7. Save and refresh the page.
 
@@ -92,7 +92,7 @@ Open WebUI's knowledge base, RAG, voice, and image features may have separate co
 Common embedding fields:
 
 ```bash
-RAG_OPENAI_API_BASE_URL=https://n.tokeness.io/v1
+RAG_OPENAI_API_BASE_URL=https://n.tokeness.dev/v1
 RAG_OPENAI_API_KEY=your Tokeness API key
 ```
 
@@ -113,7 +113,7 @@ The embedding model name must be a vector model available in Tokeness. Do not pu
 | Environment variable changes do not take effect | Open WebUI may have persisted the config — update it in the admin panel or handle PersistentConfig |
 | Model list is empty | Enter the Tokeness model name manually |
 | 401 | Check `OPENAI_API_KEY` |
-| 404 | Check that `OPENAI_API_BASE_URL` is `https://n.tokeness.io/v1` |
+| 404 | Check that `OPENAI_API_BASE_URL` is `https://n.tokeness.dev/v1` |
 | Chat works but knowledge base does not | Check the embedding model and RAG-related configuration separately |
 | Requests fail inside the Docker container | Enter the container and check network, DNS, and proxy settings |
 

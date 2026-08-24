@@ -1,7 +1,7 @@
 // allow: SIZE_OK — VitePress locale config keeps en/zh navigation, sidebar, and SEO metadata together.
 import { defineConfig } from 'vitepress'
 
-const docsOrigin = 'https://docs.tokeness.io'
+const docsOrigin = 'https://docs.tokeness.ai'
 const documentedUpdateTimestamp = Date.parse('2026-07-18T00:00:00Z')
 
 const createWebsiteJsonLd = (language: 'en-US' | 'zh-CN') => JSON.stringify({
@@ -20,7 +20,7 @@ const createOrganizationJsonLd = (language: 'en-US' | 'zh-CN') => JSON.stringify
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Tokeness',
-  url: 'https://tokeness.io',
+  url: 'https://tokeness.ai',
   logo: `${docsOrigin}/logo.svg`,
   sameAs: [docsOrigin],
   description:
@@ -69,7 +69,7 @@ const enNav = [
   { text: 'Integrations', link: '/integrations/openai-compatible' },
   { text: 'Billing', link: '/billing/pricing' },
   { text: 'Impact Program', link: '/partners/impact' },
-  { text: 'Console', link: 'https://tokeness.io/dashboard/overview' }
+  { text: 'Console', link: 'https://tokeness.ai/dashboard/overview' }
 ] as const
 
 const zhNav = [
@@ -78,7 +78,7 @@ const zhNav = [
   { text: '接入指南', link: '/zh/integrations/openai-compatible' },
   { text: '计费', link: '/zh/billing/pricing' },
   { text: '公益计划', link: '/zh/partners/impact' },
-  { text: '控制台', link: 'https://tokeness.io/dashboard/overview' }
+  { text: '控制台', link: 'https://tokeness.ai/dashboard/overview' }
 ] as const
 
 const enSidebar = [

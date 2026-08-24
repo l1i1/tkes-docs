@@ -13,7 +13,7 @@ OpenClaw supports adding model providers. To connect to Tokeness, configure it a
 | --- | --- |
 | Provider Name | `Tokeness` |
 | API Type | `OpenAI Compatible` or `OpenAI` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model | Copied from the Tokeness model catalog |
 
@@ -45,7 +45,7 @@ Create a new provider:
 ```txt
 Name: Tokeness
 API Type: OpenAI Compatible
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 Model: the model name copied from the Tokeness model catalog
 ```
@@ -110,7 +110,7 @@ Key management recommendations:
 | --- | --- |
 | 401 Unauthorized | The API key is wrong, disabled, or copied with extra spaces |
 | 403 Forbidden | Check the key group, quota, model permissions, or account status |
-| 404 Not Found | The Base URL should be `https://n.tokeness.io/v1` |
+| 404 Not Found | The Base URL should be `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the model name from the model catalog |
 | Still uses the old model after saving | After saving the provider, also switch the model in the agent default settings |
 | No Tokeness logs | The current OpenClaw agent is not using the Tokeness provider |

@@ -12,7 +12,7 @@ Tokeness 提供 OpenAI 兼容接口。大多数支持自定义 OpenAI Base URL �
 ## 基础配置
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 ```
 
@@ -37,7 +37,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const completion = await client.chat.completions.create({
@@ -66,7 +66,7 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="YOUR_TOKENESS_API_KEY",
-    base_url="https://n.tokeness.io/v1",
+    base_url="https://n.tokeness.dev/v1",
 )
 
 response = client.chat.completions.create(
@@ -82,7 +82,7 @@ print(response.choices[0].message.content)
 ## cURL
 
 ```bash
-curl https://n.tokeness.io/v1/chat/completions \
+curl https://n.tokeness.dev/v1/chat/completions \
   -H "Authorization: Bearer $TOKENESS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

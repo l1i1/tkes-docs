@@ -12,7 +12,7 @@ Dify 可以通过模型供应商接入外部模型。接入 Tokeness 时，使�
 | 项目 | 填写内容 |
 | --- | --- |
 | Provider | OpenAI-API-compatible |
-| API Endpoint / Base URL | `https://n.tokeness.io/v1` |
+| API Endpoint / Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model Name | Tokeness 模型广场中的完整模型名 |
 
@@ -59,7 +59,7 @@ Settings -> Model Provider
 填写：
 
 ```txt
-API Endpoint: https://n.tokeness.io/v1
+API Endpoint: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 Model Name: 从 Tokeness 模型广场复制的模型名
 ```
@@ -75,7 +75,7 @@ Model Name: 从 Tokeness 模型广场复制的模型名
 填写方式与聊天模型一致：
 
 ```txt
-API Endpoint: https://n.tokeness.io/v1
+API Endpoint: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 Model Name: 从 Tokeness 模型广场复制的 embedding 模型名
 ```
@@ -101,7 +101,7 @@ Model Name: 从 Tokeness 模型广场复制的 embedding 模型名
 
 ## 6. 自托管 Dify 注意事项
 
-自托管 Dify 时，Dify 容器需要能访问 `https://n.tokeness.io/v1`。
+自托管 Dify 时，Dify 容器需要能访问 `https://n.tokeness.dev/v1`。
 
 如果验证失败：
 
@@ -120,7 +120,7 @@ Model Name: 从 Tokeness 模型广场复制的 embedding 模型名
 | --- | --- |
 | Credential validation failed | 检查 Endpoint、Key、容器网络 |
 | 401 Unauthorized | API Key 错误或已禁用 |
-| 404 Not Found | API Endpoint 填 `https://n.tokeness.io/v1` |
+| 404 Not Found | API Endpoint 填 `https://n.tokeness.dev/v1` |
 | model not found | 模型名从 Tokeness 模型广场重新复制 |
 | 应用里找不到模型 | 模型添加后未保存，或没有在应用节点中选择 |
 | 知识库无法索引 | 检查 embedding 模型是否配置正确 |

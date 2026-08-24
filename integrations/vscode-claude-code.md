@@ -16,7 +16,7 @@ There are three common ways to use AI coding tools with Tokeness inside VS Code:
 Tokeness exposes a general OpenAI-compatible endpoint:
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 ## 1. Run Claude Code in the VS Code terminal
@@ -41,7 +41,7 @@ Field values:
 
 ```txt
 Provider: OpenAI Compatible
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 Model ID: copied from the Tokeness model marketplace
 ```
@@ -56,7 +56,7 @@ As long as an extension exposes these fields, you can try connecting it to Token
 | --- | --- |
 | API Provider | OpenAI Compatible / OpenAI |
 | API Key | Tokeness API key |
-| Base URL / API Base / Endpoint | `https://n.tokeness.io/v1` |
+| Base URL / API Base / Endpoint | `https://n.tokeness.dev/v1` |
 | Model / Model ID | Full model name from the Tokeness model marketplace |
 
 If an extension only supports logging in to a specific vendor and does not allow a custom Base URL, it cannot connect to Tokeness directly.
@@ -105,7 +105,7 @@ Then check the Tokeness usage logs:
 | --- | --- |
 | Extension does not show a Base URL field | The extension may not support custom APIs |
 | Authentication failed | Check the key, whitespace, and whether it is enabled |
-| 404 Not Found | Set Base URL to `https://n.tokeness.io/v1` |
+| 404 Not Found | Set Base URL to `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the model name from the model marketplace |
 | No Claude Code logs | Check whether CC Switch has Tokeness enabled and routing mode on |
 | Extension can chat but cannot edit code | Switch to a model with stronger coding ability, or use Cline / Claude Code |

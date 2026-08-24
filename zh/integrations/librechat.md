@@ -11,7 +11,7 @@ LibreChat 支持自定义 OpenAI 兼容端点。常见做法是在 `librechat.ya
 
 | 项目 | 填写值 |
 | --- | --- |
-| API URL / Base URL | `https://n.tokeness.io/v1` |
+| API URL / Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Models | 从 Tokeness 模型广场复制完整模型名 |
 
@@ -50,7 +50,7 @@ endpoints:
   custom:
     - name: "Tokeness"
       apiKey: "${TOKENESS_API_KEY}"
-      baseURL: "https://n.tokeness.io/v1"
+      baseURL: "https://n.tokeness.dev/v1"
       models:
         default:
           - "YOUR_MODEL_NAME"
@@ -124,7 +124,7 @@ apiKey: "user_provided"
 | --- | --- |
 | 看不到 Tokeness 端点 | 检查 `librechat.yaml` 是否挂载成功，重启容器 |
 | 401 | 检查 `.env` 中 `TOKENESS_API_KEY` 是否被容器读取 |
-| 404 | `baseURL` 应为 `https://n.tokeness.io/v1` |
+| 404 | `baseURL` 应为 `https://n.tokeness.dev/v1` |
 | 模型下拉为空 | 设置 `models.fetch: false`，手动填写模型名 |
 | 会话标题生成失败 | 检查 `titleModel` 是否为可用模型 |
 | 多用户 Key 混用 | 使用 `user_provided`，让用户在界面中填写自己的 Key |

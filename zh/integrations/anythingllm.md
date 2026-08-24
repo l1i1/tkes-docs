@@ -11,7 +11,7 @@ AnythingLLM 的 `OpenAI (Generic)` Provider 用于连接 OpenAI 兼容接口。T
 
 | 项目 | 填写值 |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制完整模型名 |
 
@@ -23,7 +23,7 @@ AnythingLLM 有桌面版、Docker 版和云端部署方式。菜单位置可能�
 2. 进入 Settings。
 3. 找到 LLM Preference 或 Model Provider。
 4. 选择 `OpenAI (Generic)` 或 `Generic OpenAI`。
-5. Base URL 填 `https://n.tokeness.io/v1`。
+5. Base URL 填 `https://n.tokeness.dev/v1`。
 6. API Key 填 Tokeness API Key。
 7. Model 填 Tokeness 模型广场里的完整模型名。
 8. 保存。
@@ -33,7 +33,7 @@ AnythingLLM 有桌面版、Docker 版和云端部署方式。菜单位置可能�
 | AnythingLLM 字段 | Tokeness 填写方式 |
 | --- | --- |
 | LLM Provider | `OpenAI (Generic)` |
-| Base URL / API Base | `https://n.tokeness.io/v1` |
+| Base URL / API Base | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness API Key |
 | Model | Tokeness 模型名 |
 
@@ -78,7 +78,7 @@ AnythingLLM 的聊天模型和向量模型是两类配置。接入聊天模型�
 | --- | --- |
 | 保存 Provider 后聊天仍走旧模型 | 检查 Workspace 是否覆盖了全局模型 |
 | 401 | 检查 API Key |
-| 404 | Base URL 应为 `https://n.tokeness.io/v1` |
+| 404 | Base URL 应为 `https://n.tokeness.dev/v1` |
 | model not found | 从 Tokeness 模型广场复制完整模型名 |
 | 聊天可用，文档问答不可用 | 单独配置 embedding 模型 |
 | 回复很慢 | 先用短问题测试，再检查模型、上下文长度和文档大小 |

@@ -11,7 +11,7 @@ head:
         "name": "Tokeness",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",
-        "url": "https://tokeness.io",
+        "url": "https://tokeness.ai",
         "description": "Tokeness is an AI API gateway providing OpenAI-compatible access to multiple AI models, with API key management, quota control, and usage logging.",
         "offers": {
           "@type": "Offer",
@@ -21,7 +21,7 @@ head:
         "provider": {
           "@type": "Organization",
           "name": "Tokeness",
-          "url": "https://tokeness.io"
+          "url": "https://tokeness.ai"
         }
       }
 ---
@@ -35,10 +35,10 @@ Tokeness is an AI API gateway for developers. You use one API key and a unified 
 | Item | Details |
 | --- | --- |
 | Product type | AI API gateway |
-| Standard Base URL | `https://n.tokeness.io/v1` |
+| Standard Base URL | `https://n.tokeness.dev/v1` |
 | Common protocols | OpenAI Compatible API, OpenAI Responses API, Anthropic API |
-| Console | [tokeness.io](https://tokeness.io) |
-| Documentation | [docs.tokeness.io](https://docs.tokeness.io) |
+| Console | [tokeness.ai](https://tokeness.ai) |
+| Documentation | [docs.tokeness.ai](https://docs.tokeness.ai) |
 | Billing model | Prepaid, deducted by actual usage |
 
 ## What Tokeness Solves
@@ -56,7 +56,7 @@ Common use cases include:
 
 | Question | Official answer |
 | --- | --- |
-| What is the OpenAI-compatible endpoint? | `https://n.tokeness.io/v1` |
+| What is the OpenAI-compatible endpoint? | `https://n.tokeness.dev/v1` |
 | Where are API keys created? | Tokeness console, API Keys page |
 | Where are model names copied from? | Tokeness console or model marketplace |
 | Where are prices authoritative? | Console model marketplace or formal quotation |
@@ -87,7 +87,7 @@ Cost-control tips: use a separate key for each project, set a small quota for de
 
 | Entry | URL |
 | --- | --- |
-| Website and console | <https://tokeness.io> |
-| Documentation | <https://docs.tokeness.io> |
-| API Base URL | `https://n.tokeness.io/v1` |
-| Contact | <contact@tokeness.io> |
+| Website and console | <https://tokeness.ai> |
+| Documentation | <https://docs.tokeness.ai> |
+| API Base URL | `https://n.tokeness.dev/v1` |
+| Contact | <contact@tokeness.ai> |

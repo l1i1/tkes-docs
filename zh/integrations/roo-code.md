@@ -13,7 +13,7 @@ Roo Code 是 VS Code 里的代码助手。它支持 `OpenAI Compatible` Provider
 
 | 项目 | 填写值 |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model ID | 从 Tokeness 模型广场复制完整模型名 |
 
@@ -27,7 +27,7 @@ Roo Code 对工具调用依赖较强。用于编码任务时，优先选 Tokenes
 2. 进入设置。
 3. 找到 API Provider。
 4. 选择 `OpenAI Compatible`。
-5. 在 Base URL 中填 `https://n.tokeness.io/v1`。
+5. 在 Base URL 中填 `https://n.tokeness.dev/v1`。
 6. 在 API Key 中填 Tokeness API Key。
 7. 在 Model 中填写从 Tokeness 模型广场复制的模型名。
 8. 保存配置。
@@ -37,7 +37,7 @@ Roo Code 对工具调用依赖较强。用于编码任务时，优先选 Tokenes
 | Roo Code 字段 | Tokeness 填写方式 |
 | --- | --- |
 | API Provider | `OpenAI Compatible` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness API Key |
 | Model / Model ID | Tokeness 模型名 |
 
@@ -82,7 +82,7 @@ Roo Code 使用 OpenAI 原生工具调用格式。模型如果不支持工具调
 | --- | --- |
 | Invalid API Key | 重新复制 Key，确认没有换行、空格或中文引号 |
 | Model Not Found | 从 Tokeness 模型广场重新复制完整模型名 |
-| Connection Error | 检查 Base URL 是否为 `https://n.tokeness.io/v1` |
+| Connection Error | 检查 Base URL 是否为 `https://n.tokeness.dev/v1` |
 | 普通聊天能用，文件操作失败 | 换支持工具调用的模型 |
 | 输出中断 | 降低任务规模，或调高 Max Output Tokens |
 

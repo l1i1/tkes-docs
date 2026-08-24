@@ -50,8 +50,8 @@ Recommended wording for a repository `README.md`:
 ```md
 <p>
   The AI API support for this project is sponsored by
-  <a href="https://tokeness.io">
-    Tokeness.io
+  <a href="https://tokeness.ai">
+    Tokeness.ai
   </a>
 </p>
 ```
@@ -60,13 +60,13 @@ Wording for a website footer or release page bottom:
 
 ```html
 The AI API support for this project is sponsored by
-<a href="https://tokeness.io" target="_blank" rel="noopener">
-  <img src="https://docs.tokeness.io/logo.svg" alt="Tokeness" height="24">
-  Tokeness.io
+<a href="https://tokeness.ai" target="_blank" rel="noopener">
+  <img src="https://docs.tokeness.ai/logo.svg" alt="Tokeness" height="24">
+  Tokeness.ai
 </a>
 ```
 
-Tokeness will check whether the link is still publicly accessible during both the application review and renewal review. Failure to display the logo, failure to link to `https://tokeness.io`, or placing the link in an incorrect location will all be treated as not meeting the pre-application requirements.
+Tokeness will check whether the link is still publicly accessible during both the application review and renewal review. Failure to display the logo, failure to link to `https://tokeness.ai`, or placing the link in an incorrect location will all be treated as not meeting the pre-application requirements.
 
 ## Available Capabilities
 
@@ -74,7 +74,7 @@ Selected projects will receive one or more impact-specific API keys. Tokeness wi
 
 | Capability | Description |
 | --- | --- |
-| OpenAI-compatible endpoint | Use `https://n.tokeness.io/v1` to connect most tools that support a custom base URL |
+| OpenAI-compatible endpoint | Use `https://n.tokeness.dev/v1` to connect most tools that support a custom base URL |
 | Multi-model access | `DeepSeek-V4-Flash` is the default quota baseline; other models may be used according to the rules |
 | Key and quota control | Split keys by project, environment, or task, and set quota limits |
 | Usage logs | Verify requests, models, status, and consumption in the console |
@@ -94,7 +94,7 @@ High-cost models, image generation, long context, high-concurrency batch process
 
 1. Add a Tokeness support statement in the repository `README.md`, the website homepage footer, or — if there is no website and no public repository — at the bottom of the project release page, the end of project updates, the end of a blog post, or the end of a public account article.
 2. Prepare a project introduction, public links, use cases, estimated monthly token demand, and impact goals.
-3. Send the application materials to <contact@tokeness.io>. The email subject should be `Impact Program Application - Project Name`.
+3. Send the application materials to <contact@tokeness.ai>. The email subject should be `Impact Program Application - Project Name`.
 4. Tokeness reviews the project's authenticity, public acknowledgment link, quota needs, and compliance risks.
 5. After approval, the project registers or confirms a Tokeness account.
 6. Tokeness issues the impact-specific key and configures the quota, model scope, and usage limits.
@@ -140,6 +140,6 @@ Projects with sufficient feedback, clear impact, and compliant usage may apply f
 
 ## Contact
 
-Application and cooperation inquiries: <contact@tokeness.io>
+Application and cooperation inquiries: <contact@tokeness.ai>
 
-Service portal: [tokeness.io](https://tokeness.io)
+Service portal: [tokeness.ai](https://tokeness.ai)

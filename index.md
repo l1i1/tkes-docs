@@ -33,8 +33,8 @@ features:
 <div class="tokeness-note-grid">
   <div class="tokeness-note">
     <strong>Service entries</strong>
-    Website and console: <a href="https://tokeness.io">tokeness.io</a><br>
-    Documentation: <a href="https://docs.tokeness.io">docs.tokeness.io</a>
+    Website and console: <a href="https://tokeness.ai">tokeness.ai</a><br>
+    Documentation: <a href="https://docs.tokeness.ai">docs.tokeness.ai</a>
   </div>
   <div class="tokeness-note">
     <strong>Setup order</strong>

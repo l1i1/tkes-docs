@@ -10,7 +10,7 @@ Tokeness exposes an OpenAI-compatible API. Most SDKs, chat clients, and automati
 ## Configuration
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 ```
 
@@ -33,7 +33,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const completion = await client.chat.completions.create({
@@ -62,7 +62,7 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="YOUR_TOKENESS_API_KEY",
-    base_url="https://n.tokeness.io/v1",
+    base_url="https://n.tokeness.dev/v1",
 )
 
 response = client.chat.completions.create(
@@ -78,7 +78,7 @@ print(response.choices[0].message.content)
 ## cURL
 
 ```bash
-curl https://n.tokeness.io/v1/chat/completions \
+curl https://n.tokeness.dev/v1/chat/completions \
   -H "Authorization: Bearer $TOKENESS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

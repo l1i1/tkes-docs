@@ -5,13 +5,13 @@ description: 用 LiteLLM SDK 或 Proxy 转发到 Tokeness OpenAI 兼容接口。
 
 # LiteLLM
 
-LiteLLM 可以作为 Python SDK 使用，也可以作为 OpenAI 兼容网关运行。接入 Tokeness 时，核心是把 `api_base` 或 `api_base_url` 指向 `https://n.tokeness.io/v1`，并使用 Tokeness API Key。
+LiteLLM 可以作为 Python SDK 使用，也可以作为 OpenAI 兼容网关运行。接入 Tokeness 时，核心是把 `api_base` 或 `api_base_url` 指向 `https://n.tokeness.dev/v1`，并使用 Tokeness API Key。
 
 ## 准备
 
 | 项目 | 填写值 |
 | --- | --- |
-| API Base | `https://n.tokeness.io/v1` |
+| API Base | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制完整模型名 |
 
@@ -33,7 +33,7 @@ from litellm import completion
 response = completion(
     model="openai/YOUR_MODEL_NAME",
     api_key="你的 Tokeness API Key",
-    api_base="https://n.tokeness.io/v1",
+    api_base="https://n.tokeness.dev/v1",
     messages=[
         {"role": "user", "content": "只回复 ok"}
     ],
@@ -67,7 +67,7 @@ from litellm import completion
 
 response = completion(
     model="openai/YOUR_MODEL_NAME",
-    api_base="https://n.tokeness.io/v1",
+    api_base="https://n.tokeness.dev/v1",
     messages=[
         {"role": "user", "content": "只回复 ok"}
     ],
@@ -85,7 +85,7 @@ model_list:
   - model_name: tokeness-chat
     litellm_params:
       model: openai/YOUR_MODEL_NAME
-      api_base: https://n.tokeness.io/v1
+      api_base: https://n.tokeness.dev/v1
       api_key: os.environ/TOKENESS_API_KEY
 ```
 
@@ -118,7 +118,7 @@ http://localhost:4000/v1
 
 | 场景 | 做法 |
 | --- | --- |
-| OpenAI SDK 调用 | 直接设置 `base_url=https://n.tokeness.io/v1` |
+| OpenAI SDK 调用 | 直接设置 `base_url=https://n.tokeness.dev/v1` |
 | Cherry Studio / Cline / Roo Code | 直接填 Tokeness Base URL 和 Key |
 | Dify / n8n | 直接按对应页面配置 |
 | 单人本机使用 | 直接配置工具，少一层排查 |
@@ -146,7 +146,7 @@ Proxy 方式：
 | --- | --- |
 | LiteLLM 报 provider 不明确 | 模型名前加 `openai/` |
 | 401 | 检查 Tokeness Key，Proxy 模式还要检查客户端访问 Proxy 的 Key |
-| 404 | `api_base` 应为 `https://n.tokeness.io/v1` |
+| 404 | `api_base` 应为 `https://n.tokeness.dev/v1` |
 | 客户端能连 Proxy，但 Tokeness 无日志 | 检查 LiteLLM `config.yaml` 是否真的转发到 Tokeness |
 | 模型名变了 | 客户端填 LiteLLM 暴露的别名，例如 `tokeness-chat`；LiteLLM 内部再映射到 Tokeness 模型名 |
 

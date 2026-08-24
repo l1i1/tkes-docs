@@ -12,7 +12,7 @@ Cline 支持 OpenAI Compatible Provider。Tokeness 按 OpenAI 兼容接口接入
 | 项目 | 填写内容 |
 | --- | --- |
 | API Provider | `OpenAI Compatible` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model ID | Tokeness 模型广场中的完整模型名 |
 
@@ -52,7 +52,7 @@ OpenAI Compatible
 按下面填写：
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 Model ID: 从 Tokeness 模型广场复制的模型名
 ```
@@ -100,7 +100,7 @@ Cline 会执行文件读取和修改操作。接入 Tokeness 后，工具权限�
 | --- | --- |
 | Verify 失败 | 检查 Base URL、Key、模型名 |
 | 401 Unauthorized | 重新复制 API Key，确认没有空格 |
-| 404 Not Found | Base URL 应为 `https://n.tokeness.io/v1` |
+| 404 Not Found | Base URL 应为 `https://n.tokeness.dev/v1` |
 | model not found | 从 Tokeness 模型广场重新复制 Model ID |
 | Cline 有报错但 Tokeness 无日志 | 当前 Provider 没有走 Tokeness |
 | 回复正常但工具调用失败 | 换代码能力更强的模型，或缩小任务范围 |

@@ -16,7 +16,7 @@ VS Code 里常见的 AI 编程接入方式有三种：
 Tokeness 的通用接入方式是 OpenAI 兼容接口：
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 ## 1. 在 VS Code 终端里运行 Claude Code
@@ -41,7 +41,7 @@ Cline 是 VS Code 插件，支持 OpenAI Compatible Provider。
 
 ```txt
 Provider: OpenAI Compatible
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 Model ID: 从 Tokeness 模型广场复制
 ```
@@ -56,7 +56,7 @@ Model ID: 从 Tokeness 模型广场复制
 | --- | --- |
 | API Provider | OpenAI Compatible / OpenAI |
 | API Key | Tokeness API Key |
-| Base URL / API Base / Endpoint | `https://n.tokeness.io/v1` |
+| Base URL / API Base / Endpoint | `https://n.tokeness.dev/v1` |
 | Model / Model ID | Tokeness 模型广场中的完整模型名 |
 
 如果插件只支持某一家厂商登录，不支持自定义 Base URL，则不能直接接入 Tokeness。
@@ -105,7 +105,7 @@ VS Code 插件通常会读取项目上下文，消耗比普通聊天更高。
 | --- | --- |
 | 插件不显示 Base URL | 该插件可能不支持自定义 API |
 | 认证失败 | 检查 Key、空格、是否启用 |
-| 404 Not Found | Base URL 填 `https://n.tokeness.io/v1` |
+| 404 Not Found | Base URL 填 `https://n.tokeness.dev/v1` |
 | model not found | 从模型广场重新复制模型名 |
 | Claude Code 无日志 | 检查 CC Switch 是否启用 Tokeness 和路由模式 |
 | 插件能聊天但不能改代码 | 换代码能力更强的模型，或改用 Cline/Claude Code |

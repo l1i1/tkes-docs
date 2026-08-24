@@ -13,7 +13,7 @@ description: Tokeness API 最小接入流程：登录、充值、创建 API Key�
 
 | 项目 | 检查内容 |
 | --- | --- |
-| Tokeness 账户 | 已注册并登录 tokeness.io |
+| Tokeness 账户 | 已注册并登录 tokeness.ai |
 | 余额 | 先充值一小笔测试余额 |
 | 模型名 | 从模型广场复制一个可用模型名 |
 | 测试方式 | 任选一种：客户端、Node.js、Python 或 cURL |
@@ -27,7 +27,7 @@ description: Tokeness API 最小接入流程：登录、充值、创建 API Key�
 
 ## 1. 登录 Tokeness
 
-打开 [tokeness.io](https://tokeness.io)，点击右上角“登录”。已登录时会直接进入控制台。
+打开 [tokeness.ai](https://tokeness.ai)，点击右上角“登录”。已登录时会直接进入控制台。
 
 <figure class="tokeness-shot">
   <div class="tokeness-shot-frame">
@@ -74,15 +74,15 @@ description: Tokeness API 最小接入流程：登录、充值、创建 API Key�
 常用配置如下：
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 Model ID: 从模型广场复制的模型名
 ```
 
-如果某些客户端把字段拆成“Base URL / Endpoint / 服务地址”，都优先填 `https://n.tokeness.io/v1`。
+如果某些客户端把字段拆成“Base URL / Endpoint / 服务地址”，都优先填 `https://n.tokeness.dev/v1`。
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 ## 5. 发起测试调用
@@ -94,7 +94,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const response = await client.chat.completions.create({
@@ -112,4 +112,4 @@ npm install openai
 node test-tokeness.mjs
 ```
 
-如果调用失败，优先检查四件事：Key 是否复制完整、账户余额是否充足、模型名是否和模型广场一致、Base URL 是否是 `https://n.tokeness.io/v1`。
+如果调用失败，优先检查四件事：Key 是否复制完整、账户余额是否充足、模型名是否和模型广场一致、Base URL 是否是 `https://n.tokeness.dev/v1`。

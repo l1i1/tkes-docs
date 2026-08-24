@@ -36,7 +36,7 @@ The main console entries are:
 1. Top up in "Wallet".
 2. Create independent keys for projects in "API Keys".
 3. Confirm the model names to call in "Model Marketplace".
-4. Configure `https://n.tokeness.io/v1` in the client or code.
+4. Configure `https://n.tokeness.dev/v1` in the client or code.
 5. Check whether calls succeed in "Usage Logs" and "Dashboard".
 
 ## Search and Troubleshooting

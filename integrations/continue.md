@@ -13,7 +13,7 @@ Prepare three pieces of information first:
 
 | Field | Value |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model | Full model name copied from the Tokeness model marketplace |
 
@@ -43,7 +43,7 @@ models:
   - name: Tokeness Chat
     provider: openai
     model: YOUR_MODEL_NAME
-    apiBase: https://n.tokeness.io/v1
+    apiBase: https://n.tokeness.dev/v1
     apiKey: YOUR_TOKENESS_API_KEY
     roles:
       - chat
@@ -58,7 +58,7 @@ Field meanings:
 | `name` | The name displayed in the Continue interface, e.g. `Tokeness Chat` |
 | `provider` | Set to `openai` so Continue uses the OpenAI-compatible calling method |
 | `model` | Full model name from the Tokeness model marketplace |
-| `apiBase` | Set to `https://n.tokeness.io/v1` |
+| `apiBase` | Set to `https://n.tokeness.dev/v1` |
 | `apiKey` | Tokeness API key |
 | `roles` | The tasks this model can handle |
 
@@ -87,7 +87,7 @@ models:
   - name: Tokeness Chat
     provider: openai
     model: YOUR_MODEL_NAME
-    apiBase: https://n.tokeness.io/v1
+    apiBase: https://n.tokeness.dev/v1
     apiKey: ${{ env.TOKENESS_API_KEY }}
     roles:
       - chat
@@ -106,7 +106,7 @@ models:
   - name: Tokeness Agent
     provider: openai
     model: YOUR_TOOL_CALLING_MODEL
-    apiBase: https://n.tokeness.io/v1
+    apiBase: https://n.tokeness.dev/v1
     apiKey: YOUR_TOKENESS_API_KEY
     roles:
       - chat
@@ -136,7 +136,7 @@ If chat works but rewriting or Agent mode is unstable, the issue is usually not 
 | --- | --- |
 | Model does not appear in the dropdown | Check `config.yaml` indentation, `schema`, and `models` structure; restart the IDE after saving |
 | 401 | Re-copy the Tokeness API key and confirm there are no extra spaces |
-| 404 | Check that `apiBase` is `https://n.tokeness.io/v1` |
+| 404 | Check that `apiBase` is `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the model name from the Tokeness model marketplace |
 | Agent tool calls fail | Switch to a model that supports tool calling, or use only chat, explanation, and rewriting first |
 | Configuration looks correct but still uses the old model | Close all IDE windows and reopen |

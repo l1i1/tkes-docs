@@ -22,7 +22,7 @@ head:
             "name": "Base URL 应该填什么？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "OpenAI 兼容接入统一填写 https://n.tokeness.io/v1。不要自己删掉 /v1。"
+              "text": "OpenAI 兼容接入统一填写 https://n.tokeness.dev/v1。不要自己删掉 /v1。"
             }
           },
           {
@@ -78,7 +78,7 @@ head:
             "name": "连接 AI 编程工具时报 401 怎么办？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "检查工具配置中的 API Key、Base URL、模型名和协议类型。OpenAI 兼容接入使用 https://n.tokeness.io/v1，请求头使用 Authorization: Bearer <API Key>。"
+              "text": "检查工具配置中的 API Key、Base URL、模型名和协议类型。OpenAI 兼容接入使用 https://n.tokeness.dev/v1，请求头使用 Authorization: Bearer <API Key>。"
             }
           },
           {
@@ -110,7 +110,7 @@ head:
             "name": "如何在 Claude Code 中使用 Tokeness？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Claude Code 原生使用 Anthropic 协议。Tokeness 通用接口是 OpenAI 兼容协议，建议通过 CC Switch 添加 Tokeness 供应商并开启路由模式。Base URL 填 https://n.tokeness.io（不要带 /v1，CC Switch 会自动拼接路径）。"
+              "text": "Claude Code 原生使用 Anthropic 协议。Tokeness 通用接口是 OpenAI 兼容协议，建议通过 CC Switch 添加 Tokeness 供应商并开启路由模式。Base URL 填 https://n.tokeness.dev（不要带 /v1，CC Switch 会自动拼接路径）。"
             }
           },
           {
@@ -136,7 +136,7 @@ Tokeness 是 AI API 网关。你用一个 API Key 调用不同模型，并在控
 所有接入页统一填写：
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 如果某个客户端把字段拆成 Base URL、Endpoint、Host 或 Service URL，请优先把这个完整地址填到支持完整路径的字段里。不要自己删掉 `/v1`。
@@ -185,7 +185,7 @@ Tokeness 采用预充值模式。请检查钱包余额，以及当前 API Key �
 
 ## 连接 AI 编程工具时报 401 怎么办？
 
-检查工具配置中的 API Key、Base URL、模型名和协议类型。OpenAI 兼容接入使用 `https://n.tokeness.io/v1`，请求头使用 `Authorization: Bearer <API Key>`。
+检查工具配置中的 API Key、Base URL、模型名和协议类型。OpenAI 兼容接入使用 `https://n.tokeness.dev/v1`，请求头使用 `Authorization: Bearer <API Key>`。
 
 ## 代码示例里的 `YOUR_MODEL_NAME` 是什么？
 

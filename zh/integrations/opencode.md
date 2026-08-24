@@ -15,7 +15,7 @@ OpenCode 支持多模型和自定义供应商。接入 Tokeness 时选择 OpenAI
 | --- | --- |
 | Provider | `OpenAI Compatible` 或自定义 |
 | Name | `Tokeness` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制 |
 
@@ -58,7 +58,7 @@ opencode --version
 4. 预设选择 `OpenAI Compatible`。如果没有该预设，选择自定义。
 5. 名称填写 `Tokeness`。
 6. API Key 填写 Tokeness API Key。
-7. Base URL 填写 `https://n.tokeness.io/v1`。
+7. Base URL 填写 `https://n.tokeness.dev/v1`。
 8. 模型填写 Tokeness 模型广场中的完整模型名。
 9. 保存并启用。
 
@@ -72,7 +72,7 @@ opencode --version
 | --- | --- |
 | Provider Type | OpenAI Compatible |
 | API Key | Tokeness API Key |
-| Base URL / Endpoint | `https://n.tokeness.io/v1` |
+| Base URL / Endpoint | `https://n.tokeness.dev/v1` |
 | Model | Tokeness 模型名 |
 
 不要选 Anthropic Provider。Tokeness 通用接口按 OpenAI 兼容格式接入。
@@ -111,7 +111,7 @@ OpenCode 适合同时配置多个模型。可以按用途拆分：
 | --- | --- |
 | OpenCode 找不到供应商 | 确认 CC Switch 已保存并启用 Tokeness |
 | 401 Unauthorized | 重新复制 API Key |
-| 404 Not Found | Base URL 填 `https://n.tokeness.io/v1` |
+| 404 Not Found | Base URL 填 `https://n.tokeness.dev/v1` |
 | model not found | 从模型广场重新复制模型名 |
 | 自动拉模型列表失败 | 手动填写模型名 |
 | Tokeness 无日志 | OpenCode 没有走 Tokeness 供应商，检查当前启用配置 |

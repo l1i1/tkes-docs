@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 const currentFile = fileURLToPath(import.meta.url)
 const docsRoot = resolve(currentFile, '../..')
 const defaultRepositoryRoot = resolve(docsRoot, '../..')
-const docsOrigin = 'https://docs.tokeness.io'
+const docsOrigin = 'https://docs.tokeness.ai'
 const sourcePathPrefix = 'apps/docs/'
 const selectedArticleIds = Array.from({ length: 12 }, (_, index) => String(index + 24))
 const directAnswerStatuses = new Set(['present', 'partial', 'missing'])

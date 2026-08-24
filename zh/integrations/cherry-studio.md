@@ -13,7 +13,7 @@ Cherry Studio 支持自定义 AI Provider。Tokeness 按 OpenAI 兼容接口接�
 | --- | --- |
 | Provider Type | `OpenAI` 或自定义 OpenAI 兼容服务商 |
 | Provider Name | `Tokeness` |
-| API Address / Base URL | `https://n.tokeness.io/v1` |
+| API Address / Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model ID | Tokeness 模型广场中的完整模型名 |
 
@@ -44,7 +44,7 @@ cherry-studio-local
 ```txt
 Name: Tokeness
 Type: OpenAI
-API Address: https://n.tokeness.io/v1
+API Address: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 ```
 
@@ -96,7 +96,7 @@ Cherry Studio 的自定义 Provider 通常需要手动添加模型。
 | --- | --- |
 | Check 失败 | 检查 API 地址、Key、余额 |
 | 401 Unauthorized | 重新复制 API Key |
-| 404 Not Found | API 地址填写 `https://n.tokeness.io/v1` |
+| 404 Not Found | API 地址填写 `https://n.tokeness.dev/v1` |
 | 模型列表为空 | 手动添加模型名 |
 | model not found | 从模型广场重新复制模型名 |
 | Tokeness 无日志 | 当前会话没有选中 Tokeness Provider |

@@ -19,7 +19,7 @@ Tokeness uses an OpenAI-compatible endpoint. Connecting usually requires only th
 
 | Field | Value |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model | The full model name from the Tokeness model marketplace |
 
@@ -54,7 +54,7 @@ Field names vary across tools. Use the mapping below.
 | Tool field | Tokeness value |
 | --- | --- |
 | API Key / Token / Auth Token | Tokeness API key |
-| Base URL / API Base / API Endpoint / Host | `https://n.tokeness.io/v1` |
+| Base URL / API Base / API Endpoint / Host | `https://n.tokeness.dev/v1` |
 | Provider Name / Name | `Tokeness` |
 | Model / Model ID | Full model name copied from the model marketplace |
 | API Type / Format / Protocol | `OpenAI Compatible` or `OpenAI` |
@@ -67,7 +67,7 @@ Command-line tools and code projects often support environment variables. For Op
 
 ```bash
 OPENAI_API_KEY=your Tokeness API key
-OPENAI_BASE_URL=https://n.tokeness.io/v1
+OPENAI_BASE_URL=https://n.tokeness.dev/v1
 MODEL_NAME=model name copied from the model marketplace
 ```
 
@@ -75,7 +75,7 @@ Some projects use generic variable names:
 
 ```bash
 LLM_API_KEY=your Tokeness API key
-LLM_BASE_URL=https://n.tokeness.io/v1
+LLM_BASE_URL=https://n.tokeness.dev/v1
 LLM_MODEL_ID=model name copied from the model marketplace
 ```
 
@@ -86,7 +86,7 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="your Tokeness API key",
-    base_url="https://n.tokeness.io/v1",
+    base_url="https://n.tokeness.dev/v1",
 )
 
 response = client.chat.completions.create(
@@ -106,7 +106,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const completion = await client.chat.completions.create({
@@ -129,7 +129,7 @@ macOS / Linux:
 export TOKENESS_API_KEY="your Tokeness API key"
 export TOKENESS_MODEL="model name copied from the model marketplace"
 
-curl https://n.tokeness.io/v1/chat/completions \
+curl https://n.tokeness.dev/v1/chat/completions \
   -H "Authorization: Bearer $TOKENESS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -147,7 +147,7 @@ $env:TOKENESS_API_KEY = "your Tokeness API key"
 $env:TOKENESS_MODEL = "model name copied from the model marketplace"
 
 Invoke-RestMethod `
-  -Uri "https://n.tokeness.io/v1/chat/completions" `
+  -Uri "https://n.tokeness.dev/v1/chat/completions" `
   -Method Post `
   -Headers @{
     Authorization = "Bearer $env:TOKENESS_API_KEY"
@@ -181,12 +181,12 @@ Claude Code natively uses the Anthropic protocol. When connecting through CC Swi
 The standard Tokeness Base URL is:
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 Most tools should use this address.
 
-When in doubt, start with `https://n.tokeness.io/v1`. If you get a 404, check whether the tool's actual request URL became `/v1/v1/...`. Only when the tool's documentation explicitly states it auto-appends `/v1` should you follow that tool's instructions.
+When in doubt, start with `https://n.tokeness.dev/v1`. If you get a 404, check whether the tool's actual request URL became `/v1/v1/...`. Only when the tool's documentation explicitly states it auto-appends `/v1` should you follow that tool's instructions.
 
 ## Model names
 
@@ -231,7 +231,7 @@ If the tool shows success but Tokeness has no log entry, the request likely did 
 | --- | --- |
 | 401 Unauthorized | Re-copy the API key; confirm there are no extra spaces and the key is not disabled |
 | 403 Forbidden | Check the key group, quota, model permissions, or account status |
-| 404 Not Found | Check the Base URL; it should usually be `https://n.tokeness.io/v1` |
+| 404 Not Found | Check the Base URL; it should usually be `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the model name from the model marketplace |
 | No request logs | The tool is not routing through Tokeness; check whether the provider is enabled |
 | `/v1/v1` related errors | The tool auto-appended `/v1`; follow that tool's documentation for the Base URL |

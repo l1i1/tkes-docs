@@ -10,14 +10,14 @@ Responses API 使用 `POST /v1/responses`。如果你的代码已经基于 OpenA
 ## 基础配置
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 Model: 从 Tokeness 模型广场复制的模型名
 ```
 
 ## 验证顺序
 
-1. 先用 cURL 请求 `https://n.tokeness.io/v1/responses`。
+1. 先用 cURL 请求 `https://n.tokeness.dev/v1/responses`。
 2. 确认使用日志里出现请求记录。
 3. 再把同一个 Key、模型名和 Base URL 放进 SDK。
 
@@ -36,7 +36,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const response = await client.responses.create({
@@ -68,7 +68,7 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="YOUR_TOKENESS_API_KEY",
-    base_url="https://n.tokeness.io/v1",
+    base_url="https://n.tokeness.dev/v1",
 )
 
 response = client.responses.create(
@@ -82,7 +82,7 @@ print(response.output_text)
 ## cURL
 
 ```bash
-curl https://n.tokeness.io/v1/responses \
+curl https://n.tokeness.dev/v1/responses \
   -H "Authorization: Bearer $TOKENESS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

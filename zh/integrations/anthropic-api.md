@@ -8,7 +8,7 @@ description: 通过 Tokeness 调用 Anthropic Messages API，包含 cURL、Pytho
 Anthropic API 使用 Messages 格式，常见请求路径是 `POST /v1/messages`。Tokeness 接入时，实际请求端点填写：
 
 ```txt
-https://n.tokeness.io/v1/messages
+https://n.tokeness.dev/v1/messages
 ```
 
 模型名从 Tokeness 模型广场复制。Claude 分组模型使用这一页的格式。
@@ -19,8 +19,8 @@ https://n.tokeness.io/v1/messages
 
 | 场景 | 地址 |
 | --- | --- |
-| cURL 或手写 HTTP | `https://n.tokeness.io/v1/messages` |
-| Anthropic SDK | `https://n.tokeness.io` |
+| cURL 或手写 HTTP | `https://n.tokeness.dev/v1/messages` |
+| Anthropic SDK | `https://n.tokeness.dev` |
 
 Anthropic SDK 的 `messages.create` 会处理 Messages 路径。SDK 的 `base_url` 或 `baseURL` 填服务根地址，不要再追加 `/v1/messages`。
 
@@ -28,7 +28,7 @@ Anthropic SDK 的 `messages.create` 会处理 Messages 路径。SDK 的 `base_ur
 
 | 字段 | 填写 |
 | --- | --- |
-| Endpoint | `https://n.tokeness.io/v1/messages` |
+| Endpoint | `https://n.tokeness.dev/v1/messages` |
 | API Key | Tokeness API Key |
 | Header | `x-api-key: YOUR_TOKENESS_API_KEY` |
 | Version | `anthropic-version: 2023-06-01` |
@@ -36,14 +36,14 @@ Anthropic SDK 的 `messages.create` 会处理 Messages 路径。SDK 的 `base_ur
 
 ## 验证顺序
 
-1. 先用 cURL 请求 `https://n.tokeness.io/v1/messages`。
+1. 先用 cURL 请求 `https://n.tokeness.dev/v1/messages`。
 2. 确认使用日志里出现请求记录。
 3. 再把同一个 Key、模型名和 SDK 根地址放进 Anthropic SDK。
 
 ## cURL
 
 ```bash
-curl https://n.tokeness.io/v1/messages \
+curl https://n.tokeness.dev/v1/messages \
   -H "x-api-key: $TOKENESS_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
@@ -72,7 +72,7 @@ from anthropic import Anthropic
 
 client = Anthropic(
     api_key="YOUR_TOKENESS_API_KEY",
-    base_url="https://n.tokeness.io",
+    base_url="https://n.tokeness.dev",
 )
 
 message = client.messages.create(
@@ -106,7 +106,7 @@ import Anthropic from '@anthropic-ai/sdk'
 
 const anthropic = new Anthropic({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io'
+  baseURL: 'https://n.tokeness.dev'
 })
 
 const message = await anthropic.messages.create({
@@ -143,6 +143,6 @@ console.log(text)
 | 现象 | 检查 |
 | --- | --- |
 | 401 | `x-api-key` 是否填写 Tokeness API Key |
-| 404 | SDK 是否使用 `https://n.tokeness.io`，cURL endpoint 是否是 `https://n.tokeness.io/v1/messages` |
+| 404 | SDK 是否使用 `https://n.tokeness.dev`，cURL endpoint 是否是 `https://n.tokeness.dev/v1/messages` |
 | 版本错误 | 是否带了 `anthropic-version: 2023-06-01` |
 | 模型不可用 | 模型名是否来自 Claude 分组，Key 是否允许调用该模型 |

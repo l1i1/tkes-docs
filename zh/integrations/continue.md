@@ -13,7 +13,7 @@ Continue 是 VS Code 和 JetBrains 里的代码助手。它的配置文件支持
 
 | 项目 | 填写值 |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制完整模型名 |
 
@@ -43,7 +43,7 @@ models:
   - name: Tokeness Chat
     provider: openai
     model: YOUR_MODEL_NAME
-    apiBase: https://n.tokeness.io/v1
+    apiBase: https://n.tokeness.dev/v1
     apiKey: YOUR_TOKENESS_API_KEY
     roles:
       - chat
@@ -58,7 +58,7 @@ models:
 | `name` | Continue 界面里显示的名称，可以写 `Tokeness Chat` |
 | `provider` | 填 `openai`，让 Continue 使用 OpenAI 兼容调用方式 |
 | `model` | Tokeness 模型广场里的完整模型名 |
-| `apiBase` | 填 `https://n.tokeness.io/v1` |
+| `apiBase` | 填 `https://n.tokeness.dev/v1` |
 | `apiKey` | Tokeness API Key |
 | `roles` | 这个模型可以承担的任务 |
 
@@ -87,7 +87,7 @@ models:
   - name: Tokeness Chat
     provider: openai
     model: YOUR_MODEL_NAME
-    apiBase: https://n.tokeness.io/v1
+    apiBase: https://n.tokeness.dev/v1
     apiKey: ${{ env.TOKENESS_API_KEY }}
     roles:
       - chat
@@ -106,7 +106,7 @@ models:
   - name: Tokeness Agent
     provider: openai
     model: YOUR_TOOL_CALLING_MODEL
-    apiBase: https://n.tokeness.io/v1
+    apiBase: https://n.tokeness.dev/v1
     apiKey: YOUR_TOKENESS_API_KEY
     roles:
       - chat
@@ -136,7 +136,7 @@ models:
 | --- | --- |
 | 模型没有出现在下拉框 | 检查 `config.yaml` 缩进、`schema`、`models` 结构，保存后重启 IDE |
 | 401 | 重新复制 Tokeness API Key，确认没有多余空格 |
-| 404 | 检查 `apiBase` 是否为 `https://n.tokeness.io/v1` |
+| 404 | 检查 `apiBase` 是否为 `https://n.tokeness.dev/v1` |
 | model not found | 从 Tokeness 模型广场重新复制模型名 |
 | Agent 调用工具失败 | 换用支持工具调用的模型，或先只使用聊天、解释、改写 |
 | 配置看起来正确但仍走旧模型 | 关闭所有 IDE 窗口后重新打开 |

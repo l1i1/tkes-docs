@@ -11,7 +11,7 @@ AnythingLLM's `OpenAI (Generic)` provider is designed for OpenAI-compatible inte
 
 | Field | Value |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model | The full model name copied from the Tokeness model catalog |
 
@@ -23,7 +23,7 @@ AnythingLLM comes in desktop, Docker, and cloud versions. Menu locations may dif
 2. Go to Settings.
 3. Find LLM Preference or Model Provider.
 4. Select `OpenAI (Generic)` or `Generic OpenAI`.
-5. Set the Base URL to `https://n.tokeness.io/v1`.
+5. Set the Base URL to `https://n.tokeness.dev/v1`.
 6. Enter your Tokeness API key.
 7. Enter the full model name from the Tokeness model catalog.
 8. Save.
@@ -33,7 +33,7 @@ Field mapping:
 | AnythingLLM field | Tokeness value |
 | --- | --- |
 | LLM Provider | `OpenAI (Generic)` |
-| Base URL / API Base | `https://n.tokeness.io/v1` |
+| Base URL / API Base | `https://n.tokeness.dev/v1` |
 | API Key | Your Tokeness API key |
 | Model | A Tokeness model name |
 
@@ -78,7 +78,7 @@ Do not import a large number of files right away. It makes troubleshooting slow 
 | --- | --- |
 | Chat still uses the old model after saving the provider | Check whether the workspace overrides the global model |
 | 401 | Check the API key |
-| 404 | The Base URL should be `https://n.tokeness.io/v1` |
+| 404 | The Base URL should be `https://n.tokeness.dev/v1` |
 | model not found | Copy the full model name from the Tokeness model catalog |
 | Chat works but document Q&A does not | Configure the embedding model separately |
 | Responses are very slow | Test with a short question first, then check the model, context length, and document size |

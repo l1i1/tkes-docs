@@ -12,7 +12,7 @@ The n8n OpenAI node is designed primarily around official OpenAI credentials. Wh
 | Field | Value |
 | --- | --- |
 | Method | `POST` |
-| URL | `https://n.tokeness.io/v1/chat/completions` |
+| URL | `https://n.tokeness.dev/v1/chat/completions` |
 | Authorization | `Bearer your Tokeness API key` |
 | Content-Type | `application/json` |
 | Model | The full model name from the Tokeness model catalog |
@@ -41,7 +41,7 @@ Fill in:
 
 ```txt
 Method: POST
-URL: https://n.tokeness.io/v1/chat/completions
+URL: https://n.tokeness.dev/v1/chat/completions
 ```
 
 You can leave Authentication set to None for now and add the header manually. Once it works, switch to Bearer Auth or Header Auth credentials.
@@ -102,7 +102,7 @@ You can read this field in a subsequent Set, Code, or IF node.
 If you use the Responses API, change the URL to:
 
 ```txt
-https://n.tokeness.io/v1/responses
+https://n.tokeness.dev/v1/responses
 ```
 
 Example body:
@@ -150,7 +150,7 @@ After creating the credential, select it in the HTTP Request node. This way the 
 | Symptom | Action |
 | --- | --- |
 | 401 Unauthorized | The Authorization header should be `Bearer KEY` |
-| 404 Not Found | The URL should be `https://n.tokeness.io/v1/chat/completions` |
+| 404 Not Found | The URL should be `https://n.tokeness.dev/v1/chat/completions` |
 | model not found | Re-copy the model name from the Tokeness model catalog |
 | JSON parse error | Set the body type to JSON and check quotes and commas |
 | Expression is empty | Test with fixed text first, then connect upstream fields |

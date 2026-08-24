@@ -15,7 +15,7 @@ When you manage OpenCode configuration through [CC Switch](https://ccswitch.io/z
 | --- | --- |
 | Provider | `OpenAI Compatible` or custom |
 | Name | `Tokeness` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model | Copied from the Tokeness model marketplace |
 
@@ -58,7 +58,7 @@ If the system reports the command cannot be found, close the terminal and reopen
 4. Choose `OpenAI Compatible` as the preset. If that preset is not available, choose custom.
 5. Set the name to `Tokeness`.
 6. Enter your Tokeness API key.
-7. Set the Base URL to `https://n.tokeness.io/v1`.
+7. Set the Base URL to `https://n.tokeness.dev/v1`.
 8. Enter the full model name from the Tokeness model marketplace.
 9. Save and enable.
 
@@ -72,7 +72,7 @@ If you are not using CC Switch, fill in the fields in OpenCode's own provider se
 | --- | --- |
 | Provider Type | OpenAI Compatible |
 | API Key | Tokeness API key |
-| Base URL / Endpoint | `https://n.tokeness.io/v1` |
+| Base URL / Endpoint | `https://n.tokeness.dev/v1` |
 | Model | Tokeness model name |
 
 Do not select the Anthropic provider. The Tokeness general endpoint uses the OpenAI-compatible format.
@@ -111,7 +111,7 @@ After switching models, if OpenCode does not pick up the change immediately, exi
 | --- | --- |
 | OpenCode cannot find the provider | Confirm CC Switch has saved and enabled Tokeness |
 | 401 Unauthorized | Re-copy the API key |
-| 404 Not Found | Set Base URL to `https://n.tokeness.io/v1` |
+| 404 Not Found | Set Base URL to `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the model name from the model marketplace |
 | Auto-fetch model list failed | Fill in the model name manually |
 | No Tokeness logs | OpenCode is not using the Tokeness provider; check the currently enabled configuration |

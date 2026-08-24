@@ -13,7 +13,7 @@ Confirm the following before starting:
 
 | Item | Check |
 | --- | --- |
-| Tokeness account | Registered and signed in to tokeness.io |
+| Tokeness account | Registered and signed in to tokeness.ai |
 | Balance | Top up a small test balance first |
 | Model name | Copy one available model name from the model marketplace |
 | Test method | Pick one: client, Node.js, Python, or cURL |
@@ -27,7 +27,7 @@ If you plan to test directly with code:
 
 ## 1. Sign In to Tokeness
 
-Open [tokeness.io](https://tokeness.io) and click "Sign In" in the top right. When already signed in, you will go straight to the console.
+Open [tokeness.ai](https://tokeness.ai) and click "Sign In" in the top right. When already signed in, you will go straight to the console.
 
 <figure class="tokeness-shot">
   <div class="tokeness-shot-frame">
@@ -74,15 +74,15 @@ Endpoint address:
 Common configuration:
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 Model ID: model name copied from the model marketplace
 ```
 
-If a client splits the field into "Base URL / Endpoint / Service URL", put `https://n.tokeness.io/v1` in all of them.
+If a client splits the field into "Base URL / Endpoint / Service URL", put `https://n.tokeness.dev/v1` in all of them.
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 ## 5. Make a Test Request
@@ -94,7 +94,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const response = await client.chat.completions.create({
@@ -112,4 +112,4 @@ npm install openai
 node test-tokeness.mjs
 ```
 
-If the call fails, check four things first: whether the key was copied completely, whether the account balance is sufficient, whether the model name matches the model marketplace, and whether the Base URL is `https://n.tokeness.io/v1`.
+If the call fails, check four things first: whether the key was copied completely, whether the account balance is sufficient, whether the model name matches the model marketplace, and whether the Base URL is `https://n.tokeness.dev/v1`.

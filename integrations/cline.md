@@ -12,7 +12,7 @@ Cline supports an OpenAI Compatible provider. Tokeness connects via the OpenAI-c
 | Field | Value |
 | --- | --- |
 | API Provider | `OpenAI Compatible` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model ID | Full model name from the Tokeness model marketplace |
 
@@ -52,7 +52,7 @@ If the interface only shows an OpenAI option, check whether there is a Base URL,
 Enter the following:
 
 ```txt
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: your Tokeness API key
 Model ID: the model name copied from the Tokeness model marketplace
 ```
@@ -100,7 +100,7 @@ Check the following before writing files:
 | --- | --- |
 | Verify failed | Check the Base URL, key, and model name |
 | 401 Unauthorized | Re-copy the API key and confirm there are no spaces |
-| 404 Not Found | Base URL should be `https://n.tokeness.io/v1` |
+| 404 Not Found | Base URL should be `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the Model ID from the Tokeness model marketplace |
 | Cline reports errors but no Tokeness logs | The current provider is not routing through Tokeness |
 | Replies work but tool calls fail | Switch to a model with stronger coding ability, or narrow the task scope |

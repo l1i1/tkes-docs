@@ -14,7 +14,7 @@ Cursor 的自定义模型入口在不同版本中会有差异。能看到 OpenAI
 | 项目 | 填写内容 |
 | --- | --- |
 | OpenAI API Key | Tokeness 控制台创建的 Key |
-| Override OpenAI Base URL | `https://n.tokeness.io/v1` |
+| Override OpenAI Base URL | `https://n.tokeness.dev/v1` |
 | Custom Model Name | Tokeness 模型广场中的完整模型名 |
 
 Cursor 这里字段名可能仍然写着 OpenAI。开启 Base URL 覆盖后，请求会发往你填写的地址。
@@ -48,7 +48,7 @@ Settings -> Models
 1. 开启 OpenAI API Key。
 2. 粘贴 Tokeness API Key。
 3. 开启 `Override OpenAI Base URL`。
-4. Base URL 填写 `https://n.tokeness.io/v1`。
+4. Base URL 填写 `https://n.tokeness.dev/v1`。
 5. 保存或确认。
 
 如果 Cursor 弹出确认窗口，确认它会把 OpenAI 请求发到自定义 Base URL 后再继续。
@@ -85,7 +85,7 @@ Cursor 的自定义 Base URL 通常适合：
 | --- | --- |
 | 找不到 Override OpenAI Base URL | 当前 Cursor 版本可能不支持该入口 |
 | 401 Unauthorized | 重新复制 Tokeness API Key |
-| 404 Not Found | Base URL 填 `https://n.tokeness.io/v1` |
+| 404 Not Found | Base URL 填 `https://n.tokeness.dev/v1` |
 | model not found | 自定义模型名从模型广场重新复制 |
 | Tokeness 无日志 | 当前模型没有走自定义 OpenAI 配置 |
 | 聊天可用但 Agent 报错 | 该模型与 Cursor 工具调用不完全兼容，换模型或换工具 |

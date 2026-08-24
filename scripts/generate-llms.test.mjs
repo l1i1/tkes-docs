@@ -27,23 +27,23 @@ describe('generateLlmsTxt', () => {
     const output = generateLlmsTxt()
 
     assert.match(output, /^# Tokeness Docs\n/)
-    assert.match(output, /> Base URL: https:\/\/n\.tokeness\.io\/v1/)
-    assert.match(output, /> Console: https:\/\/tokeness\.io/)
-    assert.match(output, /> Docs: https:\/\/docs\.tokeness\.io/)
+    assert.match(output, /> Base URL: https:\/\/n\.tokeness\.dev\/v1/)
+    assert.match(output, /> Console: https:\/\/tokeness\.ai/)
+    assert.match(output, /> Docs: https:\/\/docs\.tokeness\.ai/)
   })
 
   it('renders section headings and markdown links from the controlled manifest', () => {
     const output = generateLlmsTxt()
 
     assert.match(output, /^## Integration Guides$/m)
-    assert.match(output, /- \[OpenAI-Compatible API\]\(https:\/\/docs\.tokeness\.io\/integrations\/openai-compatible\): OpenAI SDK, Node\.js, Python, and cURL examples\./)
-    assert.match(output, /- \[OpenCode\]\(https:\/\/docs\.tokeness\.io\/integrations\/opencode\): OpenCode configuration\./)
+    assert.match(output, /- \[OpenAI-Compatible API\]\(https:\/\/docs\.tokeness\.ai\/integrations\/openai-compatible\): OpenAI SDK, Node\.js, Python, and cURL examples\./)
+    assert.match(output, /- \[OpenCode\]\(https:\/\/docs\.tokeness\.ai\/integrations\/opencode\): OpenCode configuration\./)
   })
 
   it('includes the llms-full pointer and no fixed price literals', () => {
     const output = generateLlmsTxt()
 
-    assert.match(output, /- \[Full LLM content\]\(https:\/\/docs\.tokeness\.io\/llms-full\.txt\): Extended machine-readable facts and key documentation excerpts for LLM ingestion\./)
+    assert.match(output, /- \[Full LLM content\]\(https:\/\/docs\.tokeness\.ai\/llms-full\.txt\): Extended machine-readable facts and key documentation excerpts for LLM ingestion\./)
     assert.doesNotMatch(output, fixedPricePattern)
   })
 
@@ -61,8 +61,8 @@ describe('generateZhLlmsTxt', () => {
     const output = generateZhLlmsTxt()
 
     assert.match(output, /^## 接入指南$/m)
-    assert.match(output, /- \[OpenAI 兼容接入\]\(https:\/\/docs\.tokeness\.io\/zh\/integrations\/openai-compatible\): OpenAI SDK、Node\.js、Python 和 cURL 示例。/)
-    assert.match(output, /- \[完整 LLM 内容\]\(https:\/\/docs\.tokeness\.io\/zh\/llms-full\.txt\): 面向 LLM 摄取的扩展机器可读事实和关键文档摘录。/)
+    assert.match(output, /- \[OpenAI 兼容接入\]\(https:\/\/docs\.tokeness\.ai\/zh\/integrations\/openai-compatible\): OpenAI SDK、Node\.js、Python 和 cURL 示例。/)
+    assert.match(output, /- \[完整 LLM 内容\]\(https:\/\/docs\.tokeness\.ai\/zh\/llms-full\.txt\): 面向 LLM 摄取的扩展机器可读事实和关键文档摘录。/)
     assert.doesNotMatch(output, fixedPricePattern)
   })
 
@@ -115,7 +115,7 @@ describe('generateLlmsFullTxt', () => {
     assert.match(output, /^# Tokeness Documentation - Full LLM Context\n/)
     assert.match(output, /^## Page: About Tokeness$/m)
     assert.match(output, /^## Page: Getting Started$/m)
-    assert.match(output, /Canonical API Base URL: https:\/\/n\.tokeness\.io\/v1/)
+    assert.match(output, /Canonical API Base URL: https:\/\/n\.tokeness\.dev\/v1/)
   })
 
   it('separates full pages with markdown horizontal rules', () => {
@@ -163,8 +163,8 @@ describe('generateZhLlmsFullTxt', () => {
     const output = generateZhLlmsFullTxt()
 
     assert.match(output, /^# Tokeness 文档 - 完整 LLM 上下文\n/)
-    assert.match(output, /^URL: https:\/\/docs\.tokeness\.io\/zh\/about$/m)
-    assert.match(output, /^URL: https:\/\/docs\.tokeness\.io\/zh\/guide\/getting-started$/m)
+    assert.match(output, /^URL: https:\/\/docs\.tokeness\.ai\/zh\/about$/m)
+    assert.match(output, /^URL: https:\/\/docs\.tokeness\.ai\/zh\/guide\/getting-started$/m)
   })
 
   it('keeps pricing authority dynamic and avoids fixed price literals', () => {

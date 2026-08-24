@@ -54,6 +54,6 @@ This repository already includes channel promotional materials and contract temp
 
 ## Contact
 
-Email: <contact@tokeness.io>
+Email: <contact@tokeness.ai>
 
 Business communication can be further arranged through the channels in existing business materials.

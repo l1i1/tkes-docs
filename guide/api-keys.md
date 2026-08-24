@@ -17,7 +17,7 @@ API keys are the credentials for calling Tokeness. Each key should have a clear 
 
 ## Create a Key
 
-1. Sign in to [tokeness.io](https://tokeness.io).
+1. Sign in to [tokeness.ai](https://tokeness.ai).
 2. Open "API Keys" in the left navigation of the console.
 3. Click create or add a key.
 4. Fill in the name, quota, group, or model scope.
@@ -74,7 +74,7 @@ Server-side projects use environment variables to store keys:
 
 ```bash
 TOKENESS_API_KEY=sk-...
-TOKENESS_BASE_URL=https://n.tokeness.io/v1
+TOKENESS_BASE_URL=https://n.tokeness.dev/v1
 ```
 
 Do not commit `.env` files to Git repositories.

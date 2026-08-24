@@ -4,7 +4,7 @@ import { useRouter } from 'vitepress'
 
 import './custom.css'
 
-const docsOrigin = 'https://docs.tokeness.io'
+const docsOrigin = 'https://docs.tokeness.ai'
 
 const normalizeRuntimePath = (pathname: string) => {
   const normalized = pathname.replace(/\/+$/, '') || '/'

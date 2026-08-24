@@ -8,7 +8,7 @@ description: Call the Anthropic Messages API through Tokeness with cURL, the Pyt
 The Anthropic API uses the Messages format. The common request path is `POST /v1/messages`. When connecting through Tokeness, set the actual request endpoint to:
 
 ```txt
-https://n.tokeness.io/v1/messages
+https://n.tokeness.dev/v1/messages
 ```
 
 Copy the model name from the Tokeness model marketplace. Models in the Claude group use the format described on this page.
@@ -17,8 +17,8 @@ Copy the model name from the Tokeness model marketplace. Models in the Claude gr
 
 | Scenario | Address |
 | --- | --- |
-| cURL or hand-written HTTP | `https://n.tokeness.io/v1/messages` |
-| Anthropic SDK | `https://n.tokeness.io` |
+| cURL or hand-written HTTP | `https://n.tokeness.dev/v1/messages` |
+| Anthropic SDK | `https://n.tokeness.dev` |
 
 The Anthropic SDK's `messages.create` handles the Messages path internally. Set the SDK's `base_url` or `baseURL` to the service root address — do not append `/v1/messages` yourself.
 
@@ -26,7 +26,7 @@ The Anthropic SDK's `messages.create` handles the Messages path internally. Set 
 
 | Field | Value |
 | --- | --- |
-| Endpoint | `https://n.tokeness.io/v1/messages` |
+| Endpoint | `https://n.tokeness.dev/v1/messages` |
 | API Key | Tokeness API key |
 | Header | `x-api-key: YOUR_TOKENESS_API_KEY` |
 | Version | `anthropic-version: 2023-06-01` |
@@ -34,14 +34,14 @@ The Anthropic SDK's `messages.create` handles the Messages path internally. Set 
 
 ## Verification order
 
-1. First send a cURL request to `https://n.tokeness.io/v1/messages`.
+1. First send a cURL request to `https://n.tokeness.dev/v1/messages`.
 2. Confirm the request appears in the Tokeness usage logs.
 3. Then use the same key, model name, and SDK root address in the Anthropic SDK.
 
 ## cURL
 
 ```bash
-curl https://n.tokeness.io/v1/messages \
+curl https://n.tokeness.dev/v1/messages \
   -H "x-api-key: $TOKENESS_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
@@ -70,7 +70,7 @@ from anthropic import Anthropic
 
 client = Anthropic(
     api_key="YOUR_TOKENESS_API_KEY",
-    base_url="https://n.tokeness.io",
+    base_url="https://n.tokeness.dev",
 )
 
 message = client.messages.create(
@@ -104,7 +104,7 @@ import Anthropic from '@anthropic-ai/sdk'
 
 const anthropic = new Anthropic({
   apiKey: 'YOUR_TOKENESS_API_KEY',
-  baseURL: 'https://n.tokeness.io'
+  baseURL: 'https://n.tokeness.dev'
 })
 
 const message = await anthropic.messages.create({
@@ -143,6 +143,6 @@ If the tool only supports OpenAI-compatible providers, use [OpenAI-Compatible AP
 | Symptom | Check |
 | --- | --- |
 | 401 | Is `x-api-key` set to your Tokeness API key? |
-| 404 | Is the SDK using `https://n.tokeness.io`? Is the cURL endpoint `https://n.tokeness.io/v1/messages`? |
+| 404 | Is the SDK using `https://n.tokeness.dev`? Is the cURL endpoint `https://n.tokeness.dev/v1/messages`? |
 | Version error | Did you include `anthropic-version: 2023-06-01`? |
 | Model unavailable | Is the model name from the Claude group? Does the key have permission to call that model? |

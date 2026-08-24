@@ -15,7 +15,7 @@ This page follows a "fresh machine, from scratch" workflow. If you already have 
 | --- | --- |
 | Provider Name | `Tokeness` |
 | API Format | `OpenAI Compatible` |
-| Base URL | `https://n.tokeness.io` |
+| Base URL | `https://n.tokeness.dev` |
 | API Key | A key created in the Tokeness console |
 | Model | Copied from the Tokeness model marketplace |
 
@@ -86,7 +86,7 @@ If CC Switch reports that it cannot find Claude Code, first confirm that `claude
 5. Set the name to `Tokeness`.
 6. Set the API format to `OpenAI Compatible` or `OpenAI`.
 7. Enter your Tokeness API key.
-8. Set the Base URL to `https://n.tokeness.io`. Do not append `/v1` — CC Switch appends the path itself.
+8. Set the Base URL to `https://n.tokeness.dev`. Do not append `/v1` — CC Switch appends the path itself.
 9. Enter the full model name from the Tokeness model marketplace.
 10. Save.
 
@@ -156,7 +156,7 @@ After switching providers, reopen the terminal before running `claude` again, so
 | `claude` command not found | Reinstall Claude Code, or restart the terminal |
 | CC Switch cannot find Claude Code | Confirm `claude --version` works |
 | 401 Unauthorized | Re-copy the Tokeness API key |
-| 404 Not Found | Set Base URL to `https://n.tokeness.io` (without `/v1`; CC Switch appends the path) |
+| 404 Not Found | Set Base URL to `https://n.tokeness.dev` (without `/v1`; CC Switch appends the path) |
 | model not found | Re-copy the model name from the model marketplace |
 | No Tokeness logs | Confirm the Tokeness provider is enabled and CC Switch routing mode is on |
 | Slow responses | Switch models, or check the current model load and network |

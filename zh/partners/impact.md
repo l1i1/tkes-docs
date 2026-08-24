@@ -50,8 +50,8 @@ Tokeness 面向开源项目、公益项目和社会化企业开放公益智能�
 ```md
 <p>
   本项目的 AI API 支持由
-  <a href="https://tokeness.io">
-    Tokeness.io
+  <a href="https://tokeness.ai">
+    Tokeness.ai
   </a>
   赞助提供。
 </p>
@@ -61,14 +61,14 @@ Tokeness 面向开源项目、公益项目和社会化企业开放公益智能�
 
 ```html
 本项目的 AI API 支持由
-<a href="https://tokeness.io" target="_blank" rel="noopener">
-  <img src="https://docs.tokeness.io/logo.svg" alt="Tokeness" height="24">
-  Tokeness.io
+<a href="https://tokeness.ai" target="_blank" rel="noopener">
+  <img src="https://docs.tokeness.ai/logo.svg" alt="Tokeness" height="24">
+  Tokeness.ai
 </a>
  赞助提供。
 ```
 
-Tokeness 会在申请审核和续期审核时检查该链接是否仍然公开可访问。未展示 Logo、未链接到 `https://tokeness.io`、链接放置位置不符合要求，均视为未完成申请前置要求。
+Tokeness 会在申请审核和续期审核时检查该链接是否仍然公开可访问。未展示 Logo、未链接到 `https://tokeness.ai`、链接放置位置不符合要求，均视为未完成申请前置要求。
 
 ## 可用能力
 
@@ -76,7 +76,7 @@ Tokeness 会在申请审核和续期审核时检查该链接是否仍然公开�
 
 | 能力 | 说明 |
 | --- | --- |
-| OpenAI 兼容接口 | 使用 `https://n.tokeness.io/v1` 接入大多数支持自定义 Base URL 的工具 |
+| OpenAI 兼容接口 | 使用 `https://n.tokeness.dev/v1` 接入大多数支持自定义 Base URL 的工具 |
 | 多模型调用 | 默认以 `DeepSeek-V4-Flash` 为额度基准，可按规则使用其他模型 |
 | Key 与额度控制 | 按项目、环境或任务拆分 Key，并设置额度上限 |
 | 使用日志 | 在控制台核对请求、模型、状态和消耗 |
@@ -96,7 +96,7 @@ Tokeness 会在申请审核和续期审核时检查该链接是否仍然公开�
 
 1. 在仓库 `README.md`、官网首页页脚，或无官网且无公开仓库时的项目发布页底部、项目动态末尾、博客文章末尾、公众号文章末尾添加 Tokeness 支持声明。
 2. 准备项目介绍、公开链接、使用场景、预计月度 token 需求和影响目标。
-3. 将申请材料发送至 <contact@tokeness.io>，邮件标题建议写为 `公益智能扶持申请 - 项目名称`。
+3. 将申请材料发送至 <contact@tokeness.ai>，邮件标题建议写为 `公益智能扶持申请 - 项目名称`。
 4. Tokeness 审核项目真实性、公开鸣谢链接、额度需求和合规风险。
 5. 审核通过后，项目方注册或确认 Tokeness 账户。
 6. Tokeness 发放公益专用 Key，并配置额度、模型范围和使用限制。
@@ -142,6 +142,6 @@ Tokeness 优先支持已经有真实用户、受益人、社区、仓库记录�
 
 ## 联系方式
 
-申请与合作咨询：<contact@tokeness.io>
+申请与合作咨询：<contact@tokeness.ai>
 
-服务入口：[tokeness.io](https://tokeness.io)
+服务入口：[tokeness.ai](https://tokeness.ai)

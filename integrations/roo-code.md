@@ -13,7 +13,7 @@ First, prepare the following in the Tokeness console:
 
 | Field | Value |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model ID | Full model name copied from the Tokeness model marketplace |
 
@@ -27,7 +27,7 @@ Configure the following in VS Code:
 2. Go to settings.
 3. Find API Provider.
 4. Select `OpenAI Compatible`.
-5. Set Base URL to `https://n.tokeness.io/v1`.
+5. Set Base URL to `https://n.tokeness.dev/v1`.
 6. Enter your Tokeness API key.
 7. Enter the model name copied from the Tokeness model marketplace.
 8. Save the configuration.
@@ -37,7 +37,7 @@ Field mapping:
 | Roo Code field | Tokeness value |
 | --- | --- |
 | API Provider | `OpenAI Compatible` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness API key |
 | Model / Model ID | Tokeness model name |
 
@@ -82,7 +82,7 @@ If the first check passes but the second fails, switch to a model that supports 
 | --- | --- |
 | Invalid API Key | Re-copy the key and confirm there are no line breaks, spaces, or non-ASCII quotation marks |
 | Model Not Found | Re-copy the full model name from the Tokeness model marketplace |
-| Connection Error | Check that the Base URL is `https://n.tokeness.io/v1` |
+| Connection Error | Check that the Base URL is `https://n.tokeness.dev/v1` |
 | Chat works but file operations fail | Switch to a model that supports tool calling |
 | Output interrupted | Reduce the task size, or increase Max Output Tokens |
 

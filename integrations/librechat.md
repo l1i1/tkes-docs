@@ -11,7 +11,7 @@ LibreChat supports custom OpenAI-compatible endpoints. The common approach is to
 
 | Field | Value |
 | --- | --- |
-| API URL / Base URL | `https://n.tokeness.io/v1` |
+| API URL / Base URL | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Models | Full model names copied from the Tokeness model catalog |
 
@@ -50,7 +50,7 @@ endpoints:
   custom:
     - name: "Tokeness"
       apiKey: "${TOKENESS_API_KEY}"
-      baseURL: "https://n.tokeness.io/v1"
+      baseURL: "https://n.tokeness.dev/v1"
       models:
         default:
           - "YOUR_MODEL_NAME"
@@ -124,7 +124,7 @@ In this mode, users enter their own key in the LibreChat UI. It suits scenarios 
 | --- | --- |
 | Tokeness endpoint not visible | Check whether `librechat.yaml` was mounted successfully and restart the container |
 | 401 | Check that `TOKENESS_API_KEY` in `.env` is being read by the container |
-| 404 | `baseURL` should be `https://n.tokeness.io/v1` |
+| 404 | `baseURL` should be `https://n.tokeness.dev/v1` |
 | Model dropdown is empty | Set `models.fetch: false` and enter model names manually |
 | Conversation title generation fails | Check that `titleModel` is an available model |
 | Multiple users' keys get mixed up | Use `user_provided` so each user enters their own key in the UI |

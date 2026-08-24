@@ -17,7 +17,7 @@ API Key 是 Tokeness 的调用凭证。每个 Key 需要有明确用途，避免
 
 ## 创建 Key
 
-1. 登录 [tokeness.io](https://tokeness.io)。
+1. 登录 [tokeness.ai](https://tokeness.ai)。
 2. 打开控制台左侧“API 密钥”。
 3. 点击创建或添加密钥。
 4. 填写名称、额度、分组或模型范围。
@@ -74,7 +74,7 @@ API 密钥页会展示每个 Key 的主要管理信息：
 
 ```bash
 TOKENESS_API_KEY=sk-...
-TOKENESS_BASE_URL=https://n.tokeness.io/v1
+TOKENESS_BASE_URL=https://n.tokeness.dev/v1
 ```
 
 不要把 `.env` 文件提交到 Git 仓库。

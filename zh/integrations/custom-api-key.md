@@ -19,7 +19,7 @@ Tokeness 使用 OpenAI 兼容接口。接入时通常只需要填三项：
 
 | 配置项 | 填写内容 |
 | --- | --- |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | Tokeness 模型广场中的完整模型名 |
 
@@ -54,7 +54,7 @@ API Key 可以按工具或项目拆分。例如：
 | 工具字段 | Tokeness 填写方式 |
 | --- | --- |
 | API Key / Token / Auth Token | Tokeness API Key |
-| Base URL / API Base / API Endpoint / Host | `https://n.tokeness.io/v1` |
+| Base URL / API Base / API Endpoint / Host | `https://n.tokeness.dev/v1` |
 | Provider Name / Name | `Tokeness` |
 | Model / Model ID | 从模型广场复制完整模型名 |
 | API Type / Format / Protocol | `OpenAI Compatible` 或 `OpenAI` |
@@ -67,7 +67,7 @@ API Key 可以按工具或项目拆分。例如：
 
 ```bash
 OPENAI_API_KEY=你的 Tokeness API Key
-OPENAI_BASE_URL=https://n.tokeness.io/v1
+OPENAI_BASE_URL=https://n.tokeness.dev/v1
 MODEL_NAME=从模型广场复制的模型名
 ```
 
@@ -75,7 +75,7 @@ MODEL_NAME=从模型广场复制的模型名
 
 ```bash
 LLM_API_KEY=你的 Tokeness API Key
-LLM_BASE_URL=https://n.tokeness.io/v1
+LLM_BASE_URL=https://n.tokeness.dev/v1
 LLM_MODEL_ID=从模型广场复制的模型名
 ```
 
@@ -86,7 +86,7 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="你的 Tokeness API Key",
-    base_url="https://n.tokeness.io/v1",
+    base_url="https://n.tokeness.dev/v1",
 )
 
 response = client.chat.completions.create(
@@ -106,7 +106,7 @@ import OpenAI from 'openai'
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'https://n.tokeness.io/v1'
+  baseURL: 'https://n.tokeness.dev/v1'
 })
 
 const completion = await client.chat.completions.create({
@@ -129,7 +129,7 @@ macOS / Linux：
 export TOKENESS_API_KEY="你的 Tokeness API Key"
 export TOKENESS_MODEL="从模型广场复制的模型名"
 
-curl https://n.tokeness.io/v1/chat/completions \
+curl https://n.tokeness.dev/v1/chat/completions \
   -H "Authorization: Bearer $TOKENESS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -147,7 +147,7 @@ $env:TOKENESS_API_KEY = "你的 Tokeness API Key"
 $env:TOKENESS_MODEL = "从模型广场复制的模型名"
 
 Invoke-RestMethod `
-  -Uri "https://n.tokeness.io/v1/chat/completions" `
+  -Uri "https://n.tokeness.dev/v1/chat/completions" `
   -Method Post `
   -Headers @{
     Authorization = "Bearer $env:TOKENESS_API_KEY"
@@ -181,12 +181,12 @@ Claude Code 本身偏 Anthropic 协议。通过 CC Switch 接 OpenAI 兼容接�
 Tokeness 的标准 Base URL 是：
 
 ```txt
-https://n.tokeness.io/v1
+https://n.tokeness.dev/v1
 ```
 
 大多数工具都应该填写这个地址。
 
-不确定时先填 `https://n.tokeness.io/v1`。如果报 404，再看工具实际请求的 URL 是否变成了 `/v1/v1/...`。只有工具文档明确写着会自动拼接 `/v1` 时，才按该工具文档处理。
+不确定时先填 `https://n.tokeness.dev/v1`。如果报 404，再看工具实际请求的 URL 是否变成了 `/v1/v1/...`。只有工具文档明确写着会自动拼接 `/v1` 时，才按该工具文档处理。
 
 ## 模型名
 
@@ -231,7 +231,7 @@ Key 管理可以按下面方式处理：
 | --- | --- |
 | 401 Unauthorized | 重新复制 API Key，确认没有多空格、没有被禁用 |
 | 403 Forbidden | 检查 Key 分组、额度、模型权限或账户状态 |
-| 404 Not Found | 检查 Base URL，通常应为 `https://n.tokeness.io/v1` |
+| 404 Not Found | 检查 Base URL，通常应为 `https://n.tokeness.dev/v1` |
 | model not found | 从模型广场重新复制模型名 |
 | 请求无日志 | 工具没有走 Tokeness，检查供应商是否启用 |
 | `/v1/v1` 相关错误 | 工具自动拼了 `/v1`，按该工具文档处理 Base URL |

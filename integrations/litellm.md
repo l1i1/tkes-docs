@@ -5,13 +5,13 @@ description: Route to the Tokeness OpenAI-compatible API using the LiteLLM SDK o
 
 # LiteLLM
 
-LiteLLM can be used as a Python SDK or run as an OpenAI-compatible gateway. When connecting to Tokeness, the core is to point `api_base` or `api_base_url` at `https://n.tokeness.io/v1` and use your Tokeness API key.
+LiteLLM can be used as a Python SDK or run as an OpenAI-compatible gateway. When connecting to Tokeness, the core is to point `api_base` or `api_base_url` at `https://n.tokeness.dev/v1` and use your Tokeness API key.
 
 ## Preparation
 
 | Field | Value |
 | --- | --- |
-| API Base | `https://n.tokeness.io/v1` |
+| API Base | `https://n.tokeness.dev/v1` |
 | API Key | A key created in the Tokeness console |
 | Model | The full model name copied from the Tokeness model catalog |
 
@@ -33,7 +33,7 @@ from litellm import completion
 response = completion(
     model="openai/YOUR_MODEL_NAME",
     api_key="your Tokeness API key",
-    api_base="https://n.tokeness.io/v1",
+    api_base="https://n.tokeness.dev/v1",
     messages=[
         {"role": "user", "content": "Reply with ok only"}
     ],
@@ -67,7 +67,7 @@ from litellm import completion
 
 response = completion(
     model="openai/YOUR_MODEL_NAME",
-    api_base="https://n.tokeness.io/v1",
+    api_base="https://n.tokeness.dev/v1",
     messages=[
         {"role": "user", "content": "Reply with ok only"}
     ],
@@ -85,7 +85,7 @@ model_list:
   - model_name: tokeness-chat
     litellm_params:
       model: openai/YOUR_MODEL_NAME
-      api_base: https://n.tokeness.io/v1
+      api_base: https://n.tokeness.dev/v1
       api_key: os.environ/TOKENESS_API_KEY
 ```
 
@@ -118,7 +118,7 @@ The following scenarios can connect to Tokeness directly without adding LiteLLM:
 
 | Scenario | Approach |
 | --- | --- |
-| OpenAI SDK calls | Set `base_url=https://n.tokeness.io/v1` directly |
+| OpenAI SDK calls | Set `base_url=https://n.tokeness.dev/v1` directly |
 | Cherry Studio / Cline / Roo Code | Fill in the Tokeness Base URL and key directly |
 | Dify / n8n | Configure according to the corresponding integration page |
 | Single-user local use | Configure the tool directly — one less layer to debug |
@@ -146,7 +146,7 @@ Proxy method:
 | --- | --- |
 | LiteLLM reports an ambiguous provider | Add the `openai/` prefix to the model name |
 | 401 | Check the Tokeness key; in Proxy mode, also check the client-to-proxy key |
-| 404 | `api_base` should be `https://n.tokeness.io/v1` |
+| 404 | `api_base` should be `https://n.tokeness.dev/v1` |
 | Client can reach the Proxy but Tokeness has no logs | Check whether the LiteLLM `config.yaml` is actually forwarding to Tokeness |
 | Model name changed | Clients should use the alias exposed by LiteLLM, such as `tokeness-chat`; LiteLLM then maps it to the Tokeness model name internally |
 

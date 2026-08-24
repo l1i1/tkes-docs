@@ -14,7 +14,7 @@ If your current version does not offer these entry points, or if third-party mod
 | Field | Value |
 | --- | --- |
 | OpenAI API Key | A key created in the Tokeness console |
-| Override OpenAI Base URL | `https://n.tokeness.io/v1` |
+| Override OpenAI Base URL | `https://n.tokeness.dev/v1` |
 | Custom Model Name | Full model name from the Tokeness model marketplace |
 
 The field names in Cursor may still say "OpenAI". Once Base URL override is enabled, requests are sent to the address you specify.
@@ -48,7 +48,7 @@ Find the API Keys, OpenAI API Key, or similar area.
 1. Enable OpenAI API Key.
 2. Paste your Tokeness API key.
 3. Enable `Override OpenAI Base URL`.
-4. Set the Base URL to `https://n.tokeness.io/v1`.
+4. Set the Base URL to `https://n.tokeness.dev/v1`.
 5. Save or confirm.
 
 If Cursor shows a confirmation dialog, confirm that it will send OpenAI requests to the custom Base URL before proceeding.
@@ -85,7 +85,7 @@ For large-scale Agent edits, complex tool calls, and multi-file modifications, c
 | --- | --- |
 | Cannot find Override OpenAI Base URL | The current Cursor version may not support this entry point |
 | 401 Unauthorized | Re-copy the Tokeness API key |
-| 404 Not Found | Set Base URL to `https://n.tokeness.io/v1` |
+| 404 Not Found | Set Base URL to `https://n.tokeness.dev/v1` |
 | model not found | Re-copy the custom model name from the model marketplace |
 | No Tokeness logs | The current model is not using the custom OpenAI configuration |
 | Chat works but Agent errors | The model is not fully compatible with Cursor tool calls; switch models or tools |

@@ -13,7 +13,7 @@ OpenClaw 支持添加模型提供商。接入 Tokeness 时，按 OpenAI Compatib
 | --- | --- |
 | Provider Name | `Tokeness` |
 | API Type | `OpenAI Compatible` 或 `OpenAI` |
-| Base URL | `https://n.tokeness.io/v1` |
+| Base URL | `https://n.tokeness.dev/v1` |
 | API Key | Tokeness 控制台创建的 Key |
 | Model | 从 Tokeness 模型广场复制 |
 
@@ -45,7 +45,7 @@ openclaw-local
 ```txt
 Name: Tokeness
 API Type: OpenAI Compatible
-Base URL: https://n.tokeness.io/v1
+Base URL: https://n.tokeness.dev/v1
 API Key: 你的 Tokeness API Key
 Model: 从 Tokeness 模型广场复制的模型名
 ```
@@ -110,7 +110,7 @@ Key 管理可以按下面方式处理：
 | --- | --- |
 | 401 Unauthorized | API Key 错误、禁用或复制时带了空格 |
 | 403 Forbidden | Key 分组、额度、模型权限或账户状态异常 |
-| 404 Not Found | Base URL 应填写 `https://n.tokeness.io/v1` |
+| 404 Not Found | Base URL 应填写 `https://n.tokeness.dev/v1` |
 | model not found | 从模型广场重新复制模型名 |
 | 保存后仍走旧模型 | Provider 保存后，还要在 Agent 默认模型里切换 |
 | Tokeness 无日志 | OpenClaw 当前 Agent 没有使用 Tokeness Provider |

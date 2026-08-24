@@ -12,7 +12,7 @@ n8n 的 OpenAI 节点主要围绕官方 OpenAI 凭据设计。接入 Tokeness �
 | 项目 | 填写内容 |
 | --- | --- |
 | Method | `POST` |
-| URL | `https://n.tokeness.io/v1/chat/completions` |
+| URL | `https://n.tokeness.dev/v1/chat/completions` |
 | Authorization | `Bearer 你的 Tokeness API Key` |
 | Content-Type | `application/json` |
 | Model | Tokeness 模型广场中的完整模型名 |
@@ -41,7 +41,7 @@ n8n-workflow
 
 ```txt
 Method: POST
-URL: https://n.tokeness.io/v1/chat/completions
+URL: https://n.tokeness.dev/v1/chat/completions
 ```
 
 Authentication 可以先选 None，然后手动添加 Header。跑通后再改成 Bearer Auth 或 Header Auth 凭证。
@@ -102,7 +102,7 @@ choices[0].message.content
 如果你使用 Responses API，请求地址改成：
 
 ```txt
-https://n.tokeness.io/v1/responses
+https://n.tokeness.dev/v1/responses
 ```
 
 Body 示例：
@@ -150,7 +150,7 @@ Value: Bearer 你的 Tokeness API Key
 | 现象 | 处理 |
 | --- | --- |
 | 401 Unauthorized | Authorization Header 格式应为 `Bearer KEY` |
-| 404 Not Found | URL 应为 `https://n.tokeness.io/v1/chat/completions` |
+| 404 Not Found | URL 应为 `https://n.tokeness.dev/v1/chat/completions` |
 | model not found | 从 Tokeness 模型广场重新复制模型名 |
 | JSON parse error | Body 类型选择 JSON，检查引号和逗号 |
 | 表达式为空 | 先用固定文本测试，再接上游字段 |
