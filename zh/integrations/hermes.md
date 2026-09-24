@@ -28,17 +28,24 @@ Hermes Agent 是 Nous Research 的开源智能体，支持两种传输协议：O
 
 ## 2. 配置 Hermes
 
-编辑 `~/.hermes/config.yaml`。调用 Claude 时推荐原生 Anthropic 传输：
+编辑 `~/.hermes/config.yaml`。**推荐把 Tokeness 配成一个自定义供应商（`provider: custom`）**，密钥由该条目自己携带，避免 Hermes 的 Anthropic 凭据优先级（`ANTHROPIC_TOKEN` / Claude Code 凭据）把你的 Tokeness Key 顶掉或发错端点：
 
 ```yaml
 model:
-  provider: anthropic
+  provider: custom
   default: claude-opus-5-5
   base_url: https://n.tokeness.dev
   api_mode: anthropic_messages
 ```
 
-也可以走 OpenAI 兼容传输：
+`api_mode` 决定传输协议，两种都受支持：
+
+| `api_mode` | 协议 | 对应端点 |
+| --- | --- | --- |
+| `anthropic_messages` | 原生 Anthropic Messages | `https://n.tokeness.dev/v1/messages` |
+| `chat_completions` | OpenAI 兼容 | `https://n.tokeness.dev/v1/chat/completions` |
+
+用 OpenAI 兼容传输时，`base_url` 要带 `/v1`：
 
 ```yaml
 model:
@@ -48,7 +55,7 @@ model:
   api_mode: chat_completions
 ```
 
-API Key 放 `~/.hermes/.env`，不要写进 `config.yaml`。
+`base_url` 不要重复拼 `/v1`（写成 `https://n.tokeness.dev/v1/v1` 会 404）。API Key 放 `~/.hermes/.env`，不要写进 `config.yaml`。
 
 ## 3. 显式开启提示缓存
 
@@ -56,15 +63,18 @@ Anthropic 的提示缓存是**显式**的：请求里必须带 `cache_control` �
 
 这解释了为什么只改传输协议（`api_mode` 改成 Anthropic）不会让命中率变好——改协议不改变这个判定，只有显式声明才会。
 
-在对应供应商条目下按模型声明：
+在供应商条目下按模型声明。**`api` 必须与 `model.base_url` 逐字一致**（Hermes 按归一化后的地址匹配路由，`/v1` 的有无是两条不同路由）：
 
 ```yaml
+prompt_caching:
+  cache_ttl: "5m"     # 或 "1h"；省略则用默认 5m
+
 providers:
   tokeness:
-    api: https://n.tokeness.dev/v1
-    transport: openai_chat        # 或 anthropic_messages
+    api: https://n.tokeness.dev        # 与 model.base_url 保持一致
+    transport: anthropic_messages      # 或 openai_chat
     api_key: ${TOKENESS_API_KEY}
-    discover_models: false        # 见第 4 步
+    discover_models: false             # 见第 4 步
     models:
       claude-opus-5-5:
         prompt_caching: true
@@ -72,16 +82,11 @@ providers:
 
 要点：
 
+- `api` 必须与 `model.base_url` 写同一个值（含 `/v1` 与否），否则声明匹配不上、缓存仍然不生效。
 - `models:` 下的键名必须与控制台里的完整模型名一致。
 - `transport` 决定断点布局：`openai_chat` 用 OpenAI 信封布局，`anthropic_messages` 用原生块内布局。两种布局 Tokeness 都能正确转换，不必为了缓存而换协议。
 - 省略 `prompt_caching` 时 Hermes 保持保守（不注入）；显式写 `false` 则强制关闭。
-
-可选的缓存有效期（默认 5 分钟；长会话、轮次间隔较久时可改成 1 小时）：
-
-```yaml
-prompt_caching:
-  cache_ttl: "5m"     # 或 "1h"
-```
+- 若使用 `api_mode: anthropic_messages`，Hermes `v2026.8.27` 及以后对 Claude 模型也会自动注入断点；但显式声明更稳妥，且在 OpenAI 兼容传输下是**唯一**的开启方式。
 
 ## 4. 模型名需要手动填写
 
@@ -104,8 +109,9 @@ Tokeness 的 `/v1/models` 只返回公开分组（`default`）的模型。Claude
 
 | 现象 | 处理 |
 | --- | --- |
-| 401 | 检查 API Key；`provider: anthropic` 用 `x-api-key`，OpenAI 兼容用 `Authorization: Bearer` |
-| 404 | `anthropic_messages` 填根地址 `https://n.tokeness.dev`；`openai_chat` 填 `https://n.tokeness.dev/v1` |
+| 401 | 检查 API Key；`anthropic_messages` 传输用 `x-api-key`，OpenAI 兼容传输用 `Authorization: Bearer` |
+| 404 | `anthropic_messages` 的 `base_url` 填 `https://n.tokeness.dev`（不要再加 `/v1`）；OpenAI 兼容填 `https://n.tokeness.dev/v1` |
 | model not found | 从控制台复制完整模型名；把 `discover_models` 设为 `false` 后手动填写 |
-| 每轮输入 token 都很大、`缓存读取` 恒为 0 | 确认已声明 `prompt_caching: true`，且模型名与请求路由完全一致 |
+| 每轮输入 token 都很大、`缓存读取` 恒为 0 | 确认已声明 `prompt_caching: true`；确认 `providers.<名>.api` 与 `model.base_url` 完全一致；确认 `models:` 下的模型名与控制台一致 |
+| 改了缓存配置但没有变化 | 该声明自 Hermes `v2026.8.27` 起生效，先确认版本 |
 | 中途切换模型后费用突增 | 缓存按模型区分，换模型后第一轮必然全价重算整段上下文 |

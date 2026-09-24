@@ -28,17 +28,24 @@ In the Tokeness console:
 
 ## 2. Configure Hermes
 
-Edit `~/.hermes/config.yaml`. For Claude models, the native Anthropic transport is recommended:
+Edit `~/.hermes/config.yaml`. **Configure Tokeness as a custom provider (`provider: custom`)** so the entry carries its own key — this avoids Hermes' Anthropic credential priority (`ANTHROPIC_TOKEN` / Claude Code credentials) shadowing your Tokeness key or sending it to the wrong endpoint:
 
 ```yaml
 model:
-  provider: anthropic
+  provider: custom
   default: claude-opus-5-5
   base_url: https://n.tokeness.dev
   api_mode: anthropic_messages
 ```
 
-The OpenAI-compatible transport also works:
+`api_mode` selects the transport; both are supported:
+
+| `api_mode` | Protocol | Endpoint used |
+| --- | --- | --- |
+| `anthropic_messages` | Native Anthropic Messages | `https://n.tokeness.dev/v1/messages` |
+| `chat_completions` | OpenAI-compatible | `https://n.tokeness.dev/v1/chat/completions` |
+
+For the OpenAI-compatible transport, include `/v1` in `base_url`:
 
 ```yaml
 model:
@@ -48,7 +55,7 @@ model:
   api_mode: chat_completions
 ```
 
-Keep the API key in `~/.hermes/.env` rather than in `config.yaml`.
+Do not append `/v1` twice (`https://n.tokeness.dev/v1/v1` returns 404). Keep the API key in `~/.hermes/.env` rather than in `config.yaml`.
 
 ## 3. Enable prompt caching explicitly
 
@@ -56,15 +63,18 @@ Anthropic prompt caching is **explicit**: the request must carry a `cache_contro
 
 This is why switching transport alone (`api_mode` set to Anthropic) does not improve the hit rate — the transport does not change that decision. Only an explicit declaration does.
 
-Declare the capability on the model under its provider entry:
+Declare the capability on the model under its provider entry. **`api` must match `model.base_url` exactly** (Hermes matches routes on the normalized address, so `/v1` vs no `/v1` are two different routes):
 
 ```yaml
+prompt_caching:
+  cache_ttl: "5m"     # or "1h"; defaults to 5m when omitted
+
 providers:
   tokeness:
-    api: https://n.tokeness.dev/v1
-    transport: openai_chat        # or anthropic_messages
+    api: https://n.tokeness.dev        # keep identical to model.base_url
+    transport: anthropic_messages      # or openai_chat
     api_key: ${TOKENESS_API_KEY}
-    discover_models: false        # see step 4
+    discover_models: false             # see step 4
     models:
       claude-opus-5-5:
         prompt_caching: true
@@ -72,9 +82,11 @@ providers:
 
 Notes:
 
+- `api` must be written the same way as `model.base_url` (with or without `/v1`); otherwise the declaration does not match and caching stays off.
 - The key under `models:` must match the full model name from the console exactly.
 - `transport` selects the marker layout: `openai_chat` uses the OpenAI envelope layout, `anthropic_messages` uses the native inner-block layout. Tokeness converts both correctly, so you do not need to change transport for caching.
 - When `prompt_caching` is omitted, Hermes stays conservative and injects nothing; `false` disables markers explicitly.
+- With `api_mode: anthropic_messages`, Hermes `v2026.8.27` and later also inject breakpoints for Claude models automatically. The explicit declaration is still the safer choice, and on the OpenAI-compatible transport it is the only way to enable caching.
 
 Optionally set the cache TTL (default 5 minutes; use 1 hour for long sessions with pauses between turns):
 
@@ -104,8 +116,9 @@ If every turn shows input tokens close to the whole context and `Cache Read` sta
 
 | Symptom | Fix |
 | --- | --- |
-| 401 | Check the API key; `provider: anthropic` uses `x-api-key`, the OpenAI-compatible transport uses `Authorization: Bearer` |
-| 404 | Use the root address `https://n.tokeness.dev` for `anthropic_messages`, or `https://n.tokeness.dev/v1` for `openai_chat` |
-| model not found | Copy the full model name from the console and set `discover_models` to `false` |
-| Large input tokens every turn and `Cache Read` stays at 0 | Confirm `prompt_caching: true` is declared and that the model name matches the routed request exactly |
+| 401 | Check the API key; the `anthropic_messages` transport uses `x-api-key`, the OpenAI-compatible transport uses `Authorization: Bearer` |
+| 404 | For `anthropic_messages`, set `base_url` to `https://n.tokeness.dev` (do not add `/v1`); for the OpenAI-compatible transport use `https://n.tokeness.dev/v1` |
+| model not found | Copy the full model name from the console, then set `discover_models` to `false` and enter it manually |
+| Large input tokens every turn and `Cache Read` stays at 0 | Confirm `prompt_caching: true` is declared; confirm `providers.<name>.api` matches `model.base_url` exactly; confirm the key under `models:` matches the console model name |
+| Changed the caching config but nothing improved | The declaration takes effect from Hermes `v2026.8.27`; check the version first |
 | Cost jumps after a mid-session model switch | Caches are keyed to the model, so the first turn after a switch always re-reads the whole context at full price |
