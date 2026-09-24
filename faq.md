@@ -197,6 +197,18 @@ Copy from the Tokeness console or model marketplace. Model names must keep their
 
 When connecting for the first time, copy one available model name, then go back to the tutorial and replace `YOUR_MODEL_NAME`.
 
+Some tools try to discover the model list automatically. Tokeness `/v1/models` returns only the public group (`default`) catalog; paid groups such as Claude and GPT are not part of that public list, so discovery returns an empty list for them. Those tools need auto-discovery turned off and the full model name entered manually.
+
+## What should I do when a client reports a 0% cache hit rate?
+
+Check two things before deciding whether this is a platform problem or a client configuration problem.
+
+First, note which protocol the request uses. Both `/v1/chat/completions` (OpenAI-compatible) and `/v1/messages` (native Anthropic) are supported; the model name and group determine the upstream channel.
+
+Second, check whether the client sends cache breakpoints. Anthropic prompt caching is **explicit**: the request must carry a `cache_control` breakpoint before the upstream caches that prefix. Some clients (Hermes Agent, for example) inject breakpoints automatically only for providers and hosts they recognise, and default to injecting none for a custom gateway. In that case the hit rate stays at 0 no matter which API protocol you switch to — the declaration has to be made in the client config. See [Hermes Agent](/integrations/hermes) for the setting.
+
+In the Tokeness console, open the request in the **usage logs** and check `Cache Write` and `Cache Read`: the first turn should show a write greater than 0, and later turns of a multi-turn conversation should show a read greater than 0. If every turn shows input tokens close to the whole context and the read stays at 0, the breakpoints are not being sent.
+
 ## Can I share one API key?
 
 Technically yes. Using separate keys for development, production, customer projects, and automation tasks makes it easier to set limits and troubleshoot.
